@@ -16,7 +16,8 @@
 title: Jack Barker
 email: jack.barker.au@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Jack Barker - Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
+  Jack Barker | 
+  Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 twitter_username: jackbarker
