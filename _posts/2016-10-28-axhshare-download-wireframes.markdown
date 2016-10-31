@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Download Wireframe Images from AxShare"
-date:   2016-10-28 17:00:00 +1100
-categories: jekyll update
+date:   2016-10-28
+tags: axure, hacks
 ---
 Here is a guide for downloading an entire site of AxureShare wireframes.
 
