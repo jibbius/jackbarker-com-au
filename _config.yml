@@ -24,6 +24,10 @@ twitter_username: jackbarker
 github_username:  jibbius
 google_analytics: UA-40447110-1
 
+#disqus
+disqus.shortname: jibbius
+
+
 # Build settings
 markdown: kramdown
 theme: minima
