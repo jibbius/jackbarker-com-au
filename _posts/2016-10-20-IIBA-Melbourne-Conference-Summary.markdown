@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Conference Summary: IIBA Melb 2016"
 date:   2016-10-20
 tags: Conference IIBA
