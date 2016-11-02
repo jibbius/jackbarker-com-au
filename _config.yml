@@ -25,7 +25,8 @@ github_username:  jibbius
 google_analytics: UA-40447110-1
 
 #disqus
-disqus.shortname: jibbius
+disqus:
+  shortname:  jibbius
 
 
 # Build settings
