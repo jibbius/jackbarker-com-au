@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Jack Barker | 
   Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "http://jackbarker.com.au" # the base hostname & protocol for your site
 twitter_username: jackbarker
 github_username:  jibbius
 google_analytics: UA-40447110-1
