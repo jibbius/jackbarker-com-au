@@ -12,5 +12,11 @@ Installation:
 
 
 Run locally:
-- Execute: `bundle exec jekyll serve`
+- Execute: `jekyll serve` (or `jekyll serve -D` to include 'Draft' content)
 - Preview your local Jekyll site in your web browser at [localhost:4000](http://localhost:4000).
+
+Live reload support:
+- Install Livereload plugin for Chrome
+- Execute: `guard`
+
+
