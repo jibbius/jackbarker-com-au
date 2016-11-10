@@ -1,0 +1,8 @@
+{% if site.mailhide.token %}
+  <li>
+      <a
+        href="{{ site.mailhide.token }}"
+        onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01-sBNq2eC9n-vtrDvcD6OFA\x3d\x3d\x26c\x3dNLYXbMiWVrSGpjrhDXi-Vg-fye9Rr2HCkeUuiWUphmI\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
+        title="Reveal this e-mail address">{{ site.mailhide.link-text }}</a>@{{ site.mailhide.domain-text }}
+  </li>
+{% endif %}

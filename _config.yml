@@ -13,14 +13,27 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+# Summary
 title: Jack Barker
 description: > # this means to ignore newlines until "baseurl:"
   Jack Barker | 
   Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
+
+# URL Settings
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://jackbarker.com.au" # the base hostname & protocol for your site
+
+# Social / Contact info
 twitter_username: jackbarker
 github_username:  jibbius
+linkedin:  https://au.linkedin.com/in/jackbarker1
+mailhide:
+  token: http://www.google.com/recaptcha/mailhide/d?k=01-sBNq2eC9n-vtrDvcD6OFA==&c=NLYXbMiWVrSGpjrhDXi-Vg-fye9Rr2HCkeUuiWUphmI=
+  link-text: j...
+  domain-text: gmail.com
+
+# Analytics
 google_analytics: UA-40447110-1
 
 #disqus

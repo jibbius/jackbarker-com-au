@@ -14,8 +14,12 @@
               {{ site.title | escape }}
             {% endif %}
             </li>
-            {% if site.email %}
+            {% if site.mailhide %}
+              {% include mailhide.html %}
+            {% else %}
+              {% if site.email %}
             <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+              {% endif %}
             {% endif %}
         </ul>
       </div>
