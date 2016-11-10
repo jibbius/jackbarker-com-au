@@ -24,7 +24,7 @@ The wireframes will be downloaded, and saved as (.png) and/or (.jpg) format.
 
 - Navigate to the Axure Wireframes page you want to download.
 - Login with your password (if applicable).
-- For example: http://mfdk5s.axshare.com/#p=a14_-_model_portfolios
+- For example: http://YourLinkID.axshare.com/
 
 ## Step 2
 Open the JavaScript console (within Firefox), by pressing `Ctrl` + `Shift` + `I` on the keyboard, and ensure "Console" is selected.
@@ -114,7 +114,7 @@ To fix:
 
 {% highlight powershell %}
 
-Dir | Rename-Item -NewName { $_.name -replace "http_mfdk5s.axshare.com_","" }
+Dir | Rename-Item -NewName { $_.name -replace "http_YourLinkID.axshare.com_","" }
 
 {% endhighlight %}
 
