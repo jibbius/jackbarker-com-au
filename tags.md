@@ -1,22 +1,31 @@
 ---
 layout: page
+title: Tags
 ---
 
+
+{% capture tags %}
+  {% for tag in site.tags %}|{{ tag[0] }}{% endfor %}
+{% endcapture %}
+{% assign sortedtags = tags | normalize_whitespace | split:'|' | sort %}
+
 <div class="tags-expo">
-  
-  <div class="tags-expo-list">  
-    {% for tag in site.tags %}
-    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+
+  <div class="tags-expo-list">
+    {% for tag in sortedtags %}
+      {% if tag != '' %}
+      <a href="#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+      {% endif %}
     {% endfor %}
   </div>
 
   <hr/>
 
   <div class="tags-expo-section">
-    {% for tag in site.tags %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    {% for tag in sortedtags %}
+    <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
     <ul class="tags-expo-posts">
-      {% for post in tag[1] %}
+      {% for post in site.tags[tag] %}
         <a href="{{ site.baseurl }}{{ post.url }}">
       <li>
         {{ post.title }}

@@ -82,3 +82,7 @@ $on-laptop:        800px;
 .tags-expo-section {
     margin-top: 20px;
 }
+.tags-expo-list a,
+.tags-expo-section h2{
+    text-transform: capitalize;
+}
