@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "_site/": true,
+    ".sass-cache/": true,
+    "Gemfile.lock": true
+  }
+}
