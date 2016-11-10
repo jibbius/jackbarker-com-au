@@ -1,9 +1,9 @@
 ---
 layout: post
-comments: true
 title:  "Conference Summary: IIBA Melb 2016"
 date:   2016-10-20
-tags: Conference IIBA
+tags:   [ IIBA , conferences]
+
 ---
 
 Yesterday, I attended the **IIBA's Business Analysis Professional Day** in Melbourne.

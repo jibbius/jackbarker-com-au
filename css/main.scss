@@ -20,6 +20,12 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+// tags
+$tag-background:       lighten($brand-color, 40%);
+$tag-background-hover: lighten($brand-color, 60%);
+$tag-text-color:       darken($brand-color, 10%);
+$tag-text-color-hover: darken($brand-color, 40%);
+
 // Width of the content area
 $content-width:    800px;
 
@@ -37,3 +43,42 @@ $on-laptop:        800px;
 
 // Import partials from the `minima` theme.
 @import "minima";
+
+
+// Custom styles (needs a bit of a tidy)
+
+/*
+ * Post tags
+ */
+.post-tag {
+    display: inline-block;
+    background: $tag-background;
+    padding: 0 .5rem;
+    border: 1px solid $tag-text-color;
+    border-radius: 4px;
+    color: $tag-text-color;
+    font-size: 90%;
+    text-decoration: none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    margin-bottom: 4px;
+}
+.post-tag:hover {
+    background: $tag-background-hover;
+    color: $tag-text-color-hover;
+    border-color: $tag-text-color-hover;
+    text-decoration: none;
+}
+.tags-expo-list {
+    margin-bottom: 14px;
+}
+.post-tag:before {
+    content: "\f02b";
+    font-family: FontAwesome;
+    padding-right: .5em;
+}
+
+.tags-expo-section {
+    margin-top: 20px;
+}

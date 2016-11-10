@@ -2,7 +2,7 @@
 layout: post
 title:  "Download Wireframe Images from AxShare"
 date:   2016-10-28
-tags: axure, hacks
+tags:  [Axure, hacks]
 ---
 Here is a guide for downloading an entire site of AxureShare wireframes.
 

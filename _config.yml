@@ -24,13 +24,16 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://jackbarker.com.au" # the base hostname & protocol for your site
 
+# Taxonomies
+tag_page: '/tags/'
+
 # Social / Contact info
 twitter_username: jackbarker
 github_username:  jibbius
 linkedin:  https://au.linkedin.com/in/jackbarker1
 mailhide:
   token: http://www.google.com/recaptcha/mailhide/d?k=01-sBNq2eC9n-vtrDvcD6OFA==&c=NLYXbMiWVrSGpjrhDXi-Vg-fye9Rr2HCkeUuiWUphmI=
-  link-text: j...
+  link-text: j.........
   domain-text: gmail.com
 
 # Analytics
