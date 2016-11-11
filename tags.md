@@ -1,9 +1,10 @@
 ---
-layout: page
-title: Tags
+layout: default
+#title: Tags
 permalink: /tags/
 ---
 
+<h2>Tags</h2> 
 
 {% capture tags %}
   {% for tag in site.tags %}|{{ tag[0] }}{% endfor %}
