@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Conference Summary: IIBA Melb 2016"
+desc:   My summary of the 2016 Melbourne IIBA event, 'BA Professional Day'.
 date:   2016-10-20
 tags:   [ IIBA , conferences]
 
