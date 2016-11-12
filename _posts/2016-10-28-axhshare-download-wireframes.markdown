@@ -10,9 +10,9 @@ The wireframes will be downloaded, and saved as (.png) and/or (.jpg) format.
 
 ### You will need:
 
-- [Mozilla Firefox](https://www.mozilla.org/firefox/products/)
+- [Mozilla Firefox](firefox){:target="_blank"}
 - The **Grab them all** Firefox extension.
-  - To download, visit this link using Firefox: [Grab them all](https://addons.mozilla.org/en-US/firefox/addon/grab-them-all/)
+  - To download, visit this link using Firefox: [Grab them all](grab-them-all){:target="_blank"}
 - A link to an AxureShare site for which you intend to download wireframe images from (and the password, if applicable).
 
 ### Optional extras:
@@ -130,3 +130,7 @@ Dir | Rename-Item -NewName { $_.name -replace "http_YourLinkID.axshare.com_","" 
 - In theory, it should be possible to systematically ignore differences in images that are still 99.9% similar.
 - I haven’t been able to find a way to alter the tolerance that is applied to this mechanism (If someone finds a way, please let me know :smile: ).
 - Regardless; I do find the folder compare useful, as you are able to open both the before and after images in a single operation, without having to search/open each file independently.
+
+
+[firefox]: https://www.mozilla.org/firefox/products/ "Mozilla Firefox"
+[grab-them-all]: https://addons.mozilla.org/en-US/firefox/addon/grab-them-all/ "Grab them all"

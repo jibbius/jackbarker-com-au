@@ -21,7 +21,7 @@ permalink: /tags/
 {% assign sortedtagslower = tags | normalize_whitespace | downcase | split:'|' | uniq | sort %}
 
 {% comment %}
-# This loop then uses the array above to construct the array we want
+# This loop then uses the array above to construct the array we actually want
 # (i.e. A, a, b, c, D, G)
 {% endcomment %}
 {% capture tags2 %}

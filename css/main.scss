@@ -48,6 +48,24 @@ $on-laptop:        800px;
 // Custom styles (needs a bit of a tidy)
 
 /*
+ * Headings
+ */
+h2{
+    margin-top: 40px;
+}
+
+/*
+ * Post images
+ */
+figure.post-image {
+    text-align: center;
+}
+figure.post-image img{
+    text-align: center;
+    border: 2px solid lighten($brand-color, 30%);
+    margin: auto;
+}
+/*
  * Post tags
  */
 .post-tag {
@@ -82,7 +100,7 @@ $on-laptop:        800px;
 .tags-expo-section {
     margin-top: 20px;
 }
-.tags-expo-list a,
+/*.tags-expo-list a,*/
 .tags-expo-section h2{
-    /*text-transform: capitalize;*/
+    text-transform: capitalize;
 }
