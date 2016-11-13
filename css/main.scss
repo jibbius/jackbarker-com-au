@@ -53,6 +53,9 @@ $on-laptop:        800px;
 h2{
     margin-top: 40px;
 }
+.post-meta+h2 {
+    margin-top: 2px;
+}
 
 /*
  * Post images
