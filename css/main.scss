@@ -107,3 +107,23 @@ figure.post-image img{
 .tags-expo-section h2{
     text-transform: capitalize;
 }
+/*
+ * Highlight draft posts differently
+*/
+h1.draft-post:before,
+li.draft-post h2:before {
+  content: "\f040";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  margin-right: 10px;
+  float:left;
+  font-size: 20px;
+}
+h1.draft-post,
+li.draft-post h2,
+li.draft-post h2 a {
+  color: #ff0089
+}
