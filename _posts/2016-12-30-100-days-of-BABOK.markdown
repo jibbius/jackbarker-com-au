@@ -4,6 +4,7 @@ title:  "The '100 Days of BABOK' Challenge"
 desc:   "My committment to 100 days of studying the BABOK"
 tags:   [ "100 Days of BABOK" ]
 date:   2016-12-30
+permalink: /blog/100-Days-of-BABOK
 ---
 
 ## My goal for the 100 Days of BABOK challenge:
