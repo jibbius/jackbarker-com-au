@@ -58,6 +58,15 @@ h2{
 }
 
 /*
+ * Lists
+ */
+li > ul,
+li > ol {
+  margin-bottom: 15px;
+}
+
+
+/*
  * Post images
  */
 figure.post-image {
@@ -100,13 +109,23 @@ figure.post-image img{
     padding-right: .5em;
 }
 
+/*
+ * Tags page
+ */
 .tags-expo-section {
     margin-top: 20px;
 }
-/*.tags-expo-list a,*/
 .tags-expo-section h2{
     text-transform: capitalize;
 }
+a.tag-post-link:hover{
+    text-decoration: none;
+}
+a.tag-post-link:hover span.tag-post-title{
+    text-decoration: underline;
+}
+
+
 /*
  * Highlight draft posts differently
 */
@@ -123,7 +142,6 @@ li.draft-post h2:before {
   font-size: 20px;
 }
 h1.draft-post,
-li.draft-post h2,
-li.draft-post h2 a {
+li.draft-post {
   color: #ff0089
 }
