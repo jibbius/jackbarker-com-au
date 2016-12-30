@@ -25,8 +25,7 @@ This is a point that she unappolegitically illustrated, drawing parallels to her
 - The [occupation of homes by "squatters"][squatters]{:target="_blank"} amidst the fallout of Melbourne's Eastwest Link; and the resultant impact upon
   domestic abuse victims awaiting state housing.
 - Hyperinflation of the narative surrounding the [Gender pay gap][gender-pay-gap]{:target="_blank"}, due to improper scrutiny of data.
-- The trend within universities with relation to [trigger-warning policies][trigger-warning]{:target="_blank"} and social-justice activism, and its
-  effects upon free speech and education. 
+- The trend within universities with relation to [trigger-warning policies][trigger-warning]{:target="_blank"} and social-justice activism; and some unintended impacts this has had in relation to free speech and education.
 
 Within each of these stories existed a subtext, which required an analytical scrutiny beyond the initial dataset.
 
