@@ -1,17 +1,18 @@
 ---
 layout: post
 title:  "The '100 Days of BABOK' Challenge"
-desc:   "My committment to 100 days of studying the BABOK"
+desc:   "My commitment to 100 days of studying the BABOK"
 tags:   [ "100 Days of BABOK" ]
 date:   2016-12-30
-permalink: /blog/100-Days-of-BABOK
+author: Jack Barker
+permalink: /blog/100-Days-of-BABOK/index
 ---
 
 ## My goal for the 100 Days of BABOK challenge:
 
 > To form a greater understanding of the content within the BABOK, in preparation for CBAP certification.
 
-To go about this goal, I am commiting to a #100DaysOfBABOK challenge.
+To go about this goal, I am committing to a #100DaysOfBABOK challenge.
 
 ## My rules for the 100 Days of BABOK:
 

@@ -3,6 +3,7 @@ layout: post
 title:  "How To Download Wireframe Images from AxShare"
 desc:   "My tutorial on bulk downloading images of wireframes, which have been hosted using Axure's AxShare cloud hosting service."
 date:   2016-10-28
+author: Jack Barker
 tags:   [Axure, hacks]
 ---
 Here is a guide for bulk downloading images of wireframes, where the wireframes have been hosted using Axure's
@@ -15,7 +16,7 @@ This may be useful if:
 - You are working in collaboration with a design partner agency, and want to ensure that wireframes are not
   "tampered with" after scope has been agreed.
 - You need to work offline for a period, but still need access to some wireframe resources.
-- You prefer working with paper (ie. hard copies), and you need to be able to bulk-print a set of hosted wireframes.
+- You prefer working with paper (i.e. hard copies), and you need to be able to bulk-print a set of hosted wireframes.
 
 ### You will need:
 
@@ -26,7 +27,7 @@ This may be useful if:
 
 ### Optional extras:
 
-- An image compare tool (i.e. BeyondCompare; DeltaWalker; Kaleaidoscope; Araxis Merge)
+- An image compare tool (i.e. BeyondCompare; DeltaWalker; Kaleidoscope; Araxis Merge)
 - Microsoft Powershell (for the purpose of scripting an image comparison)
 
 ## Step 1
