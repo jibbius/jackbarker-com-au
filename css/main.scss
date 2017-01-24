@@ -145,3 +145,18 @@ h1.draft-post,
 li.draft-post {
   color: #ff0089
 }
+
+/*
+ * Format title + subtitle
+*/
+h2.post-subtitle {
+    margin-top: 0px;
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+.post-title,
+.post-subtitle,
+.post-meta {
+    text-align: center;
+}
