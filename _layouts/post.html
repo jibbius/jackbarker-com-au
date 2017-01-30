@@ -27,4 +27,10 @@ layout: default
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %}
+
+  {% if site.firebase_comments.app_id %}
+    {% include firebase_comments.html %}
+  {% endif %}
+
+
 </article>

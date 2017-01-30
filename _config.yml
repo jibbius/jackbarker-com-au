@@ -49,10 +49,13 @@ wordpress: https://profiles.wordpress.org/jibbius
 # Analytics
 google_analytics: UA-40447110-1
 
-#disqus
-disqus:
-  shortname:  jack-barker
+#comments
+firebase_comments:
+  app_id:  jack-barker-blog
 
+#legacy comments
+#disqus:
+#  shortname:  jack-barker
 
 # Build settings
 markdown: kramdown
