@@ -3,6 +3,7 @@ layout: post
 title:  "Conference Summary: IIBA Melb 2016"
 desc:   "My summary of the 2016 Melbourne IIBA event, 'BA Professional Day'."
 date:   2016-10-20
+author: Jack Barker
 tags:   [ IIBA , conferences]
 ---
 
@@ -20,28 +21,27 @@ The day had some excellent talks and workshops, all of which left me with plenty
 Rita provided a fantastic introduction to the event.
 As a journalist and opinion columnist, she underscored the need to thoroughly investigate data as opposed to "taking the simple path".
 
-This is a point that she unappolegitically illustrated, drawing parallels to her own coverage of politically-delicate issues:
+This is a point that she unapologetically illustrated, drawing parallels to her own coverage of politically-delicate issues:
 
 - The [occupation of homes by "squatters"][squatters]{:target="_blank"} amidst the fallout of Melbourne's Eastwest Link; and the resultant impact upon
   domestic abuse victims awaiting state housing.
-- Hyperinflation of the narative surrounding the [Gender pay gap][gender-pay-gap]{:target="_blank"}, due to improper scrutiny of data.
-- The trend within universities with relation to [trigger-warning policies][trigger-warning]{:target="_blank"} and social-justice activism, and its
-  effects upon free speech and education. 
+- Hyperinflation of the narrative surrounding the [Gender pay gap][gender-pay-gap]{:target="_blank"}, due to improper scrutiny of data.
+- The trend within universities with relation to [trigger-warning policies][trigger-warning]{:target="_blank"} and social-justice activism; and some unintended impacts this has had in relation to free speech and education.
 
 Within each of these stories existed a subtext, which required an analytical scrutiny beyond the initial dataset.
 
-The intent of the above, was to draw parallels between the work of a journalist and that of an analayst. Whilst the comparison may
+The intent of the above, was to draw parallels between the work of a journalist and that of an analyst. Whilst the comparison may
 have romanticised both professions, the content was profoundly interesting, and I feel it was a good mindset to adopt for the kick-off
 the conference.
 
 ## Taruni Falconer - Communicating With Stakeholders (Workshop)
-Taruni's workshop focussed on highlighting the difficulties associated with communicating technical ideas (something which - as
+Taruni's workshop focused on highlighting the difficulties associated with communicating technical ideas (something which - as
 analysts - probably didn't require a lot of convincing ).
 
 The more interesting part of the workshop invited participants to consider the additional difficulties we face when communicating across
 different cultures. As part of this discussion Taruni drew on sources including [the artwork of Yang Liu][easts-meets-west]{:target="_blank"}.
 
-We explored the tendancies of different cultures with respect to:
+We explored the tendencies of different cultures with respect to:
 
 - Direct vs. Indirect communication styles
 - Definition and importance of punctuality
@@ -63,16 +63,16 @@ In any case, immediate takeaways I took were:
 - The difference between:
   - 1st order design (symbols)
   - 2nd order design (things)
-  - 3rd order desing (actions / transactions)
+  - 3rd order design (actions / transactions)
   - 4th order design (systems / environments)
   <br>*Note: this model is based on [the work of Richard Buchanan][design-research]{:target="_blank"}*.
 - That oftentimes when considering a large problem (i.e. crime), we should resist the urge to jump to obvious solutions (i.e. more police on the
-  street). Instead, targeting a small aspect of the problem with a targetted solution, can be much more effective). 
+  street). Instead, targeting a small aspect of the problem with a targeted solution, can be much more effective). 
 
 ## Sonia McDonald - Leadership is an Attitude (Closing keynote)
 The final talk of the day, posed the question "what is leadership?".
 
-Sonia explained that we tend to view leadership as something **grandious**, beyond the responsibilities of most staff, and the reserve of
+Sonia explained that we tend to view leadership as something **grandiose**, beyond the responsibilities of most staff, and the reserve of
 managers and senior employees. Her message of the day, was to challenge that notion. Instead consider that all people are able to lead,
 and indeed, do so - through even through the smallest of actions.
 

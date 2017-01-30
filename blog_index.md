@@ -6,7 +6,7 @@ title: Blog
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li {% if post.draft == true %}class="draft-post"{% endif %}>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>

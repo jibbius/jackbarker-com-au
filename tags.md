@@ -46,10 +46,10 @@ permalink: /tags/
     <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
     <ul class="tags-expo-posts">
       {% for post in site.tags[tag] %}
-        <a href="{{ site.baseurl }}{{ post.url }}">
-      <li>
-        {{ post.title }}
-      <small class="post-date">( {{ post.date | date_to_string }} )</small>
+        <a class="tag-post-link" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}{% if post.desc %} | {{ post.desc | escape }}{% endif %}">
+      <li {% if post.draft == true %}class="draft-post"{% endif %}>
+        <span class="tag-post-title">{{ post.title }}</span>
+        <small class="tag-post-date">( {{ post.date | date_to_string }} )</small>
       </li>
       </a>
       {% endfor %}

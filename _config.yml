@@ -41,6 +41,10 @@ mailhide:
   token: http://www.google.com/recaptcha/mailhide/d?k=01-sBNq2eC9n-vtrDvcD6OFA==&c=NLYXbMiWVrSGpjrhDXi-Vg-fye9Rr2HCkeUuiWUphmI=
   link-text: j.........
   domain-text: gmail.com
+stackoverflow:
+  story: http://stackoverflow.com/story/jackbarker
+  cv: http://stackoverflow.com/cv/jackbarker
+wordpress: https://profiles.wordpress.org/jibbius
 
 # Analytics
 google_analytics: UA-40447110-1
