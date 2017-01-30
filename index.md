@@ -5,7 +5,7 @@ permalink: /
 exclude_from_nav: true
 ---
 
-Hey there!
+Hi there!
 
 Welcome to Jack Barker's personal blog.
 
