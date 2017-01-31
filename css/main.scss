@@ -160,3 +160,11 @@ h2.post-subtitle {
 .post-meta {
     text-align: center;
 }
+
+/*
+ * Abbreviations
+*/
+abbr {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
