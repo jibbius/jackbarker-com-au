@@ -5,6 +5,17 @@ REM internet browser directed at the appropriate URL
 set server=localhost
 set port=4000
 
-start http://%server%:%port%
+REM ------------
+REM Start Jekyll
+REM ------------
 start bundle exec jekyll serve -D
-start bundle exec guard
+
+REM -----------------------------------------------
+REM Live-reload is not supported for windows (yet).
+REM -----------------------------------------------
+REM start bundle exec guard
+
+REM ------------
+REM Open Browser
+REM ------------
+start http://%server%:%port%

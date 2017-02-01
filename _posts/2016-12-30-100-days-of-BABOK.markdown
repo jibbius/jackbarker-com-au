@@ -5,7 +5,7 @@ desc:   "My commitment to 100 days of studying the BABOK"
 tags:   [ "100 Days of BABOK" ]
 date:   2016-12-30
 author: Jack Barker
-permalink: /blog/100-Days-of-BABOK/index
+permalink: /blog/100-Days-of-BABOK/index.html
 ---
 
 ## My goal for the 100 Days of BABOK challenge:
