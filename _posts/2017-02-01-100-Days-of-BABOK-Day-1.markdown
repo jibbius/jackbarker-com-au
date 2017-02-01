@@ -39,23 +39,27 @@ For me, it helped to picture these as a map (or environment) in my mind; and the
     width="600px"
 %}
 
+
+### Terms
+
+The BABOK has its own definitiions for the below, however, here is my simplified version.
+
+<dl>
+  <dt>Task</dt>
+  <dd>A discrete piece of work that falls within the domain of Business Analysis (i.e. "Something a BA does").</dd>
+  
+  <dt>Underlying Competency</dt>
+  <dd>Underlying knowledge and skills that are likely to assist the BA in a given task (i.e. "A BA's traits or skills").</dd>
+
+  <dt>Technique</dt>
+  <dd>A (recognised) way that the task *might* be completed. For example - **Stakeholder interviews** might be a technique for validating requirements.</dd>
+
+  <dt>Perspective</dt>
+  <dd>A project methodology (i.e. Agile / Waterfall), or other viewpoint, that might affect the technique/task.</dd>
+
+</dl>
+
+
 ### BA Core Competency Model
 
 {% include todo.html todo="Study this" %}
-
-
-### Terms
-<dl>
-  <dt>Task</dt>
-  <dd>A discrete piece of work that may be performed formally or informally as part of business analysis.</dd>
-  
-  <dt>Underlying Competency</dt>
-  <dd>Underlying competencies reflect knowledge, skills, behaviours, characteristics, and personal qualities that help one successfully perform the role of the business analyst.</dd>
-
-  <dt>Technique</dt>
-  <dd>{% include todo.html todo="Study this" %}</dd>
-
-  <dt>Perspective</dt>
-  <dd>{% include todo.html todo="Study this" %}</dd>
-
-</dl>
