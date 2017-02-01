@@ -45,14 +45,14 @@ Other materials (that are directly related to a BABOK knowledge area) are also r
 
 ## Inspiration
 
-My inspiration for taking on this challenge, is largely thanks to [Alexander Kallaway][kallaway-twitter]{:target="_blank"}'s appearance
+My inspiration for taking on this challenge is, in part, thanks to [Alexander Kallaway][kallaway-twitter]{:target="_blank"}'s appearance
 on the [CodeNewbie Podcast, episode #120][code-newbie-120]{:target="_blank"}. Well worth a listen :smile:.
 
 
 
 ## Planned Updates
 
-I shall be commencing this challenge in **January 2017**.
+I shall be commencing this challenge in **Early 2017**.
 
 Feel free to come back to this site, or check [my twitter feed][jackbarker-twitter]{:target="_blank"} for updates, or to send your support!
 

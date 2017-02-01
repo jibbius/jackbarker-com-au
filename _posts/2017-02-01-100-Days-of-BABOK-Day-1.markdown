@@ -8,7 +8,7 @@ tags:   [ "100 Days of BABOK" ]
 permalink: /blog/100-Days-of-BABOK/Day-1
 ---
 
-Well, it's been a busy January, but I finally convinced myself to take on the #100DaysOfBABOK challenge that I committed to at the end of last year.
+Well, it's been a busy January, but I finally convinced myself to take on the #100DaysOfBABOK challenge that I [committed to at the end of last year](/blog/100-Days-of-BABOK/).
 
 Today, is Day 1.
 
