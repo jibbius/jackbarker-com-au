@@ -22,7 +22,5 @@ Live reload support (not supported by Windows... yet?):
 - Install Livereload plugin for Chrome
 - Execute: `guard`
 
-Drafts:
-
-- Install Livereload plugin for Chrome
-- Execute: `guard`
+Install drafts:
+- git clone git@bitbucket.org:jack_barker/jackbarker-com-au_drafts.git _drafts
