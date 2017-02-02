@@ -5,6 +5,7 @@ desc:   "My summary of the 2016 Melbourne IIBA event, 'BA Professional Day'."
 date:   2016-10-20
 author: Jack Barker
 tags:   [ IIBA , conferences]
+image: "/images/2016/2016_IIBA_day_gear_300x325.jpg"
 ---
 
 Yesterday, I attended the IIBA's **Business Analysis Professional Day** in Melbourne.
