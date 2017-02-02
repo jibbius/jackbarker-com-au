@@ -6,6 +6,7 @@ date:   2017-02-01
 author: Jack Barker
 tags:   [ "100 Days of BABOK" ]
 permalink: /blog/100-Days-of-BABOK/Day-1
+image: "/images/2017/2017_BA_knowledge_map_600x410.jpg"
 ---
 
 Well, it's been a busy January, but I finally convinced myself to take on the #100DaysOfBABOK challenge that I [committed to at the end of last year](/blog/100-Days-of-BABOK/).
