@@ -19,21 +19,21 @@ order: 3
 # Unfortunately we need to convert all tags to lowercase to do this
 # (Without doing this, result would be: A, D, G, a, b, c).
 {% endcomment %}
-{% assign sortedtagslower = tags | normalize_whitespace | downcase | split:'|' | uniq | sort %}
+{% assign sortedTagsLower = tags | normalize_whitespace | downcase | split:'|' | uniq | sort %}
 
 {% comment %}
 # This loop then uses the array above to construct the array we actually want
 # (i.e. A, a, b, c, D, G)
 {% endcomment %}
 {% capture tags2 %}
-  {% for tag1 in sortedtagslower %}{% for tag in site.tags %}{% assign tag2 = tag[0] | downcase %}{% if tag1 == tag2 %}|{{ tag[0] }}{% endif %}{% endfor %}{% endfor %}
+  {% for tag1 in sortedTagsLower %}{% for tag in site.tags %}{% assign tag2 = tag[0] | downcase %}{% if tag1 == tag2 %}|{{ tag[0] }}{% endif %}{% endfor %}{% endfor %}
 {% endcapture %}
-{% assign sortedtags = tags2 | normalize_whitespace | split:'|' %}
+{% assign sortedTags = tags2 | normalize_whitespace | split:'|' %}
 
 <div class="tags-expo">
 
   <div class="tags-expo-list">
-    {% for tag in sortedtags %}
+    {% for tag in sortedTags %}
       {% if tag != '' %}
       <a href="#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
       {% endif %}
@@ -43,7 +43,7 @@ order: 3
   <hr/>
 
   <div class="tags-expo-section">
-    {% for tag in sortedtags %}
+    {% for tag in sortedTags %}
     <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
     <ul class="tags-expo-posts">
       {% for post in site.tags[tag] %}
