@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "#100DaysOfBABOK : Day 2"
-desc:   "A glutton for punishment."
+desc:   "A glutton for punishment?"
 date:   2017-02-02
 author: Jack Barker
 tags:   [ "100 Days of BABOK" ]
