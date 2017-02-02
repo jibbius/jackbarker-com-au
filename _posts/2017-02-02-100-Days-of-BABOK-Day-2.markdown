@@ -34,6 +34,7 @@ Progressing further into Chapter 2, there are...
 - Transition requirements
 
 **And, finally:**
+
 - Stakeholders (2.4)
   - These seemed self-explanatory, and not worth memorising.
 - The distinction between **Requirements** and **Designs** (2.5)
