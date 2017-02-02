@@ -2,6 +2,7 @@
 layout: default
 title: Tags
 permalink: /tags/
+order: 3
 ---
 
 <h2>Tags</h2>

@@ -11,22 +11,8 @@ Welcome to Jack Barker's personal blog.
 
 
 <h2>Latest Posts</h2>
-<ul class="post-list">
-  {% for post in site.posts %}
-    
-   <li {% if post.draft == true %}class="draft-post"{% endif %}>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <h2>
-        <a class="post-link"
-          href="{{ post.url | prepend: site.baseurl }}"
-          title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
-          >{{ post.title | escape }}</a>
-      </h2>
-        {% if post.desc %}
-            <h3 class="post-subtitle">{{ post.desc }}</h3>
-        {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+{% include post-list.html %}
 
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+<h2>Subscribe</h2>
+<p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

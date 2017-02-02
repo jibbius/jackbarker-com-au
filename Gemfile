@@ -7,7 +7,7 @@ require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 # If offline will need to use cached local version (below), instead.
-#versions = JSON.parse(open('versions.json').read)
+# versions = JSON.parse(open('versions.json').read)
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the

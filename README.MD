@@ -17,10 +17,12 @@ Run locally:
 - Execute: `jekyll serve` (or `jekyll serve -D` to include 'Draft' content)
 - Preview your local Jekyll site in your web browser at [localhost:4000](http://localhost:4000).
 
+
 Live reload support (not supported by Windows... yet?):
 
 - Install Livereload plugin for Chrome
 - Execute: `guard`
 
 Install drafts:
+
 - git clone git@bitbucket.org:jack_barker/jackbarker-com-au_drafts.git _drafts

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "#100DaysOfBABOK : Day 1"
-desc:   "Finding a BA's feet"
+desc:   "Finding a BA's feet."
 date:   2017-02-01
 author: Jack Barker
 tags:   [ "100 Days of BABOK" ]
