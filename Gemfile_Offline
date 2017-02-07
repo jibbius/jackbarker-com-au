@@ -1,0 +1,23 @@
+source 'https://rubygems.org'
+#ruby RUBY_VERSION
+require 'json'
+require 'open-uri'
+
+# If offline will need to use cached local version (below), instead.
+versions = JSON.parse(open('versions.json').read)
+
+# This is the default theme for new Jekyll sites.
+gem "minima" # https://github.com/jekyll/minima
+
+gem 'github-pages', versions['github-pages']
+
+# If you have any plugins, put them here!
+group :jekyll_plugins do
+end
+
+gem 'guard'
+gem 'guard-jekyll-plus'
+gem 'guard-livereload'
+
+#gem 'kramdown', versions['kramdown']
+#gem 'rake'
