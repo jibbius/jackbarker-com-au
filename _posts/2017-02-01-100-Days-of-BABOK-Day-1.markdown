@@ -6,6 +6,7 @@ date:   2017-02-01
 author: Jack Barker
 tags:   [ "100 Days of BABOK" ]
 permalink: /blog/100-Days-of-BABOK/Day-1
+image: "/images/2017/2017_BA_knowledge_map_600x410.jpg"
 ---
 
 Well, it's been a busy January, but I finally convinced myself to take on the #100DaysOfBABOK challenge that I [committed to at the end of last year](/blog/100-Days-of-BABOK/).
@@ -42,9 +43,12 @@ For me, it helped to picture these as a map (or environment) in my mind; and the
 
 ### Terms
 
-The BABOK has its own definitiions for the below, however, here is my simplified version.
+The BABOK has its own definitions for the below.
+
+Here is my simplified version;
 
 <dl>
+
   <dt>Task</dt>
   <dd>A discrete piece of work that falls within the domain of Business Analysis (i.e. "Something a BA does").</dd>
   
@@ -62,4 +66,50 @@ The BABOK has its own definitiions for the below, however, here is my simplified
 
 ### BA Core Competency Model
 
-{% include todo.html todo="Study this" %}
+Finally, my summary of the Core Competency Model:
+
+<dl>
+
+  <dt>Needs</dt>
+  <dd>Problems (opportunities) that prompt a change/solution.</dd>
+
+  <dt>Change</dt>
+  <dd>An act of transformation, in response to a **need**.</dd>
+
+  <dt>Solutions</dt>
+  <dd>A specific method/approach for addressing a **need**.</dd>
+
+  <dt>Stakeholders</dt>
+  <dd>Individuals that are affected by the **need**, **change**, or **solution**.</dd>
+
+  <dt>Value</dt>
+  <dd>A measure of how valuable a **solution** option is, to a **stakeholder**.</dd>
+
+  <dt>Contexts</dt>
+  <dd>Variables / Conditions that must be considered with respect to a **change**.
+    <br>The BABOK has a vast list of examples - including: culture, attitudes, governments,
+    technology, weather.
+  </dd>
+  
+</dl>
+
+### Further thoughts on the BACCM
+
+The BABOK describes the importance of the common vocabulary above, and that each concept is expected
+to be equally relevant in any given business analysis effort.
+
+I do not intend to reproduce all of that content here.
+
+I think the key takeaways however, are:
+
+* That the BACCM lets us consider how **complete** and **thorough** our analysis has been.
+* The BACCM lets us share a common terminology with others in the profession.
+
+
+## Reflections
+
+The content above, whilst somewhat dry, seems to form a critical foundation for anyone taking the CBAP (or intending to digest the BABOK).
+
+With the BA Knowledge areas now firmly lodged in my brain, I'm keen to progress further into BABOK chapter 2.
+
+The BACCM terms feel as though they need a good mnemonic - although perhaps, through use, they will become 2nd nature soon enough?

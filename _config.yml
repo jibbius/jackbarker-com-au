@@ -34,6 +34,7 @@ post_dirs: false
 tag_page: '/tags/'
 
 # Social / Contact info
+logo: /favicons/favicon_400x400.png
 twitter_username: jackbarker
 github_username:  jibbius
 linkedin:  https://au.linkedin.com/in/jackbarker1

@@ -62,24 +62,24 @@ var normalisedAxureNodes = function getValues(obj, key) {
 }(axureNodes, key);
 
 // Prepare file contents
-var myfilecontents = function buildTextFile(my_values){
-    var textfilecontents = '';
+var myFileContents = function buildTextFile(my_values){
+    var textFileContents = '';
         for (var i in my_values) {
         if(my_values[i] != '')
-            textfilecontents += 'http://' + window.location.hostname + '/' + my_values[i] + '\n';
+            textFileContents += 'http://' + window.location.hostname + '/' + my_values[i] + '\n';
     }
-    return textfilecontents;
+    return textFileContents;
 }(normalisedAxureNodes);
 
 // Open file in browser
-var url = 'data:text;charset=utf8,' + encodeURIComponent(myfilecontents);
+var url = 'data:text;charset=utf8,' + encodeURIComponent(myFileContents);
 window.open(url, '_blank');
 window.focus();
 
 {% endhighlight %}
 
 ## Step 4
-In case the above doesn’t work you may need to do the following first:
+In case the above doesn't work you may need to do the following first:
 
 - If prompted, you may need to type “allow pasting” into the JavaScript console, before you will be allowed to paste code (then retry step 4).
 - If prompted, you may need to also enable pop-ups from the page.

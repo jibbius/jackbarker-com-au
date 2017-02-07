@@ -233,3 +233,8 @@ dd {
 .PageNavigation .next {
   text-align: right;
 }
+.PageNavigation .prev:last-child,
+.PageNavigation .next:first-child,
+{
+    width:100%;
+}
