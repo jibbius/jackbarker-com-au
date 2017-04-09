@@ -20,7 +20,7 @@ Progressing further into Chapter 2, there are...
 - Business Analysis Information
 - Design
 - Enterprise
-- -Organization- Organisation
+- Organisation
 - Plan
 - Requirement
 

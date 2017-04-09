@@ -8,11 +8,12 @@ tags:   [ "100 Days of BABOK" ]
 permalink: /blog/100-Days-of-BABOK/breaking-the-hiatus
 ---
 
-**Phew**, studying and blogging daily is kinda hard!
+**Phew**, studying and blogging **daily** is kinda hard!
 
 For anyone out there reading this, you may have noticed I just took a week off.
 
-In addition to everything else I've been working on, I moved cities last weekend, and used the opportunity to also take time out; and reassess what I'm looking to do with my writing.
+In addition to everything else I've been working on, I moved cities last weekend.
+I also used the opportunity to take some time out, and reassess what I'm looking to do with my writing.
 
 
 ## New Objectives
