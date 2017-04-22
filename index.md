@@ -10,9 +10,10 @@ Hi there!
 
 Welcome to Jack Barker's personal blog.
 
-
-<h2>Latest Posts</h2>
-{% include post-list.html %}
+<div class="blog-roll">
+    <h2>Latest Posts</h2>
+    {% include post-list.html %}
+</div>
 
 
 <h2>Subscribe</h2>

@@ -46,7 +46,23 @@ $on-laptop:        800px;
 
 
 // Custom styles (needs a bit of a tidy)
-
+/*
+ * Site title
+ */
+.site-subtitle {
+    font-size: 12px;
+    float: left;
+    clear: left;
+    margin-bottom: 6px;
+    font-family: monospace;
+}
+.site-nav{
+    float: none;
+    text-align: right;
+}
+.footer-heading a{
+    color: black;
+}
 /*
  * Headings
  */
@@ -63,6 +79,28 @@ h2{
 li > ul,
 li > ol {
   margin-bottom: 15px;
+}
+
+/*
+ * Blogroll
+ */
+.blog-roll {
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 2px solid #f9f9f9;
+}
+.blog-roll > h2 {
+    margin-top: 0px;
+}
+.blog-roll > h2 {
+    margin-top: 0px;
+}
+
+ul.post-list li {
+    padding: 20px;
+    background-color:#f9f9f9;
+    text-align:center;
+    border-radius:16px
 }
 
 
@@ -130,9 +168,10 @@ a.tag-post-link:hover span.tag-post-title{
  * Highlight draft posts differently
 */
 h1.draft-post:before,
-li.draft-post h2:before {
+li.draft-post:before {
   content: "\f040";
   font-family: FontAwesome;
+  color: #ff0089;
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -141,7 +180,7 @@ li.draft-post h2:before {
   font-size: 20px;
 }
 h1.draft-post,
-li.draft-post {
+li.draft-post h2 a.post-link {
   color: #ff0089
 }
 
