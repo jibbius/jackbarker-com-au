@@ -13,7 +13,12 @@
             <h3 class="post-subtitle">{{ post.desc }}</h3>
         {% endif %}
         {% if post.image %}
-          <img class="post-image" src="{{post.image }}">
+          <img
+            class="post-image"
+            src="{{post.image }}"
+            {% if post.image-srcset %}srcset="{{post.image-srcset }}"{% endif %}
+            alt="{{ post.title | escape }}"
+            >
         {% endif %}
     </li>
   {% endfor %}
