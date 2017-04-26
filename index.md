@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Jack Barker | This Analyst's Life
+title: Jack Barker
 desc: Hi there! Welcome to Jack Barker's personal blog.
 permalink: /
 exclude_from_nav: true
