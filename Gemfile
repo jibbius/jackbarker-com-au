@@ -16,7 +16,7 @@ def url_exist?(url_string)
   if res.kind_of?(Net::HTTPRedirection)
     url_exist?(res['location']) # Go after any redirect and make sure you can access the redirected URL 
   else
-    res.code[0] != "4" #false if http code starts with 4 - error on your side.
+    ! %W(4 5).include?(res.code[0]) # Not from 4xx or 5xx families
   end
 rescue
   false #false if can't find the server
