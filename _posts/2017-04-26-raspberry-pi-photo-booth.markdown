@@ -10,8 +10,8 @@ image: "/images/2017/photo_booth_web/0_FinishedBooth_1a_300x179.jpg"
 image-srcset: "
 /images/2017/photo_booth_web/0_FinishedBooth_1a_300x179.jpg 300w,
 /images/2017/photo_booth_web/0_FinishedBooth_1a_400x238.jpg 400w,
-/images/2017/photo_booth_web/0_FinishedBooth_2a_600x357.jpg 600w,
-/images/2017/photo_booth_web/0_FinishedBooth_2a_900x536.jpg 900w,
+/images/2017/photo_booth_web/0_FinishedBooth_1a_600x357.jpg 600w,
+/images/2017/photo_booth_web/0_FinishedBooth_1a_900x536.jpg 900w,
 /images/2017/photo_booth_web/0_FinishedBooth_1a_1400x834.jpg 1400w,
 /images/2017/photo_booth_web/0_FinishedBooth_1a_1800x1072.jpg 1800w,
 /images/2017/photo_booth_web/0_FinishedBooth_1a_3000x2250.jpg 3000w"
