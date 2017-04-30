@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-#ruby RUBY_VERSION
+
 require 'json'
 require 'open-uri'
 require 'active_support'
@@ -22,7 +22,6 @@ rescue
   false #false if can't find the server
 end
 
-github_url = 'http://github.com'
 github_versions_url = 'https://pages.github.com/versions.json'
 local_versions_path  = 'versions.json'
 
@@ -43,15 +42,8 @@ end
 
 # This is the default theme for new Jekyll sites.
 gem "minima" # https://github.com/jekyll/minima
+
 gem 'github-pages', versions['github-pages']
-
-# If you have any plugins, put them here!
-group :jekyll_plugins do
-end
-
 gem 'guard'
 gem 'guard-jekyll-plus'
 gem 'guard-livereload'
-
-#gem 'kramdown', versions['kramdown']
-#gem 'rake'
