@@ -36,7 +36,7 @@ So too, apparently, did my guests - who absolutely loved taking shots with the p
 %}
 
 Here are the high level steps:
-1. Listing out the requirements
+1. [Listing out the requirements][howtophotobooth-1]
 1. Getting started with Pi and PiCamera
 1. Building the Booth
 1. Adding the 12volt Lights / Flash (Optional)
@@ -47,3 +47,5 @@ Here are the high level steps:
 1. Post-production
 
 I'll be writing articles for each of these steps in the coming days :)
+
+[howtophotobooth-1]: /photo-booth/1 "How to build a Photo Booth: Step 1"

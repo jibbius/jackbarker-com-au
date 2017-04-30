@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My Github Pages Gemfile"
-desc:   "How to ensure the local environment uses Github versions, even when offline"
+desc:   "How to ensure your local Jekyll environment uses Github Pages' plugin versions, even when offline."
 date:   2017-04-30
 author: Jack Barker
 tags:   [ Jekyll, Github Pages, hacks ]
@@ -166,4 +166,4 @@ gem 'guard-livereload'
 {% endhighlight %}
 
 
-[fotanus]: http://stackoverflow.com/a/18582395 "fotanus on Stackoverflowu"
+[fotanus]: http://stackoverflow.com/a/18582395 "fotanus on Stackoverflow"
