@@ -17,4 +17,7 @@ Welcome to Jack Barker's personal blog.
 
 
 <h2>Subscribe</h2>
-<p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<ul>
+    <li class="subscribe-via">Subscribe <a href="{{ "/subscribe" | prepend: site.baseurl }}">via email</a></li>
+    <li class="subscribe-via">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></li>
+</ul>
