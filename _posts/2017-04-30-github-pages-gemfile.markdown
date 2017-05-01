@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Working Offline with Github Pages"
-desc:   "How to ensure your local Jekyll environment uses Github Pages' plugin versions, even when offline."
+desc:   "How to tailor your Gemfile, to ensure your local Jekyll environment uses Github Pages' plugin versions even when offline."
 date:   2017-04-30
 author: Jack Barker
 tags:   [ Jekyll, Github Pages, hacks ]
