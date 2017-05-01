@@ -12,6 +12,7 @@ image-srcset: "
 /images/2017/gemfile-800x433.jpg 800w,
 /images/2017/gemfile-1000x542.jpg 1003w
 "
+twitter-image: "/images/2017/gemfile2-300x300.jpg"
 ---
 
 ## The Problem
