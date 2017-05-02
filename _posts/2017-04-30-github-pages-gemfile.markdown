@@ -10,9 +10,10 @@ image-srcset: "
 /images/2017/gemfile-300x162.jpg 300w,
 /images/2017/gemfile-600x325.jpg 600w,
 /images/2017/gemfile-800x433.jpg 800w,
-/images/2017/gemfile-1000x542.jpg 1003w
+/images/2017/gemfile-1000x542.jpg 1000w
 "
-twitter-image: "/images/2017/gemfile2-300x300.jpg"
+thumbnail-image: "/images/2017/gemfile2-crop-300x300.jpg"
+banner-image: "/images/2017/gemfile2-crop-600x314.jpg"
 ---
 
 ## The Problem
