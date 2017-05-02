@@ -7,7 +7,15 @@ date:   2017-05-01
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 permalink: /photo-booth/1
-
+image: "/images/2017/photoBoothReqs-crop-600x314.jpg"
+image-srcset: "
+/images/2017/photoBoothReqs-300x243.jpg 300w,
+/images/2017/photoBoothReqs-600x486.jpg 600w,
+/images/2017/photoBoothReqs-800x648.jpg 800w,
+/images/2017/photoBoothReqs-1000x810.jpg 1000w
+"
+thumbnail-image: "/images/2017/photoBoothReqs-crop-300x300.jpg"
+banner-image: "/images/2017/photoBoothReqs-crop-600x314.jpg"
 ---
 
 This article is part 1 of my ['How to build a Photo Booth'][howtophotobooth] series.
