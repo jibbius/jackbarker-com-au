@@ -1,7 +1,6 @@
 # spell-checker: disable
 
 # Files to ignore:
-Gemfile.lock
 _site
 .sass-cache
 .jekyll-metadata

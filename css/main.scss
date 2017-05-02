@@ -146,6 +146,11 @@ figure.post-image img{
     font-family: FontAwesome;
     padding-right: .5em;
 }
+/* Comments */
+div#idc-container-parent {
+    padding: 20px;
+    background-color: #f2f2f2;
+}
 
 /*
  * Tags page
@@ -226,11 +231,27 @@ div.todo {
     clear: both;
     margin-bottom: 20px;
 }
-div.todo p {
+div.todo p
+ {
     padding: 10px;
     margin: 0;
 }
-
+/*
+* Updates
+*/
+div.update {
+    width: 100%;
+    background-color: #fff6d8;
+    border-radius: 4px;
+    clear: both;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+ .update h3 {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
 /*
  * Definition lists
  */

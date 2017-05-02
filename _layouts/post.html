@@ -9,7 +9,12 @@ layout: default
     <h2 class="post-subtitle" itemprop="description">{{ page.desc | escape }}</h2>
     {% endif %}
     <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+    {% if page.last-modified %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>* {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+      <br><small>*(last modified on <time datetime="{{ page.last-modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.last-modified | date: "%b %-d, %Y" }}</time>)</small>
+    {% else %}
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+    {% endif %}
     </p>
   {% if page.tags %}
   <div class="tags post-tags">
