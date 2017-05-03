@@ -31,5 +31,6 @@ Provide your email address to be notified of new articles.
 
 ## Subscribe via RSS
 <ul>
-    <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a></li>
+    <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed ("Excerpt only" format)</a></li>
+    <li><a href="{{ "/longform-feed.xml" | prepend: site.baseurl }}">RSS Feed ("Full article" format)</a></li>
 </ul>
