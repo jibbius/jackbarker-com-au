@@ -60,6 +60,8 @@ disqus:
 markdown: kramdown
 theme: minima
 
+include: ['_pages']
+
 exclude:
   - .vscode
   - CNAME
