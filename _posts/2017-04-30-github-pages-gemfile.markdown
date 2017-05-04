@@ -194,10 +194,10 @@ Interestingly, the two solutions work in a very similar same way, ie;
 {% include image.html
     url="/images/2017/compare-versions-json-gemfile-lock-600x594.jpg"
     srcset="
-    /images/2017/compare-versions-json-gemfile-lock-600x594.jpg 600w,
-    /images/2017/compare-versions-json-gemfile-lock-800x792.jpg 800w,
-    /images/2017/compare-versions-json-gemfile-lock-1000x990.jpg 1000w"
-    alt="Gemfile.lock versus Versions.json"
+      /images/2017/compare-versions-json-gemfile-lock-600x594.jpg 600w,
+      /images/2017/compare-versions-json-gemfile-lock-800x792.jpg 800w,
+      /images/2017/compare-versions-json-gemfile-lock-1000x990.jpg 1000w"
+      alt="Gemfile.lock versus Versions.json"
     caption="<strong>Gemfile.lock</strong> versus <strong>Versions.json</strong>"
     width="600px"
 %}
