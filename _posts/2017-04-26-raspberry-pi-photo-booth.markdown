@@ -15,7 +15,7 @@ image-srcset: "
 "
 
 ---
-This article is 'part 1' of my ['How to build a Photo Booth'][howtophotobooth] series.
+This article is 'part 1' of my 'How to build a Photo Booth' series.
 
 
 ## Back story
@@ -26,20 +26,20 @@ So too, apparently, did my guests - who absolutely loved taking shots with the p
 {% include image.html
     url="/images/2017/photo_booth_web/0_FinishedBooth_2a_300x400.jpg"
     srcset="
-/images/2017/photo_booth_web/0_FinishedBooth_2a_300x400.jpg 300w,
-/images/2017/photo_booth_web/0_FinishedBooth_2a_600x800.jpg 600w,
-/images/2017/photo_booth_web/0_FinishedBooth_2a_900x1200.jpg 900w,
-/images/2017/photo_booth_web/0_FinishedBooth_2a_1225x1500.jpg 1225w,
-/images/2017/photo_booth_web/0_FinishedBooth_2a_2250x3000.jpg 2250w"
+        /images/2017/photo_booth_web/0_FinishedBooth_2a_300x400.jpg 300w,
+        /images/2017/photo_booth_web/0_FinishedBooth_2a_600x800.jpg 600w,
+        /images/2017/photo_booth_web/0_FinishedBooth_2a_900x1200.jpg 900w,
+        /images/2017/photo_booth_web/0_FinishedBooth_2a_1225x1500.jpg 1225w,
+        /images/2017/photo_booth_web/0_FinishedBooth_2a_2250x3000.jpg 2250w"
     alt="My kickass photobooth!"
     caption="Weddings, Parties, Anything: My kickass photobooth!"
     width="600px"
 %}
 
 
-## THe build process
+## The build process
 Here are the high level steps:
-1. [Listing out the requirements][howtophotobooth-1]
+1. Listing out the requirements
 1. Getting started with Pi and PiCamera
 1. Building the Booth
 1. Adding the 12volt Lights / Flash (Optional)

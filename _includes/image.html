@@ -1,9 +1,17 @@
 <figure class="post-image">
     <img
-        src="{{ include.url }}"
+        src="{{ include.url | prepend: site.url }}"
         alt="{{ include.alt }}"
         title="{{ include.alt }}"
-        {% if include.srcset %}srcset="{{ include.srcset }}"{% endif %}
+        {% if include.srcset %}
+            srcset="
+            {% assign sources=include.srcset | split: ',' %}
+            {% for source in sources %}
+                {% assign token=source | split: ' ' %}
+                {{ token[0] | prepend: site.url }} {{ token[1] }},
+            {% endfor%}
+            "
+        {% endif %}
         {% if include.width %}width="{{ include.width }}"{% endif %}
     />
     {% if include.caption %}
