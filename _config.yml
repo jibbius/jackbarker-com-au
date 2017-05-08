@@ -34,6 +34,13 @@ post_dirs: false
 # Taxonomies
 tag_page: '/tags/'
 
+# Nav
+header_pages:
+  - '_pages/blog_index.md'
+  - '_pages/about.md'
+  - '_pages/tags.md'
+  - '_pages/subscribe.md'
+
 # Social / Contact info
 logo: /favicons/favicon_400x400.png
 twitter_username: jackbarker
@@ -74,4 +81,5 @@ exclude:
 gems:
   - jemoji
   - jekyll-sitemap
+  - jekyll-feed
   

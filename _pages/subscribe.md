@@ -4,7 +4,6 @@ title: Subscribe
 permalink: /subscribe/
 desc: Subscribe to email newsletter
 permalink: /subscribe
-order: 5
 ---
 
 Provide your email address to be notified of new articles.

@@ -2,7 +2,6 @@
 layout: page
 title: About
 permalink: /about/
-order: 2
 ---
 
 Jack Barker is a Business Analyst and Coder based in Melbourne Australia.
