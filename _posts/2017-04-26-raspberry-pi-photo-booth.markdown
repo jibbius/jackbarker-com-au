@@ -6,13 +6,8 @@ date:   2017-04-26
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 permalink: /photo-booth/
-image: "/images/2017/photo_booth_web/0_FinishedBooth_1a_300x225.jpg"
-image-srcset: "
-/images/2017/photo_booth_web/0_FinishedBooth_1a-300x195.jpg 300w,
-/images/2017/photo_booth_web/0_FinishedBooth_1a-600x390.jpg 600w,
-/images/2017/photo_booth_web/0_FinishedBooth_1a-800x521.jpg 800w,
-/images/2017/photo_booth_web/0_FinishedBooth_1a-1000x651.jpg 1000w
-"
+img: "/2017/photo_booth/0_FinishedBooth_1b"
+img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
 
 ---
 This article is 'part 1' of my 'How to build a Photo Booth' series.
@@ -23,19 +18,11 @@ Last weekend, I had an absolute blast at my wedding.
 
 So too, apparently, did my guests - who absolutely loved taking shots with the photo booth!
 
-{% include image.html
-    url="/images/2017/photo_booth_web/0_FinishedBooth_2a_300x400.jpg"
-    srcset="
-        /images/2017/photo_booth_web/0_FinishedBooth_2a_300x400.jpg 300w,
-        /images/2017/photo_booth_web/0_FinishedBooth_2a_600x800.jpg 600w,
-        /images/2017/photo_booth_web/0_FinishedBooth_2a_900x1200.jpg 900w,
-        /images/2017/photo_booth_web/0_FinishedBooth_2a_1225x1500.jpg 1225w,
-        /images/2017/photo_booth_web/0_FinishedBooth_2a_2250x3000.jpg 2250w"
+{% include image-2.html
+    img="/2017/photo_booth/0_FinishedBooth_2b"
     alt="My kickass photobooth!"
     caption="Weddings, Parties, Anything: My kickass photobooth!"
-    width="600px"
 %}
-
 
 ## The build process
 Here are the high level steps:

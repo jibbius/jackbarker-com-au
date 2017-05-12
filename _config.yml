@@ -41,6 +41,22 @@ header_pages:
   - '_pages/tags.md'
   - '_pages/subscribe.md'
 
+# ImageSizes
+img_root: /images/dist
+img_size:
+  banner:
+   w : 600
+   h : 314
+  banner_2x:
+   w : 1200
+   h : 628
+  thumb:
+   w : 1200
+   h : 1200
+  standard_width:
+   - 700
+   - 1400
+
 # 3rd party scripts
 include_google_adwords: false
 include_font_awesome: false #Used for icons: 'tag', 'drafts'.

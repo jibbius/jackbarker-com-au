@@ -1,15 +1,54 @@
 #!/bin/bash
 src_path=./src
-ouput_path=./output
+src_instruction_path=./src
+ouput_path=./dist
 
-req_img_widths=( 300 600 800 1000)
-req_img_resolutions=( 300x300 600x314)
+req_img_widths=( 700 1400)
+req_img_resolutions=( 1200x1200 600x314 1200x628)
 
 #Common image sizes:
-# - Twitter / FB "Large" = 600 X 314
+# - Twitter / FB "Large" = 600 x 314
+# - Min Apple Publishing = 600 x 600
 
+function fileExists()
+{
+    local dirname=$1
+    local filename=$2
+    if
+        test -n "$(find ${dirname} -maxdepth 1 -name ${filename} -print -quit)"
+    then
+        echo True
+    else
+        echo False
+    fi
+}
 
-# echo src_path: ${src_path}
+function createImageAtSize()
+{
+    local src=$1
+    local dest_dirname=$2
+    local dest_filename=$3
+    local resize=$4
+
+    magick "${src}" \
+        -resize ${resize} \
+    ${dest_dirname}/${dest_filename}
+}
+
+function createImageAtSizeAndGravity()
+{
+    local src=$1
+    local dest_dirname=$2
+    local dest_filename=$3
+    local resize=$4
+    local gravity=$5
+
+    magick "${src}" \
+        -resize ${resize}^ \
+        -gravity ${gravity} -extent ${resize} \
+    ${dest_dirname}/${dest_filename}
+}
+
 FILES=$(find ${src_path} -type f -name '*.jpg')
 for f in $FILES
 do
@@ -21,64 +60,70 @@ do
     src_file_no_ext=${src_file_basename%.*}
     src_file_dirname=`dirname "${f}"`
     dest_dirname=${ouput_path}${src_file_dirname:${#src_path}}
-
-    if
-        test -n "$(find ${src_file_dirname} -maxdepth 1 -name ${src_file_no_ext}-gravity-* -print -quit)"
-    then
-        gravitymap=$(find ${src_file_dirname} -maxdepth 1 -name ${src_file_no_ext}-gravity-* -print -quit)
-        echo "Gravity Map = " ${gravitymap}
-        gravity=${gravitymap:${#src_file_dirname}+${#src_file_no_ext}+10}
-        echo "Gravity = " ${gravity}
-    else
-        gravity=center
-    fi
-
-    # echo "src_file_dirname: "${src_file_dirname}
-    # echo "Path to write to: "${dest_dirname}
+    
+    #Ensure output directory exists
     mkdir -p ${dest_dirname}
 
-    # attempt to create an image at each required width
+    ###################################
+    # Generate specific instructions
+    ###################################
+    instruction_path=${src_instruction_path}${src_file_dirname:${#src_path}}
+
+    ### TODO: Refactor out repetition
+    instruction_file="${src_file_no_ext}.not-for-export"
+    if 
+        $(fileExists ${instruction_path} ${instruction_file})
+    then
+        continue
+    fi
+
+    ###
+    instruction_file="${src_file_no_ext}.gravity"
+    if 
+        $(fileExists ${instruction_path} ${instruction_file})
+    then
+        gravity=$(<${instruction_path}/${instruction_file})
+        echo "  Info: default gravity overridden!"
+    else
+        gravity="center"
+    fi
+
+    ###################################
+    # Generate specific widths
+    ###################################
     for width in ${req_img_widths[@]}
     do
     #TODO: make sure that the source image is not smaller than the desired resolution
     
+        filenameToWrite="${src_file_no_ext}-${width}w.jpg"
         #check if file already exists...
-        if test -n "$(find ${dest_dirname} -maxdepth 1 -name ${src_file_no_ext}-${width}x*.jpg -print -quit)"
+        if 
+            $(fileExists ${dest_dirname} ${filenameToWrite})
         then
-            echo "  Skipped: "[ ${dest_dirname}/${src_file_no_ext}-${width}x*.jpg ];
+            echo "  Skipped: "[ ${dest_dirname}/${filenameToWrite} ];
         else
-            echo "  - Generating file image @ pixel width: "${width}
-            magick "${f}" -resize ${width} \
-                -set filename:area '%wx%h' ${dest_dirname}/${src_file_no_ext}-%[filename:area].jpg
-            echo "    - Created: "[ ${dest_dirname}/${src_file_no_ext}-${width}x*.jpg ];
+            createImageAtSize ${f} ${dest_dirname} ${filenameToWrite} ${width}
+            echo "    - Created: "[ ${dest_dirname}/${filenameToWrite} ];
         fi
 
     done
 
+    ###################################
+    # Generate specific resolutions
+    ###################################
     for resolution in ${req_img_resolutions[@]}
     do
-
-    #TODO: make sure that the source image is not smaller than the desired resolution
-    
+        filenameToWrite="${src_file_no_ext}-${resolution}.jpg"
         #check if file already exists...
-        if
-            test -n "$(find ${dest_dirname} -maxdepth 1 -name ${src_file_no_ext}-${resolution}.jpg -print -quit)"
+        if 
+            $(fileExists ${dest_dirname} ${filenameToWrite})
         then
-            echo "  Skipped: "[ ${dest_dirname}/${src_file_no_ext}-${resolution}.jpg ];
-        elif
-            test -n "$(find ${dest_dirname} -maxdepth 1 -name ${src_file_no_ext}-crop-${resolution}.jpg -print -quit)"
-        then
-            echo "  Skipped: "[ ${dest_dirname}/${src_file_no_ext}-crop-${resolution}.jpg ];
+            echo "  Skipped: "[ ${dest_dirname}/${filenameToWrite} ];
         else
-            echo "  - Generating file image @ pixel resolution: "${resolution}
-            magick "${f}" -resize ${resolution}^ \
-                -gravity ${gravity} -extent ${resolution} \
-                -set filename:area '%wx%h' ${dest_dirname}/${src_file_no_ext}-crop-%[filename:area].jpg
-            echo "    - Created: "[ ${dest_dirname}/${src_file_no_ext}-crop-${resolution}.jpg ];
+            createImageAtSizeAndGravity ${f} ${dest_dirname} ${filenameToWrite} ${resolution} ${gravity}
+            echo "    - Created: "[ ${dest_dirname}/${filenameToWrite} ];
         fi
 
     done
-
-
 
 done

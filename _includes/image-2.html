@@ -1,0 +1,27 @@
+<figure class="post-image">
+    <img
+    {% assign img_ext='.jpg' %}
+    {% assign img_res=site.img_size.standard_width[0] | append: 'w' %}
+    {% assign img_src=site.url | append: site.img_root | append: include.img | append: '-' | append: img_res | append: img_ext %}
+
+    {% for width in site.img_size.standard_width %}
+        {% assign srctoken=site.url | append: site.img_root | append: include.img | append: '-' | append: width | append: 'w' | append: img_ext | append: ' ' | append: width | append: 'w' %}
+        {% if srcset_all==undefined %}
+        {% else %}
+            {% assign srcset_all=srcset_all | append: ', ' %}
+        {% endif %}
+        {% assign srcset_all=srcset_all | append: srctoken %}
+    {% endfor%}
+
+        src="{{ img_src }}"
+        alt="{{ include.alt }}"
+        title="{{ include.alt }}"
+
+        srcset="{{srcset_all}}"
+        sizes="100vw"
+    />
+    {% if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {% endif %}
+</figure>
+

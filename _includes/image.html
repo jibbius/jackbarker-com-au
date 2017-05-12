@@ -3,18 +3,28 @@
         src="{{ include.url | prepend: site.url }}"
         alt="{{ include.alt }}"
         title="{{ include.alt }}"
+
         {% if include.srcset %}
-            srcset="
+
+            {% assign srcset-all="false" %}
             {% assign sources=include.srcset | split: ',' %}
             {% for source in sources %}
                 {% assign token=source | split: ' ' %}
-                {{ token[0] | prepend: site.url }} {{ token[1] }},
+                {% assign srctoken=token[0] | prepend: site.url | append: ' ' | append:token[1] %}
+                {% if srcset-all=="false" %}
+                    {% assign srcset-all=srctoken %}
+                {% else %}
+                    {% assign srcset-all=srcset-all | append: ', ' | append: srctoken %}
+                {% endif %}
             {% endfor%}
-            "
+            
+            srcset="{{srcset-all}}"
+            sizes="100vw"
+        
         {% endif %}
-        {% if include.width %}width="{{ include.width }}"{% endif %}
     />
     {% if include.caption %}
     <figcaption>{{ include.caption }}</figcaption>
     {% endif %}
 </figure>
+

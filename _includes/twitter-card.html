@@ -1,6 +1,3 @@
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@{{ site.twitter_username }}">
-<meta name="twitter:creator" content="@{{ site.twitter_username }}">
 
 {% if page.title %}
   <meta property="og:title" content="{{ page.title }}">
@@ -14,18 +11,21 @@
   <meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
 {% endif %}
 
-{% if page.image %}
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{ site.twitter_username }}">
+<meta name="twitter:creator" content="@{{ site.twitter_username }}">
+
+
+{% if page.img-thumb %}
+  <meta property="og:image" content="{{ site.url }}{{ site.img_root }}{{ page.img-thumb }}-{{ site.img_size.thumb.w }}x{{ site.img_size.thumb.h }}.jpg">
+{% elsif page.img %}
+  <meta property="og:image" content="{{ site.url }}{{ site.img_root }}{{ page.img }}-{{ site.img_size.thumb.w }}x{{ site.img_size.thumb.h }}.jpg">
+{% elsif page.image %}
   <meta property="og:image" content="{{ site.url }}{{ page.image }}">
 {% else %}
   <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
-{% endif %}
-
-{% if page.thumbnail-image %}
-  <meta name="twitter:image" content="{{ site.url }}{{ page.thumbnail-image }}">
-{% elsif page.image %}
-  <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
-{% else %}
-  <meta name="twitter:image" content="{{ site.url }}{{ site.logo }}">
 {% endif %}
 
 {% if page.permalink %}

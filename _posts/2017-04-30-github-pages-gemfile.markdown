@@ -1,25 +1,17 @@
 ---
 layout: post
 title:  "Working Offline with Github Pages"
-desc:   "How to tailor your Gemfile, to ensure your local Jekyll environment uses Github Pages' plugin versions even when offline."
+desc:   "How (not) to tailor your Gemfile, to ensure your local Jekyll environment uses Github Pages' plugin versions even when offline."
 date:   2017-04-30
-last-modified: 2017-05-03
+last-modified: 2017-05-08
 author: Jack Barker
 tags:   [ Jekyll, Github Pages, hacks ]
-image: "/images/2017/gemfile-300x254.jpg"
-image-srcset: "
-/images/2017/gemfile-300x162.jpg 300w,
-/images/2017/gemfile-600x325.jpg 600w,
-/images/2017/gemfile-800x433.jpg 800w,
-/images/2017/gemfile-1000x542.jpg 1000w
-"
-thumbnail-image: "/images/2017/gemfile2-crop-300x300.jpg"
-banner-image: "/images/2017/gemfile2-crop-600x314.jpg"
+img: "/2017/gemfile2"
 ---
 
 {%include update.html
-heading="Update - 3 May 2017"
-text="Whilst the below is a novel solution to this problem, I have since found a far simpler solution (discussed at the end of the article). I am still undecided as to which solution is <strong>truly superior</strong>, however.
+heading="Update - 8 May 2017"
+text="Whilst the below is a novel solution to this problem, I have since found a far simpler solution (discussed at the end of the article). There are merits for each, and it provides for interesting discussion.
 Have a read and judge for yourself?"
 %}
 
@@ -174,7 +166,7 @@ gem 'guard-livereload'
 
 ## An even simpler solution?
 {%include update.html
-heading="Update - 3 May 2017"
+heading="Update - 8 May 2017"
 text="Per earlier comment, I came across this simpler solution after posting the original article."
 %}
 It's actually possible to completely ignore this entire post, and instead make sure that you are running Jekyll via: `bundle exec jekyll serve` instead of `jekyll serve`.
@@ -191,20 +183,17 @@ Interestingly, the two solutions work in a very similar same way, ie;
  - Both solutions write a file to the project directory (versions.json / Gemfile.lock), listing out the gem versions that were utilised within the previous successful build.
  - The files even look loosely the same:
 
-{% include image.html
-    url="/images/2017/compare-versions-json-gemfile-lock-600x594.jpg"
-    srcset="
-      /images/2017/compare-versions-json-gemfile-lock-600x594.jpg 600w,
-      /images/2017/compare-versions-json-gemfile-lock-800x792.jpg 800w,
-      /images/2017/compare-versions-json-gemfile-lock-1000x990.jpg 1000w"
-      alt="Gemfile.lock versus Versions.json"
+{% include image-2.html
+    img="/2017/compare-versions-json-gemfile-lock"
+    alt="Gemfile.lock versus Versions.json"
     caption="<strong>Gemfile.lock</strong> versus <strong>Versions.json</strong>"
-    width="600px"
 %}
 
-As I alluded to at the start of the article; the `bundler` solution **is** somewhat simpler and clearly more widely recognised. It also tracks changes to your local environment's other Jekyll dependencies. For these reasons it is currently the solution I would recommend.
+As I alluded to at the start of the article; the **Bundler** solution **is** somewhat simpler and clearly more widely recognised. It also tracks changes to your local environment's other Jekyll dependencies. For these reasons it is currently the solution I would recommend.
 
-That said; `bundler` does require you to run `bundle update` (and you must remember to do this regularly), whereas my **custom** _(read as: "proceed with caution"_) solution doesn't require you to do this. For this reason, I'm leaving this post here as food for thought.
+A further argument is that the development tenant "{% include abbr.html abbr="DRY" full="Don't Repeat Yourself" %}", can be extended to encompass "Don't Repeat Your Framework". Clearly the custom solution above breaches this.
+
+That said; **Bundler** does require you to run `bundle update` (and you must remember to do this regularly), whereas my **custom** _(read as: "proceed with caution"_) solution doesn't require you to do this. For this reason, I'm leaving this post here as food for thought.
 
 Comments (constructive) are welcome :smile:.
 

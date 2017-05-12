@@ -5,19 +5,17 @@ desc:   "My summary of the 2016 Melbourne IIBA event, 'BA Professional Day'."
 date:   2016-10-20
 author: Jack Barker
 tags:   [ IIBA , conferences]
-image: "/images/2016/2016_IIBA_day_gear_300x325.jpg"
+img: "/2016/IIBA_day_gear"
 ---
 
 Yesterday, I attended the IIBA's **Business Analysis Professional Day** in Melbourne.
 
 The day had some excellent talks and workshops, all of which left me with plenty to muse upon after the event.
 
-{% include image.html
-    url="/images/2016/2016_IIBA_day_gear_300x325.jpg"
-    srcset="/images/2016/2016_IIBA_day_gear_300x325.jpg 300w, /images/2016/2016_IIBA_day_gear_600x650.jpg 600w"
+{% include image-2.html
+    img="/2016/IIBA_day_gear"
     alt="Geared up and ready!"
     caption="Geared up and ready; for the IIBA's <em>Business Analysis Professional Day</em> 2016!"
-    width="600px"
 %}
 
 ## Rita Panahi - Good Thinking (Keynote)
