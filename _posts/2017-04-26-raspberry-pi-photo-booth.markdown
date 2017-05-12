@@ -3,7 +3,6 @@ layout: post
 title:  "How to build a Photo Booth"
 desc:   "My first Raspberry Pi project!"
 date:   2017-04-26
-rss-modified: 2017-05-12
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 permalink: /photo-booth/
