@@ -41,6 +41,10 @@ header_pages:
   - '_pages/tags.md'
   - '_pages/subscribe.md'
 
+# 3rd party scripts
+include_google_adwords: false
+include_font_awesome: false #Used for icons: 'tag', 'drafts'.
+
 # Social / Contact info
 logo: /favicons/favicon_400x400.png
 twitter_username: jackbarker
@@ -64,6 +68,19 @@ disqus:
 
 
 # Build settings
+html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+
+sass:
+  style: compressed
+
 markdown: kramdown
 theme: minima
 

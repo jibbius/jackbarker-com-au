@@ -3,6 +3,12 @@
 ---
 @charset "utf-8";
 
+// Variables to modify font folders
+$fa-font-path:        "../fonts/font-awesome";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "font-awesome/font-awesome";
+
 // Our variables
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
