@@ -113,7 +113,4 @@ That said, you might have a wooden box or crate that could easily be converted i
 ## Next article
 In my next article in this series, I'll be taking about <strong>Getting started with the Raspberry Pi</strong>, and the other components that will form the photo booth.
 
-[Subscribe][subscribe] to my blog to stay informed of my progress.
-
-[subscribe]: /subscribe "Subscribe"
-
+[Subscribe]({{ "/subscribe" | prepend: site.url }}) to my blog to stay informed of my progress.
