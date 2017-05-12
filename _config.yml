@@ -92,8 +92,13 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Guardfile
+  - cSpell.json
+  - images/build_images.sh
   - minima
+  - osx_update_gem_versions.sh
   - versions.json
+  - win_start_server.bat
+  - win_update_gem_versions.bat
 
 gems:
   - jemoji
