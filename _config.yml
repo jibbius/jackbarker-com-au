@@ -110,6 +110,7 @@ exclude:
   - Guardfile
   - cSpell.json
   - images/build_images.sh
+  - images/src
   - minima
   - osx_update_gem_versions.sh
   - versions.json
