@@ -1,50 +1,30 @@
 ---
 layout: post
-title:  "How to build a Photo Booth"
-desc:   "My first Raspberry Pi project!"
-date:   2017-04-26
+title:  "How to build a Photo Booth (Part 1: Requirements)"
+desc:   "Planning the photo booth build"
+date:   2017-05-01
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
-permalink: /photo-booth/
-img: "/2017/photo_booth/0_FinishedBooth_1b"
-img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
+permalink: /photo-booth/1
+img: "/2017/photo_booth/photoBoothReqs"
+img-thumb: "/2017/photo_booth/photoBoothReqs"
 
 ---
-This article is 'part 1' of my 'How to build a Photo Booth' series.
+This article is 'part 1' of my ['How to build a Photo Booth']({{ "/photo-booth/" | prepend: site.url }}) series.
 
-
-## Back story
-Last weekend, I had an absolute blast at my wedding.
-
-So too, apparently, did my guests - who absolutely loved taking shots with the photo booth!
-
-{% include image-2.html
-    img="/2017/photo_booth/0_FinishedBooth_2b"
-    alt="My kickass photobooth!"
-    caption="Weddings, Parties, Anything: My kickass photobooth!"
-%}
-
-## The build process
-Here are the high level steps:
-1. Listing out the requirements
-1. Getting started with Pi and PiCamera
-1. Building the Booth
-1. Adding the 12volt Lights / Flash (Optional)
-1. Adding a Printer (Optional)
-1. Adding a Power button
-1. Fine-tuning
-1. Photo day!
-1. Post-production
-
-I'll be writing articles for each of these steps in the coming days and weeks.
-
-For now, we'll start with;
 
 ## Step 1 : Listing out the requirements
 
 > Requirements?!
 > <br/> ...typical bleeding Business Analyst!
 
+
+{% include image-2.html
+    img="/2017/photo_booth/photoBoothReqs"
+    alt="Planning"
+    caption="Make sure you are clear of your photo booth's requirements, before delving too far into the design"
+    class="medium"
+%}
 
 Before we go into the specifics of how I built my Photo Booth, you should begin to think about the features and constraints affecting your (potential) photo booth.
 
@@ -111,6 +91,6 @@ That said, you might have a wooden box or crate that could easily be converted i
 
 
 ## Next article
-In my next article in this series, I'll be taking about <strong>Getting started with the Raspberry Pi</strong>, and the other components that will form the photo booth.
+For the [next article]({{ "/photo-booth/2" | prepend: site.url }}) in this series, I'll be talking about <strong>Getting started with the Raspberry Pi</strong>, and the other components that will form the photo booth.
 
 [Subscribe]({{ "/subscribe" | prepend: site.url }}) to my blog to stay informed of my progress.
