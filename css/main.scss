@@ -54,6 +54,24 @@ $on-laptop:        800px;
 
 
 // Custom styles (needs a bit of a tidy)
+
+/*
+ * Page background
+ */
+ .page-content {
+    background-color: #fffef9;
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+.page-content>.wrapper {
+    background-color: white;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+
+
 /*
  * Site title
  */

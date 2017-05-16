@@ -84,6 +84,8 @@ disqus:
 
 
 # Build settings
+cache-bust: true
+
 html:
   clippings: []
   comments: []
