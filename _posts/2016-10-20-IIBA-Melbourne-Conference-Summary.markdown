@@ -6,6 +6,7 @@ date:   2016-10-20
 author: Jack Barker
 tags:   [ IIBA , conferences]
 img: "/2016/IIBA_day_gear"
+img-thumb: "/2016/IIBA_day_gear"
 ---
 
 Yesterday, I attended the IIBA's **Business Analysis Professional Day** in Melbourne.

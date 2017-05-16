@@ -1,6 +1,11 @@
-
+<meta property="og:site_name" content="{{ site.title }}">
+  
 {% if page.title %}
   <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:type" content="article">
+  {% if page.author %}
+    <meta property="article:author" content="{{ page.author }}">
+  {% endif %}
 {% else %}
   <meta property="og:title" content="{{ site.title }}">
 {% endif %}
@@ -10,7 +15,6 @@
 {% else %}
   <meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
 {% endif %}
-
 
 
 <meta name="twitter:card" content="summary">

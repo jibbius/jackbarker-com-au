@@ -4,6 +4,7 @@ layout: default
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+
     <h1 class="post-title {% if page.draft == true %}draft-post{% endif %}" itemprop="name headline">{{ page.title | escape }}</h1>
     {% if page.desc %}
     <h2 class="post-subtitle" itemprop="description">{{ page.desc | escape }}</h2>
@@ -16,18 +17,25 @@ layout: default
           <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
     {% endif %}
     </p>
+
+
   {% if page.tags %}
-  <div class="tags post-tags">
-  {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" title="{{ tag }}">{{ tag }}</a>
-  {% endfor %}
-  </div>
+    <div class="tags post-tags">
+    {% for tag in page.tags %}
+      <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" title="{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+    </div>
   {% endif %}
+
   </header>
+
+    {% include share-links.html %}
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+{% include share-links.html %}
 
 </article>
 

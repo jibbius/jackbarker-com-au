@@ -1,0 +1,39 @@
+{% assign share-url=page.share-url | default : page.url | prepend : site.url %}
+{% assign share-title=page.title | escape %}
+<div class="share-links">
+    Share this, via:
+    <a
+        href="https://twitter.com/intent/tweet?text={{ share-title }}&url={{ share-url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}"
+        rel="nofollow"
+        target="_blank"
+        title="Share on Twitter">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+    </a>
+    <a href="https://facebook.com/sharer.php?u={{ share-url }}"
+        rel="nofollow"
+        target="_blank"
+        title="Share on Facebook">
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </a>
+    <a
+        href="https://plus.google.com/share?url={{ share-url }}"
+        rel="nofollow"
+        target="_blank"
+        title="Share on Google+">
+        <i class="fa fa-google" aria-hidden="true"></i>
+    </a>
+    <a
+        href="http://pinterest.com/pin/create/button/?url={{ share-url }}&description={{ share-title }}"
+        rel="nofollow"
+        target="_blank"
+        title="Share on Pinterest+">
+        <i class="fa fa-pinterest" aria-hidden="true"></i>
+    </a>
+    <a
+        href="http://www.linkedin.com/shareArticle?mini=true&url={{ share-url }}&title={{ share-title }}&summary={{ share-title }}&"
+        rel="nofollow"
+        target="_blank"
+        title="Share on LinkedIn">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </a>
+</div>
