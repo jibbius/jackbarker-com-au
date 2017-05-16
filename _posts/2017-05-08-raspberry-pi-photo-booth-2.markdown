@@ -143,12 +143,16 @@ Connect your button to the Pi, as follows:
 
 {% include image-2.html
     img="/2017/photo_booth/1_Breadboarding_2"
-    alt="Gemfile.lock versus Versions.json"
-    caption="<strong>Gemfile.lock</strong> versus <strong>Versions.json</strong>"
+    alt="Breadboarding"
+    caption="Breadboarding"
 %}
 
 ## Connecting up the button
 Once the button is connected we can run a "simple version" of our photo booth code.
+
+The button needs to connect to **GPIO21** and **ground**.
+
+(I will provide some more instructions/images on this soon).
 
 This piece of code doesn't have the full functionality of my finished photo booth, but it contains "just enough" to test out the functionality that we care about and get an idea of how the finished code might look.
 
