@@ -1,11 +1,14 @@
   <style amp-custom>
-    body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+    body, figure {
         margin: 0;
         padding: 0;
     }
     body {
       color: #000;
       font-family: "Roboto",sans-serif;
+    }
+    figure{
+        text-align: center;
     }
     .icon>svg {
       display: inline-block;
@@ -75,4 +78,35 @@
     ul.post-list .post-meta {
         text-align: left;
     }
+
+/*
+ * Post tags
+ */
+.post-tag {
+    display: inline-block;
+    background: #2a7ae2;
+    padding: 0 .5rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 90%;
+    text-decoration: none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    margin-bottom: 4px;
+}
+.post-tag:hover {
+    background: #3f3fff;
+    text-decoration: none;
+}
+.tags-expo-list {
+    margin-bottom: 14px;
+}
+.post-tag:before {
+    content: "\f02b";
+    font-family: FontAwesome;
+    padding-right: .5em;
+}
+
   </style>
