@@ -20,9 +20,9 @@ This may be useful if:
 
 ### You will need:
 
-- [Mozilla Firefox](firefox){:target="_blank"}
+- [Mozilla Firefox](https://www.mozilla.org/firefox/products/){:target="_blank"}
 - The **Grab them all** Firefox extension.
-  - To download, visit this link using Firefox: [Grab them all](grab-them-all){:target="_blank"}
+  - To download, visit this link using Firefox: [Grab them all](https://addons.mozilla.org/en-US/firefox/addon/grab-them-all/){:target="_blank"}
 - A link to an AxureShare site for which you intend to download wireframe images from (and the password, if applicable).
 
 ### Optional extras:
@@ -147,7 +147,3 @@ than actually exist between the wireframe images.
   let me know :smile: ).
 - Regardless; I do find the folder compare useful, as you are able to open both the before and after images in a single operation,
   without having to search/open each file independently.
-
-
-[firefox]: https://www.mozilla.org/firefox/products/ "Mozilla Firefox"
-[grab-them-all]: https://addons.mozilla.org/en-US/firefox/addon/grab-them-all/ "Grab them all"
