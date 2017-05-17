@@ -105,6 +105,7 @@ theme: minima
 include: ['_pages']
 
 exclude:
+  - .travis.yml
   - .vscode
   - CNAME
   - Gemfile
@@ -114,7 +115,9 @@ exclude:
   - images/build_images.sh
   - images/src
   - minima
+  - script
   - osx_update_gem_versions.sh
+  - vendor
   - versions.json
   - win_start_server.bat
   - win_update_gem_versions.bat
