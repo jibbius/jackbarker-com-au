@@ -1,0 +1,137 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+# Summary
+title: This Analyst's Life
+subtitle: A blog about Business Analysis, Hacking, and Making stuff.
+author: Jack Barker
+
+description: > # this means to ignore newlines until "baseurl:"
+  Jack Barker | 
+  Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
+
+# URL Settings
+url: "http://jackbarker.com.au" # the base hostname & protocol for your site
+
+# Permalink structure
+permalink: /blog/:year/:month/:day/:title
+post_dirs: false
+
+# Taxonomies
+tag_page: '/tags/'
+
+# Nav
+header_pages:
+  - '_pages/blog_index.md'
+  - '_pages/about.md'
+  - '_pages/tags.md'
+  - '_pages/subscribe.md'
+
+# ImageSizes
+img_root: /images/dist
+img_size:
+  banner:
+   w : 600
+   h : 314
+  banner_2x:
+   w : 1200
+   h : 628
+  thumb:
+   w : 1200
+   h : 1200
+  standard_width:
+   - 700
+   - 1400
+
+# 3rd party scripts
+include_google_adwords: false
+include_font_awesome: false #Used for icons: 'tag', 'drafts'.
+
+# Social / Contact info
+logo: /favicons/favicon_400x400.png
+twitter_username: jackbarker
+github_username:  jibbius
+linkedin:  https://au.linkedin.com/in/jackbarker1
+mailhide:
+  token: http://www.google.com/recaptcha/mailhide/d?k=01-sBNq2eC9n-vtrDvcD6OFA==&c=NLYXbMiWVrSGpjrhDXi-Vg-fye9Rr2HCkeUuiWUphmI=
+  link-text: j.........
+  domain-text: gmail.com
+stackoverflow:
+  story: http://stackoverflow.com/story/jackbarker
+  cv: http://stackoverflow.com/cv/jackbarker
+wordpress: https://profiles.wordpress.org/jibbius
+
+# Analytics
+google_analytics: UA-40447110-1
+
+#disqus
+disqus:
+  shortname:  jack-barker
+
+
+# Build settings
+cache-bust: true
+
+html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+
+sass:
+  style: compressed
+
+markdown: kramdown
+theme: minima
+
+include: ['_pages']
+
+exclude:
+  - .vscode
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Guardfile
+  - cSpell.json
+  - images/build_images.sh
+  - images/src
+  - minima
+  - osx_update_gem_versions.sh
+  - versions.json
+  - win_start_server.bat
+  - win_update_gem_versions.bat
+
+gems:
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-feed
+  
+#AMP-specific
+baseurl: "/amp"
+canonical_baseurl: ""
+
+destination: "_site/amp"
+layouts_dir: "./_layouts-amp"
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "default"

@@ -1,0 +1,40 @@
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+ {% include amp-styles.html %}
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+  
+  {% include twitter-card.html %}
+
+  {% include favicons.html %}
+  
+  {% if site.include_google_adwords %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5152502719432699",
+        enable_page_level_ads: true
+      });
+    </script>
+  {% endif %}
+
+  {% if site.include_font_awesome %}
+    <script src="https://use.fontawesome.com/3b6721610a.js"></script>
+  {% endif %}
+
+  <meta name="p:domain_verify" content="28ed5acf37ca4e7ca6c932d091f3644b"/>
+  {% include amp-boilerplate.html %}
+</head>
