@@ -30,20 +30,24 @@ Before we go into the specifics of how I built my Photo Booth, you should begin 
 
 Here are some things you need to consider:
  - How will the booth be powered?
- - How much light will you need?
- - Will I have internet access?
- - How will I share my photos?
- - What will you make the booth out of?
+ - How much additional light will be needed?
+ - Will internet access be available?
+ - How will photos be shared?
+ - What will the booth made out of?
 
 ### How will the booth be powered?
 For the photo booth I built, I needed the following;
  - a 5 volt power supply (for the Pi), and
+ - a USB phone charger (also delivering 5 volt) for the screen, and
  - a 12 volt power supply (for the LED lights)
 
-To achieve this, I included a small power board inside the photo booth cabinet, and ran an extension lead to the nearest power point.
+To achieve this, I:
+ - included a small power board inside the photo booth cabinet, and ran an extension lead to the nearest power point.
+ - attached each of the required power supplies to the power board.
 
-The critical decision I made, was that the booth would be powered from a power point. If you don't want to depend on power point access, then you will need a different solution.
+An assumption that I was making, was that the booth would be powered from a power point. If you don't want your booth to depend on power point access, then you will need a different solution.
 
+In a future build, I will look to tidy up the power supplies, and the possibility of running off a battery.
 
 ### How much light will you need?
 My wedding tested both of these scenarios:
@@ -69,7 +73,7 @@ If you choose to go without internet connectivity, then I highly recommend getti
 This means that you will be able to record the date + time that each photo was taken.
 If the PhotoBooth needs to be restarted for any reason, then this will be especially useful.
 
-### How will you share your photos
+### How will you share your photos?
 By default, photos will get written to your SD card, and you can distribute them after the event.
 
 Some other options to consider;

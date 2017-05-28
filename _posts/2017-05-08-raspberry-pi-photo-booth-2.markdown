@@ -150,7 +150,7 @@ Connect your button to the Pi, as follows:
 ## Connecting up the button
 Once the button is connected we can run a "simple version" of our photo booth code.
 
-The button needs to connect to **GPIO21** and **ground**.
+The button needs to connect to **GPIO21** and **Ground**.
 
 (I will provide some more instructions/images on this soon).
 
@@ -166,6 +166,7 @@ You can either copy across the code manually, or enter the following at the comm
     git clone https://gist.github.com/8105081adfc0d6dd7da77cd813c69593.git ~/simple-photo-booth
 
 Run the code via:
+
     cd ~/simple-photo-booth
     python simple-photo-booth.py
 
