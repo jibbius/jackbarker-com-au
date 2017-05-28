@@ -18,15 +18,11 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-$secondary-color:  #000;
-$light-color:      #e73582;
+$brand-color:      #2a7ae2; /* tags, ...etc */
+$secondary-color:  #f06D06; /* header */
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$share-link-bground:  #000;
+$share-link-color: #e73582;
 
 // tags
 $tag-background:       lighten($brand-color, 40%);
@@ -36,7 +32,6 @@ $tag-text-color-hover: darken($brand-color, 40%);
 
 // Width of the content area
 $content-width:    800px;
-
 $on-palm:          600px;
 $on-laptop:        800px;
 
@@ -55,43 +50,49 @@ $on-laptop:        800px;
 
 // Custom styles (needs a bit of a tidy)
 
-/*
- * Page background
- */
- .page-content {
-    background-color: #fffef9;
+.site-header {
+    background-color: #000;
+    text-align: center;
+    border-bottom: 6px solid $secondary-color;
+
+    .site-title {
+        clear: both;
+        float: none;
+        font-size: 30px;
+        font-weight: normal;
+        color: #FFF;
+    }
+    .site-nav{
+        float: none;
+        font-size: 18px;
+        font-weight: lighter;
+
+        a{
+            color: #FFF;
+        }
+    }
+}
+.page-content {
+    background-color: #fff;
     padding-top:4px;
     padding-bottom:4px;
 }
 
 .page-content>.wrapper {
-    background-color: white;
+    background-color: #fff;
     padding-top:30px;
     padding-bottom:30px;
 }
 
-
-
-/*
- * Site title
- */
-.site-subtitle {
-    font-size: 12px;
-    float: left;
-    clear: left;
-    margin-bottom: 6px;
-    font-family: monospace;
-}
-.site-nav{
-    float: none;
-    text-align: right;
-}
 .footer-heading a{
     color: black;
 }
 /*
  * Headings
  */
+ .home{
+     h1{font-size: 30px}
+ }
 .post-content{
     h1{font-size:48px}
     h2{font-size:40px}
@@ -136,6 +137,21 @@ ul.post-list li {
     border-radius:16px
 }
 
+/*
+ * Post-list
+ */
+ul.post-list li h2,
+ul.post-list li h2 a {
+    font-size: 30px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+ul.post-list li h3 {
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
 
 /*
  * Post images
@@ -245,9 +261,6 @@ ul.post-list .post-subtitle,
 ul.post-list .post-meta {
     text-align: left;
 }
-ul.post-list img.post-image {
-    max-height: 350px;
-}
 
 /*
  * Abbreviations
@@ -354,8 +367,8 @@ p.poweredByTL {
 /*Share links */
 .share-links {
     text-align: center;
-    background: $secondary-color;
-    color: $light-color;
+    background: $share-link-bground;
+    color: $share-link-color;
     padding: 8px 15px;
     border-radius: 5px;
     margin: 1.5 * $spacing-unit 0;
