@@ -1,0 +1,38 @@
+.hotspot {
+    position: absolute;
+    border: 1px solid blue;
+}
+.hotspot:hover {
+    border: 1px solid red;
+}
+.hotspot + * {
+    pointer-events: none;
+    opacity: 0;
+}
+.hotspot:hover + * {
+    opacity: 1.0;
+}
+.wash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.wash-text {
+    position: absolute;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+.image-map{
+    position:relative;
+}
+@include media-query($on-palm) {
+    .hotspot,
+    .wash,
+    .wash-text{
+        display:none;
+    }
+}
