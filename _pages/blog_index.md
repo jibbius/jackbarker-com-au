@@ -4,4 +4,4 @@ permalink: /blog/
 title: Latest Posts
 ---
 
-{% include post-list.html %}
+{% include post-list-grid.html %}

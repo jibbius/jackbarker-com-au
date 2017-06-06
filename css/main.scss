@@ -351,6 +351,18 @@ dd {
     clear: both;
 }
 /*
+ * Standard lists
+ */
+li{
+     list-style: initial;
+}
+ul li {
+    list-style-type: disc;
+}
+ul ul li {
+    list-style-type: circle;
+}
+/*
  * Nested lists
  */
  article li>ul{
@@ -433,4 +445,12 @@ p.poweredByTL {
             border-bottom: 1px dashed #fff;
         }
     }
+}
+
+/* Footer */
+ul.contact-list li,
+ul.social-media-list li {
+    list-style: none;
+    list-style-type: none;
+    margin-left: 0;
 }
