@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Photo Booth (Part 4): Adding the 12v Lights"
-desc:   "...a little LED bling."
+title:  "Photo Booth (Part 4):  Wiring up the Circuit"
+desc:   "( and adding the LED lights )"
 permalink: /photo-booth/4
 date:   2017-05-29
 author: Jack Barker
@@ -31,3 +31,5 @@ We need all of the following parts (discussed previously) to complete step 4:
 - Side cutters or Scissors
 - Wire strippers
 
+## Next article
+For the [next article]({{ "/photo-booth/5" | prepend: site.url }}) in this series, I'll be talking about <strong>writing the code</strong> that will run on our photo booth.
