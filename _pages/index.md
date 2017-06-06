@@ -11,7 +11,7 @@ Welcome to Jack Barker's personal blog.
 
 <div class="blog-roll">
     <h2>Latest Posts</h2>
-    {% include post-list.html %}
+    {% include post-list-grid.html %}
 </div>
 
 

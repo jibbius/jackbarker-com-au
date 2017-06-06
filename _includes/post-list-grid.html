@@ -1,6 +1,18 @@
-<ul class="post-list">
+<div class="post-list container">
+  {% assign count=0 %}
   {% for post in site.posts %}
-   <li {% if post.draft == true %}class="draft-post"{% endif %}>
+    {% capture thecycle %}{% cycle '1of2', '2of2', '1of1' %}{% endcapture %}
+
+  {% if thecycle == '1of2' or thecycle == '1of1' %}
+    <div class="row">
+  {% endif %}
+    <div class="column">
+    {% if post.draft == true %}
+      {% assign postclass="post-list-li draft-post" %}
+    {% else %}
+      {% assign postclass="post-list-li" %}
+    {% endif %}
+     <div class="{{postclass}} {{thecycle}}">
       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
       <h2>
         <a class="post-link"
@@ -29,6 +41,17 @@
             alt="{{ post.title | escape }}"
             >
         {% endif %}
-    </li>
+        </div><!-- end post-list-li -->
+    </div><!-- end column -->
+    
+  {% if thecycle == '2of2' or thecycle == '1of1'  %}
+    </div><!-- end row -->
+  {% endif %}
+
   {% endfor %}
-</ul>
+
+    {% if thecycle == '1of2' %}
+    </div><!-- end row -->
+  {% endif %}
+  
+</div>
