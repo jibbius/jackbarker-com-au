@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to build a Photo Booth (Part 3: Building the Booth)"
+title:  "Photo Booth (Part 3): Building the Booth"
 desc:   "(♫)  If I were a Carpenter..."
 permalink: /photo-booth/3
 date:   2017-05-16
@@ -11,9 +11,7 @@ img-thumb: "/2017/photo_booth/2_Cabinet_3"
 
 ---
 
-This article is 'part 3' of my ['How to build a Photo Booth']({{ "/photo-booth/" | prepend: site.url }}) series.
-
-In the [previous post]({{ "/photo-booth/2" | prepend: site.url }}) I discussed the electronic components of the build.
+{% include multi-post-photo-booth.html part=3 %}
 
 ## Overview of Part 3
 Part 3 describes the steps I took in **making the wooden cabinet** for my Photo Booth.
@@ -28,7 +26,7 @@ I chose to build the photo booth at this size, because I wanted people to see it
 
 ## Tools and Materials
 ### Parts we need from step 2
-We need both of the following parts (discussed previously) on hand, because we'll have to cut holes in the cabinet for each:
+We need all of the following parts (discussed previously) on hand, because we'll have to cut holes in the cabinet for each:
 - LED screen,
 - Arcade button,
 - The PiCamera.

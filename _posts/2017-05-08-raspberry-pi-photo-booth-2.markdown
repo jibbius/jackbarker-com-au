@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to build a Photo Booth (Part 2: Getting started with Pi and PiCamera)"
+title:  "Photo Booth (Part 2): Getting started with Pi and PiCamera"
 desc:   "Breadboarders, assemble!"
 permalink: /photo-booth/2
 date:   2017-05-08
@@ -11,9 +11,7 @@ img-thumb: "/2017/photo_booth/1_Breadboarding_2"
 
 ---
 
-This article is 'part 2' of my ['How to build a Photo Booth']({{ "/photo-booth/" | prepend: site.url }}) series.
-
-In the [previous post]({{ "/photo-booth/1" | prepend: site.url }}) I discussed the requirements process related to the build.
+{% include multi-post-photo-booth.html part=2 %}
 
 ## Overview of Part 2
 Before providing a full set of components and plans for the Photo Booth, I'd recommend breadboarding out a simple version to get you started.

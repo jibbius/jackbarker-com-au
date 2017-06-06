@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to build a Photo Booth (Part 1: Requirements)"
+title:  "Photo Booth (Part 1): Requirements"
 desc:   "Planning the photo booth build"
 date:   2017-05-01
 author: Jack Barker
@@ -10,30 +10,22 @@ img: "/2017/photo_booth/photoBoothReqs"
 img-thumb: "/2017/photo_booth/photoBoothReqs"
 
 ---
-This article is 'part 1' of my ['How to build a Photo Booth']({{ "/photo-booth/" | prepend: site.url }}) series.
 
+{% include multi-post-photo-booth.html part=1 %}
 
 ## Step 1 : Listing out the requirements
 
-> Requirements?!
-> <br/> ...typical bleeding Business Analyst!
+Before we go into the specifics of how I built my Photo Booth, you should begin to think about the features and constraints affecting your (potential) photo booth.
 
+> "Requirements?!
+> <br/> ...typical bleeding Business Analyst!"
 
 {% include image-2.html
     img="/2017/photo_booth/photoBoothReqs"
     alt="Planning"
-    caption="Make sure you are clear of your photo booth's requirements, before delving too far into the design"
+    caption="Make sure you are clear of your photo booth's requirements, before delving too far into the design."
     class="medium"
 %}
-
-Before we go into the specifics of how I built my Photo Booth, you should begin to think about the features and constraints affecting your (potential) photo booth.
-
-Here are some things you need to consider:
- - How will the booth be powered?
- - How much additional light will be needed?
- - Will internet access be available?
- - How will photos be shared?
- - What will the booth made out of?
 
 ### How will the booth be powered?
 For the photo booth I built, I needed the following;
@@ -42,8 +34,8 @@ For the photo booth I built, I needed the following;
  - a 12 volt power supply (for the LED lights)
 
 To achieve this, I:
- - included a small power board inside the photo booth cabinet, and ran an extension lead to the nearest power point.
- - attached each of the required power supplies to the power board.
+1. included a small power board inside the photo booth cabinet, and ran an extension lead to the nearest power point.
+1. attached each of the required power supplies to the power board.
 
 An assumption that I was making, was that the booth would be powered from a power point. If you don't want your booth to depend on power point access, then you will need a different solution.
 
@@ -66,8 +58,9 @@ Internet access will help you for two reasons:
 1. It will allow you to share (and backup) your photos - immediately
 1. It will provide access to a real time clock
 
-The Raspberry Pi 2 will allow you to connect a wireless internet dongle.
-The Raspberry Pi 3 comes with wireless internet, out of the box.
+Options available to you might differ based on which version of the Pi you are using:
+- The Raspberry Pi 2 will allow you to connect a wireless internet dongle (or via an ethernet cable).
+- The Raspberry Pi 3 comes with wireless internet out of the box (no adapter required).
 
 If you choose to go without internet connectivity, then I highly recommend getting a RTC (Real Time Clock) module.
 This means that you will be able to record the date + time that each photo was taken.

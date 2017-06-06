@@ -10,7 +10,10 @@ img: "/2017/photo_booth/0_FinishedBooth_1b"
 img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
 
 ---
-This article is the introduction to my 'How to build a Photo Booth' series.
+
+{% include multi-post-photo-booth.html part=0 %}
+
+## The Finished Photo Booth
 
 {% include image-2.html
     img="/2017/photo_booth/0_FinishedBooth_2b"
@@ -44,18 +47,6 @@ The code for my photo booth is available here:
 
 [https://github.com/jibbius/rasberry_pi_photo_booth](https://github.com/jibbius/rasberry_pi_photo_booth){:target="_blank"}
 
-## The build process
-Here are the high level steps:
-1. [Listing out the requirements]({{ "/photo-booth/1" | prepend: site.url }})
-1. [Getting started with Pi and PiCamera]({{ "/photo-booth/2" | prepend: site.url }})
-1. [Building the Booth]({{ "/photo-booth/3" | prepend: site.url }})
-1. Adding the 12volt LED lights
-1. The code
-1. Fine-tuning
-1. Photo day!
-1. Post-production
-
-I'll be writing articles for each of these steps in the coming days and weeks.
 
 
 ## Next article
