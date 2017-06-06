@@ -256,8 +256,7 @@ a.tag-post-link:hover span.tag-post-title{
 /*
  * Highlight draft posts differently
 */
-h1.draft-post:before,
-li.draft-post:before {
+.draft-post:before {
   content: "\f040";
   font-family: FontAwesome;
   color: $draft-link-color;
@@ -269,7 +268,7 @@ li.draft-post:before {
   font-size: 20px;
 }
 h1.draft-post,
-li.draft-post h2 a.post-link {
+.draft-post h2 a.post-link {
   color: $draft-link-color;
 }
 
