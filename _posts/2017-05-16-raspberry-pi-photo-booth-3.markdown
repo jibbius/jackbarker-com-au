@@ -207,4 +207,4 @@ By "hacking" a grooved angle into an additional piece of wood (off which the lig
 %}
 
 ## Next article
-For the **next article** in this series, I'll be talking about <strong>mounting the LED lights</strong> and <strong>connecting up the circuits</strong>.
+For the [next article]({{ "/photo-booth/4" | prepend: site.url }}) in this series, I'll be talking about <strong>mounting the LED lights</strong> and <strong>connecting up the circuits</strong>.
