@@ -81,22 +81,25 @@ do
         if
             $(fileExists ${instruction_path} ${instruction_file})
         then
-            if [ "$instruction" == "not-for-export" ];
-            then
-                #Skip the file
-                echo "Info: File is marked 'not for export'!"
-                continue 2    
-            elif [ "$instruction" == "gravity" ];
-            then
-                #Apply specified gravity
-                echo "Info: Default gravity overridden!"
-                gravity=$(<${instruction_path}/${instruction_file})
-            elif [ "$instruction" == "resolutions" ];
-            then
-                #Include additional image resolutions
-                echo "Info: Additional resolutions apply and will be processed!"
-                additionalResolutions=( $(<${instruction_path}/${instruction_file}) )
-            fi
+            case "$instruction" in
+                "not-for-export")
+                    #Skip the file
+                    echo "Info: File is marked 'not for export'!"
+                    continue 2    
+                    ;;
+                
+                "gravity")
+                    #Apply specified gravity
+                    echo "Info: Default gravity overridden!"
+                    gravity=$(<${instruction_path}/${instruction_file})
+                    ;;
+
+                "resolutions")
+                    #Include additional image resolutions
+                    echo "Info: Additional resolutions apply and will be processed!"
+                    additionalResolutions=( $(<${instruction_path}/${instruction_file}) )
+                    ;;
+            esac
         fi
     done
 
