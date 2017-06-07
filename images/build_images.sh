@@ -3,8 +3,8 @@ src_path=./src
 src_instruction_path=./src
 ouput_path=./dist
 
-req_img_widths=( 700 1400)
-req_img_resolutions=( 1200x1200 600x314 1200x628)
+req_img_widths=( 700 1400 )
+req_img_resolutions=( 1200x1200 600x314 1200x628 )
 
 #Common image sizes:
 # - Twitter / FB "Large" = 600 x 314
@@ -88,6 +88,18 @@ do
         gravity="center"
     fi
 
+    ###
+    instruction_file="${src_file_no_ext}.resolutions"
+    if 
+        $(fileExists ${instruction_path} ${instruction_file})
+    then
+        additionalResolutions=( $(<${instruction_path}/${instruction_file}) )
+        echo "  Info: additional resolutions apply!"
+    else
+        additionalResolutions=()
+        continue
+    fi
+
     ###################################
     # Generate specific widths
     ###################################
@@ -112,6 +124,24 @@ do
     # Generate specific resolutions
     ###################################
     for resolution in ${req_img_resolutions[@]}
+    do
+        filenameToWrite="${src_file_no_ext}-${resolution}.jpg"
+        #check if file already exists...
+        if 
+            $(fileExists ${dest_dirname} ${filenameToWrite})
+        then
+            echo "  Skipped: "[ ${dest_dirname}/${filenameToWrite} ];
+        else
+            createImageAtSizeAndGravity ${f} ${dest_dirname} ${filenameToWrite} ${resolution} ${gravity}
+            echo "    - Created: "[ ${dest_dirname}/${filenameToWrite} ];
+        fi
+
+    done
+
+    ###################################
+    # Additional (custom) resolutions
+    ###################################
+    for resolution in ${additionalResolutions[@]}
     do
         filenameToWrite="${src_file_no_ext}-${resolution}.jpg"
         #check if file already exists...
