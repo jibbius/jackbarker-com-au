@@ -68,37 +68,37 @@ do
     # Generate specific instructions
     ###################################
     instruction_path=${src_instruction_path}${src_file_dirname:${#src_path}}
+    instruction_types=( not-for-export gravity resolutions )
+    
+    #Defaults
+    gravity="center"
+    additionalResolutions=()
 
-    ### TODO: Refactor out repetition
-    instruction_file="${src_file_no_ext}.not-for-export"
-    if 
-        $(fileExists ${instruction_path} ${instruction_file})
-    then
-        continue
-    fi
-
-    ###
-    instruction_file="${src_file_no_ext}.gravity"
-    if 
-        $(fileExists ${instruction_path} ${instruction_file})
-    then
-        gravity=$(<${instruction_path}/${instruction_file})
-        echo "  Info: default gravity overridden!"
-    else
-        gravity="center"
-    fi
-
-    ###
-    instruction_file="${src_file_no_ext}.resolutions"
-    if 
-        $(fileExists ${instruction_path} ${instruction_file})
-    then
-        additionalResolutions=( $(<${instruction_path}/${instruction_file}) )
-        echo "  Info: additional resolutions apply!"
-    else
-        additionalResolutions=()
-        continue
-    fi
+    #Overrides
+    for instruction in ${instruction_types[@]}
+    do
+        instruction_file="${src_file_no_ext}.${instruction}"
+        if
+            $(fileExists ${instruction_path} ${instruction_file})
+        then
+            if [ "$instruction" == "not-for-export" ];
+            then
+                #Skip the file
+                echo "Info: File is marked 'not for export'!"
+                continue 2    
+            elif [ "$instruction" == "gravity" ];
+            then
+                #Apply specified gravity
+                echo "Info: Default gravity overridden!"
+                gravity=$(<${instruction_path}/${instruction_file})
+            elif [ "$instruction" == "resolutions" ];
+            then
+                #Include additional image resolutions
+                echo "Info: Additional resolutions apply and will be processed!"
+                additionalResolutions=( $(<${instruction_path}/${instruction_file}) )
+            fi
+        fi
+    done
 
     ###################################
     # Generate specific widths
