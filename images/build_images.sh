@@ -126,25 +126,7 @@ do
     ###################################
     # Generate specific resolutions
     ###################################
-    for resolution in ${req_img_resolutions[@]}
-    do
-        filenameToWrite="${src_file_no_ext}-${resolution}.jpg"
-        #check if file already exists...
-        if 
-            $(fileExists ${dest_dirname} ${filenameToWrite})
-        then
-            echo "  Skipped: "[ ${dest_dirname}/${filenameToWrite} ];
-        else
-            createImageAtSizeAndGravity ${f} ${dest_dirname} ${filenameToWrite} ${resolution} ${gravity}
-            echo "    - Created: "[ ${dest_dirname}/${filenameToWrite} ];
-        fi
-
-    done
-
-    ###################################
-    # Additional (custom) resolutions
-    ###################################
-    for resolution in ${additionalResolutions[@]}
+    for resolution in ${req_img_resolutions[@]} ${additionalResolutions[@]}
     do
         filenameToWrite="${src_file_no_ext}-${resolution}.jpg"
         #check if file already exists...
