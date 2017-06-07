@@ -3,14 +3,37 @@ layout: page
 title: About
 permalink: /about/
 ---
+<div class="container">
 
-Jack Barker is a Business Analyst and Coder based in Melbourne Australia.
+<div class="row">
+<div class="column" markdown="1">
+Jack Barker is a Business Analyst, and Coder, based in Melbourne Australia.
 
-By day he works as a BA for DST Bluedoor.
+By day he works as a BA for **DST Bluedoor Ltd**.
+
 By night he writes code, blogs, and muses on all things technology.
 
+On weekends you can find him at the **Ballarat Hackerspace** or taking on the trails at **Black Hill Mountain Bike Park**.
+</div><!--end column-->
+<div class="column">
+<div class="container img-container"  markdown="1">
+{% include image-2.html
+    img="/2017/JackBarker"
+    alt="Jack Barker"
+%}
+</div><!--end img-container-->
+</div><!--end column-->
+</div><!--end row-->
 
-Jack's projects (past & present) include:
+<div class="row">
+<div class="column" markdown="1">
+### Projects
+Jack's projects (past &amp; present) include:
 
 - [WhereTheTruck.at](http://wherethetruck.at){:target="_blank"}
 - The website for the [Royal Melbourne Philharmonic](http://rmp.org.au){:target="_blank"}.
+- (And more on [GitHub](http://github.com/jibbius){:target="_blank"}).
+</div><!--end column-->
+</div><!--end row-->
+
+</div><!--end container-->
