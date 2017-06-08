@@ -58,7 +58,7 @@ do
 
     src_file_basename=`basename "${f}"`
     src_file_no_ext=${src_file_basename%.*}
-    # src_file_ext=${ ${src_file_basename}:${#src_file_no_ext} }
+    src_file_ext=${src_file_basename:${#src_file_no_ext}}
     src_file_dirname=`dirname "${f}"`
     dest_dirname=${ouput_path}${src_file_dirname:${#src_path}}
     
