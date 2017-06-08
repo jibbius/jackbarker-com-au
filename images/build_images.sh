@@ -49,7 +49,7 @@ function createImageAtSizeAndGravity()
     ${dest_dirname}/${dest_filename}
 }
 
-FILES=$(find ${src_path} -type f -name '*.jpg')
+FILES=$(find ${src_path} -type f -name '*.jpg' -or -name '*.png')
 for f in $FILES
 do
     echo
@@ -58,6 +58,7 @@ do
 
     src_file_basename=`basename "${f}"`
     src_file_no_ext=${src_file_basename%.*}
+    # src_file_ext=${ ${src_file_basename}:${#src_file_no_ext} }
     src_file_dirname=`dirname "${f}"`
     dest_dirname=${ouput_path}${src_file_dirname:${#src_path}}
     
@@ -110,7 +111,7 @@ do
     do
     #TODO: make sure that the source image is not smaller than the desired resolution
     
-        filenameToWrite="${src_file_no_ext}-${width}w.jpg"
+        filenameToWrite="${src_file_no_ext}-${width}w${src_file_ext}"
         #check if file already exists...
         if 
             $(fileExists ${dest_dirname} ${filenameToWrite})
@@ -128,7 +129,7 @@ do
     ###################################
     for resolution in ${req_img_resolutions[@]} ${additionalResolutions[@]}
     do
-        filenameToWrite="${src_file_no_ext}-${resolution}.jpg"
+        filenameToWrite="${src_file_no_ext}-${resolution}${src_file_ext}"
         #check if file already exists...
         if 
             $(fileExists ${dest_dirname} ${filenameToWrite})
