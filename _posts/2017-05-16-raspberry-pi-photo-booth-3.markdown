@@ -25,13 +25,15 @@ I should also note that the cabinet I made was **quite large** (far larger than 
 I chose to build the photo booth at this size, because I wanted people to see it and interact with it.
 
 ## Tools and Materials
-### Parts we need from step 2
-We need all of the following parts (discussed previously) on hand, because we'll have to cut holes in the cabinet for each:
-- LED screen,
-- Arcade button,
-- The PiCamera.
 
-### Additional Materials
+<div class="row">
+<div class="column" markdown="1">
+
+### Required Materials
+- We need all of the following parts (discussed previously) on hand, because we'll have to cut holes in the cabinet for each:
+  - LED screen,
+  - Arcade button,
+  - The PiCamera.
 - Wood; <br>more specifically, I used:
   - A hard plywood for the base
   - Some additional plywood for support struts
@@ -39,12 +41,9 @@ We need all of the following parts (discussed previously) on hand, because we'll
   - Note that My photo booth doesn't have a lid or back.<br>This is something that you may wish to include, however.
 - Wood screws,
 - Double-sided tape.
-- **Optional materials:**
-  - Metal brackets (I used these in my build, but are optional),
-  - Wood glue (I didn't use these in my build, but it may be helpful).
 
-I picked up all of the above from the local hardware store.
-
+</div>
+<div class="column" markdown="1">
 
 ### Required Tools
 The required tools are pretty basic:
@@ -52,7 +51,7 @@ The required tools are pretty basic:
   - Some standard drill bits of various sizes (for pre-drilling for your screws, starting your interior cuts)
   - A "spade" drill bit (cutting the hole for the Arcade button)
 - A screwdriver,
-- A hand saw,
+- A hand saw (or power tool equivalent),
 - A saw for making interior cuts<br>i.e.
   - A jigsaw, or
   - A fretsaw, or
@@ -61,13 +60,26 @@ The required tools are pretty basic:
 - A pencil,
 - A tape measure,
 - A framing square.
-- **Optional tools:**
+
+I picked up all of the above from the local hardware store.
+</div><!-- end: column -->
+</div><!-- end: row -->
+<div class="row">
+<div class="column" markdown="1">
+
+### Optional Parts/Tools
+  - Metal brackets (I used these in my build, but are optional),
+  - Wood glue
   - A vice (to help with sawing / glueing),
   - Clamps (to help with glueing).
+  - Sandpaper and paint might also go a long way in finishing your booth.
+</div><!-- end: column -->
+</div><!-- end: row -->
 
-You can of course replace any of the above with power tool equivalents. <br>Sandpaper and paint might also go a long way in finishing your booth.
+
+## Build Steps
+
 ### The Base
-
 I cut the base into shape, and added **support struts** on either side.
 
 Note:
@@ -191,7 +203,7 @@ I've also attached my Raspberry Pi (inside it's case) to the back of this panel,
     class="medium"
 %}
 
-#### The Flash Diffuser
+### The Flash Diffuser
 The final piece of wood that I cut was a "flash diffuser" (I will be discussing the LEDs in detail later).
 
 However, when I was installing the lights, I found that "direct light" off of the LEDs felt a bit unpleasant.
@@ -206,5 +218,8 @@ By "hacking" a grooved angle into an additional piece of wood (off which the lig
     class="medium"
 %}
 
+This completes the woodwork section of the build.
+
 ## Next article
+
 For the [next article]({{ "/photo-booth/4" | prepend: site.url }}) in this series, I'll be talking about <strong>mounting the LED lights</strong> and <strong>connecting up the circuits</strong>.

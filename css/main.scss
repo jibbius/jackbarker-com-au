@@ -190,10 +190,15 @@ div.post-list-li h3 {
 figure.post-image {
     text-align: center;
 }
-figure.post-image img{
-    text-align: center;
-    border: 2px solid lighten($brand-color, 30%);
-    margin: auto;
+figure.post-image{
+    img{
+        text-align: center;
+        border: 2px solid lighten($brand-color, 30%);
+        margin: auto;
+    }
+    &.more-padding img{
+        padding: 10px;
+    }
 }
 figure.medium img{
     max-width: 60%;
