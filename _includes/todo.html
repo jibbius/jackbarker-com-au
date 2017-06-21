@@ -1,3 +1,5 @@
+{% if jekyll.environment != 'production' %}
 <div class="todo">
-    <p><strong>To do:</strong> <span class="task">{{ include.todo }}</span></p>
+    <p><strong style="color:red">TODO:</strong> <span class="task" markdown="1">{{ include.todo }}</span></p>
 </div>
+{% endif %}
