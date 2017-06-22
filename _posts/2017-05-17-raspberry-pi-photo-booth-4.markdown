@@ -6,8 +6,8 @@ permalink: /photo-booth/4
 date:   2017-06-22
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
-img:       "/2017/photo_booth/0_FinishedBooth_5"
-img-thumb: "/2017/photo_booth/0_FinishedBooth_5"
+img:       "/2017/photo_booth/photobooth_powerboard"
+img-thumb: "/2017/photo_booth/photobooth_powerboard"
 ---
 
 {% include multi-post-photo-booth.html part=4 %}
