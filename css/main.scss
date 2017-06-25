@@ -53,7 +53,6 @@ $on-laptop:        800px;
 // Image maps css
 @import "image-maps.scss";
 
-// Custom styles (needs a bit of a tidy)
 /*
  * Site title
  */
@@ -120,6 +119,9 @@ $on-laptop:        800px;
     h2{font-size:40px}
     h3{font-size:32px}
     h4{font-size:24px; margin-bottom:8px;}
+    a {
+        word-break: break-word;
+    }
 }
 
 h2, h3{

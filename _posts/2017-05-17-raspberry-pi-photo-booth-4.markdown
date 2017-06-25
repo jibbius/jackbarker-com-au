@@ -54,7 +54,11 @@ We will need the following parts and tools (in addition to the photo booth cabin
 </div><!-- end: row -->
 </div><!-- end: container -->
 
-{%include todo.html todo="Photo with each of the above tools + parts"%}
+{% include image-2.html
+    img="/2017/photo_booth/tools_part4"
+    alt="Parts and Tools for this step"
+    caption="Parts and Tools for this step"
+%}
 
 ## The Lights
 ### Intro to LED strips

@@ -76,6 +76,11 @@ I picked up all of the above from the local hardware store.
 </div><!-- end: column -->
 </div><!-- end: row -->
 
+    {% include image-2.html
+        img="/2017/photo_booth/tools_part3"
+        alt="Parts and Tools for this step"
+        caption="Parts and Tools for this step"
+    %}
 
 ## Build Steps
 
