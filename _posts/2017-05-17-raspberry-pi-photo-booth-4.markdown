@@ -69,7 +69,11 @@ Common to all LED strips are **dotted line markings** which will occur at variou
 
 Measure the width of the photo booth, and cut the strip at the appropriate length.
 
-{%include todo.html todo="Photo: dotted line on LED strip"%}
+{% include image-2.html
+    img="/2017/photo_booth/LED_strip_closeup"
+    alt="The dotted lines indicate where you can cut the strip into smaller segments"
+    caption="The dotted lines indicate where you can cut the strip into smaller segments."
+%}
 
 ### Checking the electrical resistance of the LED strip
 LEDs have a very low resistance - and **as a rule**, you should never connect an LED directly to a power supply without the inclusion of a resistor within the circuit.
