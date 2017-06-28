@@ -45,7 +45,7 @@ So too, apparently, did my guests - who absolutely loved taking shots with the p
 ## The code
 The code for my photo booth is available here: 
 
-[https://github.com/jibbius/rasberry_pi_photo_booth](https://github.com/jibbius/rasberry_pi_photo_booth){:target="_blank"}
+[https://github.com/jibbius/raspberry_pi_photo_booth](https://github.com/jibbius/raspberry_pi_photo_booth){:target="_blank"}
 
 
 
