@@ -29,3 +29,7 @@
 ## Test suite
 
 - `bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --check-opengraph --assume-extension`
+
+## Spell checker
+
+- `bundle exec yaspeller ./_site/**/*.html --ignore-urls`
