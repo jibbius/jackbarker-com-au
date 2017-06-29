@@ -105,18 +105,20 @@ theme: minima
 include: ['_pages']
 
 exclude:
+  - .gitignore
   - .travis.yml
   - .vscode
+  - .yaspellerrc
   - CNAME
+  - cSpell.json
   - Gemfile
   - Gemfile.lock
   - Guardfile
-  - cSpell.json
   - images/build_images.sh
   - images/src
   - minima
-  - script
   - osx_update_gem_versions.sh
+  - script
   - vendor
   - versions.json
   - win_start_server.bat
