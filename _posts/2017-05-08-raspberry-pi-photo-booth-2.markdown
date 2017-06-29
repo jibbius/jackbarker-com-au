@@ -176,4 +176,4 @@ To exit the **simple photo booth** app, press `ctrl` + `c`.
 For the [next article]({{ "/photo-booth/3" | prepend: site.url }}) in this series, I'll be talking about <strong>building the wood cabinet</strong> that houses the photo booth.
 
 [noobs]: https://www.raspberrypi.org/downloads/noobs/ "The NOOBs version of Raspian"
-[pi-software-guide]: https://www.raspberrypi.org/learning/software-guide/ "RasberryPi.org - Software Guide"
+[pi-software-guide]: https://www.raspberrypi.org/learning/software-guide/ "RaspberryPi.org - Software Guide"

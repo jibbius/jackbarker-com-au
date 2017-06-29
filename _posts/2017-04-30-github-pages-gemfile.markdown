@@ -49,7 +49,7 @@ Except - what happens when I take my dev environment on the road, and I can't co
 ### Part B: Dealing with internet connectivity issues
 #### Checking for internet connectivity
 
-Solving this part, first happened after I read [fotanus's post on Stackoverflow][fotanus]{:target="_blank"}.
+Solving this part, first happened after I read [fotanus' post on Stackoverflow][fotanus]{:target="_blank"}.
 
 This caused me to include the following function within my Gemfile:
 

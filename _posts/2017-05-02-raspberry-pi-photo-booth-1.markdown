@@ -59,12 +59,12 @@ Internet access will help you for two reasons:
 1. It will provide access to a real time clock
 
 Options available to you might differ based on which version of the Pi you are using:
-- The Raspberry Pi 2 will allow you to connect a wireless internet dongle (or via an ethernet cable).
+- The Raspberry Pi 2 will allow you to connect a wireless internet dongle (or via an Ethernet cable).
 - The Raspberry Pi 3 comes with wireless internet out of the box (no adapter required).
 
 If you choose to go without internet connectivity, then I highly recommend getting a RTC (Real Time Clock) module.
 This means that you will be able to record the date + time that each photo was taken.
-If the PhotoBooth needs to be restarted for any reason, then this will be especially useful.
+If the Photo Booth needs to be restarted for any reason, then this will be especially useful.
 
 ### How will you share your photos?
 By default, photos will get written to your SD card, and you can distribute them after the event.

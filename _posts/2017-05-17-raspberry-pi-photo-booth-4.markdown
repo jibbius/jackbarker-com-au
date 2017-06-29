@@ -6,8 +6,8 @@ permalink: /photo-booth/4
 date:   2017-06-22
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
-img:       "/2017/photo_booth/photobooth_powerboard"
-img-thumb: "/2017/photo_booth/photobooth_powerboard"
+img:       "/2017/photo_booth/photo_booth_power_board"
+img-thumb: "/2017/photo_booth/photo_booth_power_board"
 ---
 
 {% include multi-post-photo-booth.html part=4 %}
@@ -152,13 +152,13 @@ My light strip refused to stay flat against the booth, particularly where the ho
 {%include todo.html todo="**Photo**: Diagram of clamp technique"%}
 
 ## Wiring the Booth
-### Version 1: The "Powerboard Method"
+### Version 1: The "Power Board Method"
 For the first version, I relied on multiple power adapters to provide each of the different voltages required by the circuit.
 
 Note that (in my photo booth) the LEDs in both the arcade button &amp; and LED strip include resistors which allow them to safely operate at 12v (your parts may vary).
 
 {% include image-2.html
-    img="/2017/photo_booth/photobooth_powerboard"
+    img="/2017/photo_booth/photo_booth_power_board"
     ext=".png"
     alt="wiring diagram"
     caption="Photo booth: Wiring diagram."
