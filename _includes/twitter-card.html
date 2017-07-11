@@ -23,11 +23,11 @@
 
 
 {% if page.img-thumb %}
-  <meta property="og:image" content="{{ site.url }}{{ site.img_root }}{{ page.img-thumb }}-{{ site.img_size.thumb.w }}x{{ site.img_size.thumb.h }}.jpg">
+  {% assign img-thumb-ext=page.img-thumb-ext | default: '.jpg' %}}
+  <meta property="og:image" content="{{ site.url }}{{ site.img_root }}{{ page.img-thumb }}-{{ site.img_size.thumb.w }}x{{ site.img_size.thumb.h }}{{img-thumb-ext}}">
 {% elsif page.img %}
-  <meta property="og:image" content="{{ site.url }}{{ site.img_root }}{{ page.img }}-{{ site.img_size.thumb.w }}x{{ site.img_size.thumb.h }}.jpg">
-{% elsif page.image %}
-  <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+  {% assign img-ext=page.img-ext | default: '.jpg' %}}
+  <meta property="og:image" content="{{ site.url }}{{ site.img_root }}{{ page.img }}-{{ site.img_size.thumb.w }}x{{ site.img_size.thumb.h }}{{img-ext}}">
 {% else %}
   <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
 {% endif %}
