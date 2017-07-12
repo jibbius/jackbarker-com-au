@@ -7,7 +7,6 @@ author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 permalink: /photo-booth/1
 img: "/2017/photo_booth/photoBoothReqs"
-img-thumb: "/2017/photo_booth/photoBoothReqs"
 
 ---
 

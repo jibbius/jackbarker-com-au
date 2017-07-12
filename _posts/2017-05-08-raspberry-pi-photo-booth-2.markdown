@@ -7,7 +7,6 @@ date:   2017-05-08
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 img: "/2017/photo_booth/1_Breadboarding_2"
-img-thumb: "/2017/photo_booth/1_Breadboarding_2"
 
 ---
 
@@ -78,8 +77,10 @@ After connecting the camera, you need to enable it, via the command line.
 #### Enabling PiCamera
 Connect a keyboard to the Pi, and open up the Terminal.
 
-    sudo raspbi-config
-    #Note: You will be prompted to enter your password
+{% highlight sh %}
+sudo raspbi-config
+#Note: You will be prompted to enter your password
+{% endhighlight %}
 
 From the menu, you need to enable 'PiCamera'.
 
@@ -90,7 +91,7 @@ Other useful options to enable here are:
 
 ## A Test Run of the Camera
 To familiarise yourself with the PyCamera library, begin by starting a terminal on the Pi.
-It's best to connect to the pi from another computer (via `SSH` or `RealVNC`)
+It's best to connect to the pi from another computer (via `SSH` or `RealVNC`).
 
 If you connected via RealVNC, open `Terminal` or `UXTerm` on the Pi.
 You will be greeted with a command prompt.
@@ -102,9 +103,11 @@ From here, we can access the python interpreter by typing `python`.
 ### Test run via Python interpreter
 Within the interpreter, enter the following commands:
 
-    import picamera
-    camera = picamera.PiCamera()
-    camera.start_preview()
+{% highlight python %}
+import picamera
+camera = picamera.PiCamera()
+camera.start_preview()
+{% endhighlight %}
 
 The camera will now be displaying your picture on the screen that is connected to the Pi.
 
@@ -112,68 +115,100 @@ The camera will now be displaying your picture on the screen that is connected t
 
 You may need to flip and/or rotate the picture, such that it suits the angle your camera has been mounted at.
 
-    camera.hflip = True
-    camera.rotation = 90
+{% highlight python %}
+camera.hflip = True
+camera.rotation = 90
+{% endhighlight %}
 
 ### Save a photo
 
 Enter a couple more commands into the terminal, to save a photo
 
-    filename = ~\my_test_photo.jpg
-    camera.capture(filename)
+{% highlight python %}
+filename = ~\my_test_photo.jpg
+camera.capture(filename)
+{% endhighlight %}
 
 Exit the python interpreter
 
-    exit()
+{% highlight python %}
+exit()
+{% endhighlight %}
 
 You can now see that the photo has been saved to the Pi.
 
-    ls ~
+{% highlight sh %}
+ls ~
+{% endhighlight %}
 
 ## Connecting up the button
 Now that we have a basic understanding of how our PiCamera will work, it is time to connect our button.
 
-Shutdown the Pi and disconnect the power supply.
+Shutdown the Pi:
 
-    sudo shutdown now
+{% highlight sh %}
+sudo shutdown now
+{% endhighlight %}
+
+Disconnect the power supply.
+
+The button needs to connect to **GPIO21** and **Ground**.
+
+Once the button is attached we can safely boot up the Pi again.
 
 Connect your button to the Pi, as follows:
 
 {% include image-2.html
-    img="/2017/photo_booth/1_Breadboarding_2"
-    alt="Breadboarding"
-    caption="Breadboarding"
+    img="/2017/photo_booth/part2_photo_booth_camera_test_circuit"
+    ext=".png"
+    alt="wiring diagram"
+    caption="Photo booth: Wiring diagram."
+    class="more-padding large"
 %}
 
-## Connecting up the button
-Once the button is connected we can run a "simple version" of our photo booth code.
 
-The button needs to connect to **GPIO21** and **Ground**.
-
-(I will provide some more instructions/images on this soon).
+## Running a "Test app"
+Once the button is connected we can run a simplified version of our photo booth code.
 
 This piece of code doesn't have the full functionality of my finished photo booth, but it contains "just enough" to test out the functionality that we care about and get an idea of how the finished code might look.
 
-Boot up your Raspberry Pi again.
-
 The code we are going to run is shown here: [gist.github.com/jibbius/8105081adfc0d6dd7da77cd813c69593](https://gist.github.com/jibbius/8105081adfc0d6dd7da77cd813c69593){:target="_blank"}.
 
-You can either copy across the code manually, or enter the following at the command line (on the Pi) to download it.
+Boot up your Raspberry Pi again.
 
-    mkdir ~/simple-photo-booth
-    git clone https://gist.github.com/8105081adfc0d6dd7da77cd813c69593.git ~/simple-photo-booth
+You can then either;
+ - Copy the code into a text file (`simple-photo-booth.py`) manually, or
+ - Enter the following at the command line on the Pi to download it:
+
+{% highlight sh %}
+mkdir ~/simple-photo-booth
+git clone https://gist.github.com/8105081adfc0d6dd7da77cd813c69593.git ~/simple-photo-booth
+{% endhighlight %}
 
 Run the code via:
 
-    cd ~/simple-photo-booth
-    python simple-photo-booth.py
+{% highlight sh %}
+cd ~/simple-photo-booth
+python simple-photo-booth.py
+{% endhighlight %}
 
 Press the button to test the code.
+
+{% include image-2.html
+    img="/2017/photo_booth/1_Breadboarding_2"
+    alt="Testing the photo booth components"
+    caption="Testing the photo booth components"
+    class="large"
+%}
 
 To exit the **simple photo booth** app, press `ctrl` + `c`.
 
 ## Next article
 For the [next article]({{ "/photo-booth/3" | prepend: site.url }}) in this series, I'll be talking about <strong>building the wood cabinet</strong> that houses the photo booth.
+
+
+If you'd prefer to skip that step, you can jump ahead to [Part 5]({{ "/photo-booth/5" | prepend: site.url }}), where we extend our "simple photo booth" code into a **Fully-featured Photo Booth app**.
+
 
 [noobs]: https://www.raspberrypi.org/downloads/noobs/ "The NOOBs version of Raspian"
 [pi-software-guide]: https://www.raspberrypi.org/learning/software-guide/ "RaspberryPi.org - Software Guide"

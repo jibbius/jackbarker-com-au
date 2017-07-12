@@ -5,9 +5,9 @@ desc:   "( and adding the LED lights )"
 permalink: /photo-booth/4
 date:   2017-06-22
 author: Jack Barker
-tags:   [ Raspberry Pi , hacks ]
+tags:   [ Raspberry Pi , hacks, electronics ]
 img:       "/2017/photo_booth/photo_booth_power_board"
-img-thumb: "/2017/photo_booth/photo_booth_power_board"
+img-ext: '.png'
 ---
 
 {% include multi-post-photo-booth.html part=4 %}
@@ -70,7 +70,7 @@ Common to all LED strips are **dotted line markings** which will occur at variou
 Measure the width of the photo booth, and cut the strip at the appropriate length.
 
 {% include image-2.html
-    img="/2017/photo_booth/LED_strip_closeup"
+    img="/2017/photo_booth/LED_strip_close_up"
     alt="The dotted lines indicate where you can cut the strip into smaller segments"
     caption="The dotted lines indicate where you can cut the strip into smaller segments."
 %}
@@ -181,8 +181,6 @@ In a future post I intend to document this further.
 
 ## Next article
 
-For the next article in this series, I'll be talking about <strong>writing the code</strong> that will run on our photo booth.
-
-{%include todo.html todo="Link to next post"%}
+For the [next article]({{ "/photo-booth/5" | prepend: site.url }}) in this series, I'll be talking about <strong>writing the code</strong> that will run on our photo booth.
 
 [Subscribe]({{ "/subscribe" | prepend: site.url }}) to my blog to stay informed of my progress.

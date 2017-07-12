@@ -29,14 +29,14 @@ So too, apparently, did my guests - who absolutely loved taking shots with the p
 
 {% include image-2.html
     img="/2017/photo_booth/JWLPhotography_201704152105_LANG1749"
-    alt="Photo credit: Jonathan Lang Photography</a>"
+    alt="Photo credit: Jonathan Lang Photography"
     caption="Photo credit: <a href='http://jonathanlangphotography.com.au/' target='_blank'>Jonathan Lang Photography</a>."
     class="medium"
 %}
 
 {% include image-2.html
     img="/2017/photo_booth/JWLPhotography_201704152106_LANG1753"
-    alt="Photo credit: Jonathan Lang Photography</a>"
+    alt="Photo credit: Jonathan Lang Photography"
     caption="Photo credit: <a href='http://jonathanlangphotography.com.au/' target='_blank'>Jonathan Lang Photography</a>."
     class="medium"
 %}

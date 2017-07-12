@@ -7,7 +7,6 @@ date:   2017-05-16
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 img:       "/2017/photo_booth/2_Cabinet_3"
-img-thumb: "/2017/photo_booth/2_Cabinet_3"
 
 ---
 

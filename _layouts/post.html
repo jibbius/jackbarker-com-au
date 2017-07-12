@@ -7,7 +7,7 @@ layout: default
 
     <h1 class="post-title {% if page.draft == true %}draft-post{% endif %}" itemprop="name headline">{{ page.title | escape }}</h1>
     {% if page.desc %}
-    <h2 class="post-subtitle" itemprop="description">{{ page.desc | escape }}</h2>
+    <h2 class="post-subtitle" itemprop="description">{{ page.desc }}</h2>
     {% endif %}
     <p class="post-meta">
     {% if page.last-modified %}
