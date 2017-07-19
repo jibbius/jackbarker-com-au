@@ -15,10 +15,12 @@ img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
 
 ## The Finished Photo Booth
 
+{%include todo.html todo="Include Youtube video"%}
+
 {% include image-2.html
     img="/2017/photo_booth/0_FinishedBooth_2b"
-    alt="My kickass photobooth!"
-    caption="Weddings, Parties, Anything: My kickass photobooth!"
+    alt="My kickass photo booth!"
+    caption="Weddings, Parties, Anything: My kickass photo booth!"
     class="medium"
 %}
 

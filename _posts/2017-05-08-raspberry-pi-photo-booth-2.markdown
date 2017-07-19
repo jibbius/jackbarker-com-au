@@ -77,7 +77,7 @@ After connecting the camera, you need to enable it, via the command line.
 #### Enabling PiCamera
 Connect a keyboard to the Pi, and open up the Terminal.
 
-{% highlight sh %}
+{% highlight bash %}
 sudo raspbi-config
 #Note: You will be prompted to enter your password
 {% endhighlight %}
@@ -137,7 +137,7 @@ exit()
 
 You can now see that the photo has been saved to the Pi.
 
-{% highlight sh %}
+{% highlight bash %}
 ls ~
 {% endhighlight %}
 
@@ -146,7 +146,7 @@ Now that we have a basic understanding of how our PiCamera will work, it is time
 
 Shutdown the Pi:
 
-{% highlight sh %}
+{% highlight bash %}
 sudo shutdown now
 {% endhighlight %}
 
@@ -180,14 +180,14 @@ You can then either;
  - Copy the code into a text file (`simple-photo-booth.py`) manually, or
  - Enter the following at the command line on the Pi to download it:
 
-{% highlight sh %}
+{% highlight bash %}
 mkdir ~/simple-photo-booth
 git clone https://gist.github.com/8105081adfc0d6dd7da77cd813c69593.git ~/simple-photo-booth
 {% endhighlight %}
 
 Run the code via:
 
-{% highlight sh %}
+{% highlight bash %}
 cd ~/simple-photo-booth
 python simple-photo-booth.py
 {% endhighlight %}
