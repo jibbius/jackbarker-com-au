@@ -201,12 +201,15 @@ figure.post-image{
     &.more-padding img{
         padding: 10px;
     }
-}
-figure.medium img{
-    max-width: 60%;
-}
-figure.large img{
-    max-width: 90%;
+    &.no-border img{
+        border: none;
+    }
+    &.medium img{
+        max-width: 60%;
+    }
+    &.large img{
+        max-width: 90%;
+    }
 }
 
 /*
@@ -457,6 +460,16 @@ p.poweredByTL {
     }
 }
 
+.center-text,
+.center-text p,
+.center-text h1,
+.center-text h2,
+.center-text h3 {
+    text-align: center;
+}
+.row.dropped {
+    margin-top: 20px;
+}
 /* Footer */
 ul.contact-list li,
 ul.social-media-list li {
