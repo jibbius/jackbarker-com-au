@@ -71,14 +71,11 @@ By default, photos will get written to your SD card, and you can distribute them
 Some other options to consider;
 
 1. Upload to Dropbox (internet access required)
-
 1. Upload to Website (GitHub Pages)
-  - This is how I distributed my photos.
+- (This is how I distributed my photos).
 
 1. Upload to Tumbler / Google Photos / Similar service
-
 1. Printer
-
 1. Email
 
 ### What will the booth be made out of?

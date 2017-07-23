@@ -8,7 +8,6 @@
     "words": [
         "abbr",
         "Araxis",
-        "axshare",
         "AxShare",
         "Axure",
         "BA's",
@@ -30,9 +29,8 @@
         "fotanus",
         "gemfile",
         "GitHub's",
-        "Github",
         "GitHub",
-        "gmail",
+        "Gmail",
         "HDMI",
         "IIBA's",
         "IIBA",
@@ -54,7 +52,7 @@
         "PiCamera",
         "Powershell",
         "PyCamera",
-        "Raspian",
+        "Raspbian",
         "RealVNC",
         "RSS",
         "RTC",
@@ -69,13 +67,15 @@
         "todo",
         "Travis",
         "unapologetically",
-        "yaspeller"
+        "WiFi",
+        "yaspeller",
+        "YouTube"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
     // For example "hte" should be "the"
     "flagWords": [
         "hte",
-        "rasberry" // (raspberry)
+        "rasberry"
     ]
 }
