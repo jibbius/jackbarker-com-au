@@ -99,17 +99,16 @@ Then we have our import statements.
 These statements used to include some specific Python **libraries** into our app:
 
 {% highlight python %}
+#Imports
 import datetime
-from time import sleep
 import os
-import time
+from time import sleep
 from PIL import Image
-import RPi.GPIO as GPIO
 import picamera
+import RPi.GPIO as GPIO
 {% endhighlight %}
 
 These libraries provide simple mechanisms for dealing with **images**, **timestamps**, the Pi's **GPIO pins**, and other complex features. This means our code doesn't need to consider all of the intricacies that are associated with such things, and that saves us a bunch of time.
-
 
 ### Configurable options
 Further down the file, are a set of variables that will be used by our code:
@@ -172,21 +171,26 @@ def main():
 The logic for alternating between the images looks like this:
 
 {% highlight python %}
+    #Amount of cycles to wait, when alternating between each frame
+    blink_speed = 5
+
     #Use falling edge detection to see if button is pushed
     is_pressed = GPIO.wait_for_edge(pin_camera_btn, GPIO.FALLING, timeout=100)
 
     #Stay inside loop, until button is pressed
     if is_pressed is None:
         
-        #After every 5 cycles, alternate the overlay
         i = i+1
+
+        #After every 5 cycles, alternate the overlay
         if i==blink_speed:
-            overlay_2.alpha = 255
+            overlay_2.alpha = 255 #make the top image fully visible
         elif i==(2*blink_speed):
-            overlay_2.alpha = 0
+            overlay_2.alpha = 0 #make the top image fully transparent
             i=0
         
-        #Regardless, restart loop
+        #Regardless of what happens above...
+        #...restart the loop, and wait for the button to be pressed;
         continue
 {% endhighlight %}
 
