@@ -38,7 +38,7 @@ mkdir ~/photo-booth
 git clone https://github.com/jibbius/raspberry_pi_photo_booth.git ~/photo-booth
 {% endhighlight %}
 
-The above will create a new directory (`/home/pi/photo-booth/`), and then download my *Raspberry Pi Photo Booth* code, for you to use.
+The above will create a new directory (`/home/pi/photo-booth/`), and then download the *Raspberry Pi Photo Booth* code, for you to use.
 
 {% include image-2.html
     img="/2017/photo_booth/part5-git-clone-photo-booth"

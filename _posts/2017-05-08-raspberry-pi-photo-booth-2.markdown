@@ -80,10 +80,8 @@ Alternatively, you can access a similar set of options via the command line (usi
 - Within **Interfaces**;
   - You must enable 'Camera'.
   - Other useful options to enable here are:
-    - 'VNC', which lets you remotely connect to the Pi from another computer
-    <br>(using the RealVNC Viewer client).
-    - 'SSH', which allows you to connect remotely to the pi via an SSH terminal.
-    - (Both VNC and SSH are optional, I'll leave the decision up to you).
+    - 'VNC', which lets you remotely connect to the Pi from another computer (after downloading the **RealVNC Viewer** _client_ application, onto another computer).
+    - 'SSH', which allows you to connect remotely to the pi via an SSH terminal. This is an option for advanced users, and not required for this tutorial.
 
 {% include image-2.html
     img="/2017/photo_booth/part2-pi_config_interfaces"
@@ -93,7 +91,7 @@ Alternatively, you can access a similar set of options via the command line (usi
 %}
 
 - Within **Localisation**;
-  - By default, you Pi is probably configured to use a UK **Keyboard**.
+  - By default, your Pi is probably configured to use a UK **Keyboard**.
   - If your keyboard doesn't have a pound key (£) on it, then you probably need to switch to a US keyboard (or whichever keyboard is appropriate to you).
   - It's also worth changing your **Locale**, **Timezone**, and **WiFi country** while here.
 
@@ -104,16 +102,16 @@ Alternatively, you can access a similar set of options via the command line (usi
     class="medium"
 %}
 
-Click `Ok`, to save.
+Click `OK`, to save.
 
 After saving all of these options, you should restart the Pi to ensure that the changes take effect.
 
 ### Connecting to WiFi
-If you haven't already done so, you also want to connect your Pi to WiFi.
+If you haven't already done so, you'll now want to connect your Pi to WiFi.
 
 If you are using Raspbian this is relatively straightforward (just click the wireless networking logo in the top right of the screen, and setup the network).
 
-Once you've connected up to wifi, it is also possible to connect to the Pi from another computer via `ssh` or VNC (assuming you enabled this as part of the configuration steps above). We'll get to this step later on.
+Once you've connected up to WiFi, it is also possible to connect to the Pi from another computer via VNC or `SSH`. We'll get to this step later on.
 
 ### Connecting the LCD Screen
 If you haven't already done so, connect the Pi to the LCD screen that we will be using as the screen for the Photo Booth.
