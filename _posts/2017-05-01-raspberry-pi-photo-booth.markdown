@@ -13,7 +13,8 @@ img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
 
 {% include multi-post-photo-booth.html part=0 %}
 
-## The Finished Photo Booth
+## My DIY Photo Booth
+### The Finished Product
 
 {%include todo.html todo="Include Youtube video"%}
 
@@ -44,12 +45,51 @@ So too, apparently, did my guests - who absolutely loved taking shots with the p
 %}
 
 
-## The code
+## Where can I see the code?
 The code for my photo booth is available here: 
 
 [https://github.com/jibbius/raspberry_pi_photo_booth](https://github.com/jibbius/raspberry_pi_photo_booth){:target="_blank"}
 
+## What makes **this** DIY photo booth special?
+My photo booth is unique for the following reasons;
+    
+1. It was the 1st project I **ever** built with a Raspberry Pi, and it's a great starting point for beginners.
+1. It takes a "less is more" approach;
+ - I opted to exclude features that weren't essential. 
+ - The code runs on both **Python 2.7** and **Python 3**.
+ - The code introduces very few libraries/dependencies, in the hopes of delivering a solution that "just works".
 
+## Publicity
+Since writing about my photo booth, it's been featured in the following publications:
+<div class="row">
+<div class="column">
+{% include image-2.html
+    img="/2017/photo_booth/part0-DIYODE_1"
+    ext=".png"
+    alt="Photo credit: Jonathan Lang Photography"
+    caption="<a href='https://diyodemag.com/features/pi_booth/' target='_blank'>DIYODE, #1</a>"
+    class="medium"
+    caption_placement="top"
+%}
+</div>
+<div class="column" markdown="1">
+{% include image-2.html
+    img="/2017/photo_booth/part0-TheMagPi_60"
+    ext=".png"
+    alt="Photo credit: Jonathan Lang Photography"
+    caption="<a href='https://www.raspberrypi.org/magpi-issues/MagPi60.pdf#page=30' target='_blank'>The MagPi, #60</a>"
+    class="medium"
+    caption_placement="top"
+%}
+</div>
+</div>
+
+Thanks to all the above for their support.
+
+## Acknowledgements
+I'd also like to thank the following;
+- The [Ballarat Hackerspace](https://ballarathackerspace.org.au/), and awesome community for their ideas and assistance.
+- [DrumminHands' Photo Booth](http://www.drumminhands.com/2014/06/15/raspberry-pi-photo-booth/) which provided some inspiration for this build.
 
 ## Next article
 For the [next article]({{ "/photo-booth/1" | prepend: site.url }}) in this series, I'll be talking about <strong>the requirements process</strong> that I went through when planning my photo booth.
