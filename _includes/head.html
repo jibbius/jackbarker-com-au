@@ -25,7 +25,7 @@
 
   {% include favicons.html %}
   
-  {% if site.include_google_adwords %}
+  {% if jekyll.environment == 'production' and site.include_google_adsense  %}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
