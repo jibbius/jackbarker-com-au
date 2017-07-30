@@ -1,7 +1,11 @@
 {% assign class='post-image' | append: ' ' | append: include.class %}
 {% assign img_ext=include.ext | default: '.jpg' %}
+{% assign caption_placement=include.caption_placement | default: 'bottom' %}
 
 <figure class="{{class}}">
+    {% if include.caption and caption_placement=='top' %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {% endif %}
     <img
     {% assign img_res=site.img_size.standard_width[0] | append: 'w' %}
     {% assign img_src=site.url | append: site.img_root | append: include.img | append: '-' | append: img_res | append: img_ext %}
@@ -23,7 +27,7 @@
         srcset="{{srcset_all}}"
         sizes="100vw"
     />
-    {% if include.caption %}
+    {% if include.caption and caption_placement=='bottom'%}
     <figcaption>{{ include.caption }}</figcaption>
     {% endif %}
 </figure>
