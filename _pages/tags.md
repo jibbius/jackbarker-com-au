@@ -2,6 +2,7 @@
 layout: default
 title: Tags
 permalink: /tags/
+adverts: disable
 ---
 
 <h2>Tags</h2>

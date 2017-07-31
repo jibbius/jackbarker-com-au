@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+adverts: disable
 ---
 <div class="container">
 
