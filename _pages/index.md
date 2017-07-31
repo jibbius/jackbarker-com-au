@@ -3,6 +3,7 @@ layout: home
 title: Jack Barker
 desc: Hi there! Welcome to Jack Barker's personal blog.
 permalink: /
+adverts: disable
 ---
 
 Hi there!
