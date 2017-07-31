@@ -250,7 +250,9 @@ Once the button is connected we can run a simplified version of our photo booth 
 
 This piece of code doesn't have the full functionality of my finished photo booth, but it contains "just enough" to test out the functionality that we care about and get an idea of how the finished code might look.
 
-The code we are going to run is shown here: [gist.github.com/jibbius/8105081adfc0d6dd7da77cd813c69593](https://gist.github.com/jibbius/8105081adfc0d6dd7da77cd813c69593){:target="_blank"}.
+The code we are going to run is shown here:
+
+<script src="https://gist.github.com/jibbius/8105081adfc0d6dd7da77cd813c69593.js"></script>
 
 Boot up your Raspberry Pi again.
 

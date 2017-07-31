@@ -453,6 +453,10 @@ p.poweredByTL {
 
         &:hover {
             border-bottom: 1px dashed #fff;
+            text-decoration: none;
+        }
+        i {
+            margin-left: 4px;
         }
     }
 }

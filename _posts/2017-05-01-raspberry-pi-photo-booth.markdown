@@ -88,8 +88,8 @@ Thanks to all the above for their support.
 
 ## Acknowledgements
 I'd also like to thank the following;
-- The [Ballarat Hackerspace](https://ballarathackerspace.org.au/), and awesome community for their ideas and assistance.
-- [DrumminHands' Photo Booth](http://www.drumminhands.com/2014/06/15/raspberry-pi-photo-booth/) which provided some inspiration for this build.
+- The [Ballarat Hackerspace](https://ballarathackerspace.org.au/){:target="_blank"}, and awesome community for their ideas and assistance.
+- [DrumminHands' Photo Booth](http://www.drumminhands.com/2014/06/15/raspberry-pi-photo-booth/{:target="_blank"} which provided inspiration for this build.
 
 ## Next article
 For the [next article]({{ "/photo-booth/1" | prepend: site.url }}) in this series, I'll be talking about <strong>the requirements process</strong> that I went through when planning my photo booth.
