@@ -86,12 +86,12 @@ disqus:
 # Build settings
 cache-bust: true
 
-html:
+compress_html:
   clippings: []
   comments: []
   endings: []
   ignore:
-    envs: []
+    envs: ['development']
   blanklines: false
   profile: false
   startings: []
