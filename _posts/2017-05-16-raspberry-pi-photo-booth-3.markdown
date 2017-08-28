@@ -75,11 +75,30 @@ I picked up all of the above from the local hardware store.
 </div><!-- end: column -->
 </div><!-- end: row -->
 
+<div class="image-map">
+
     {% include image-2.html
         img="/2017/photo_booth/tools_part3"
         alt="Parts and Tools for this step"
         caption="Parts and Tools for this step"
     %}
+
+    {% include hotspot.html x="4" y="4" w="180" h="503" title="Wood" %}
+    {% include hotspot.html x="260" y="4" w="220" h="60" title="Hand saw" %}
+    {% include hotspot.html x="240" y="90" w="90" h="60" title="LED screen" %}
+
+    {% include hotspot.html x="260" y="160" w="50" h="40" title="Arcade button" %}
+    {% include hotspot.html x="210" y="210" w="120" h="60" title="PiCamera v2" %}
+
+    {% include hotspot.html x="500" y="30" w="170" h="130" title="Power drill" %}
+    {% include hotspot.html x="500" y="164" w="150" h="92" title="Drill bits" %}
+    {% include hotspot.html x="460" y="164" w="34" h="92" title="Spade bit" %}
+    {% include hotspot.html x="460" y="270" w="190" h="200" title="Jig saw" %}
+
+    {% include hotspot.html x="410" y="280" w="40" h="226" title="Wood file" %}
+    {% include hotspot.html x="374" y="340" w="30" h="166" title="Screwdriver" %}
+
+</div>
 
 ## Build Steps
 

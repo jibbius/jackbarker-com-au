@@ -219,11 +219,9 @@ The photo booth app has more lines of code than makes sense to explore within th
 (And if you're feeling super excited, perhaps you might even want to code up some additional features of your own?).
 
 ## Next article
-For the next article in this series, I'll be talking about <strong>further optimisations</strong> to our Photo Booth's software, namely:
+For the [next article]({{ "/photo-booth/5" | prepend: site.url }}) in this series, I'll be talking about <strong>further optimisations</strong> to our Photo Booth's software, namely:
 
 - Replacing the app's stock images with your own custom ones,
 - Running the photo booth code as soon as the Pi starts up.
-
-{%include todo.html todo="Link to next post"%}
 
 [Subscribe]({{ "/subscribe" | prepend: site.url }}) to my blog to stay informed of my progress.

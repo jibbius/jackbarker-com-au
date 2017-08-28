@@ -1,0 +1,11 @@
+{% assign disable-link = include.disable-link | default: 'false' %}
+<li {% if include.part==include.li %} class="current-post"{% endif %}>
+<span markdown='1'>
+{% if disable-link=='false' %}
+  {% if include.li==0 %}[{{include.title}}]({{ include.group-url | prepend: site.url }}){% if include.part==include.li %} **(this post)** {% endif %}
+  {% else %}Part {{include.li}}: [{{include.title}}]({{ include.group-url | append: include.li | prepend: site.url }}){% if include.part==include.li %} **(this post)** {% endif %}
+  {% endif %}
+{% else %}Part {{include.li}}: {{include.title}}
+{% endif %}
+</span>
+</li>
