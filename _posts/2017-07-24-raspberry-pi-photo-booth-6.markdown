@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Photo Booth (Part 6): Fine-tuning"
-desc: "&#171; Hello, photo! &#187;"
+desc: "Personalising the UI; Adding an autostart script; and more!"
 permalink: /photo-booth/6
 date: 2017-08-28
 author: Jack Barker
@@ -14,7 +14,7 @@ img-ext: ".png"
 ## Overview of Part 6
 In part 6 of this series we'll look at some additional improvements we can make for the photo booth.
 
-### Personalised images
+## Personalised images
 The `assets` directory contains a number of images.
 
 {% include image-2.html
@@ -40,7 +40,7 @@ You can enhance the photo booth experience for your guests by personalising thes
     class="large no-border"
 %}
 
-### Automatically launching the Photo Booth app when the Pi starts
+## Automatically launching the Photo Booth app when the Pi starts
 
 At the moment we need to start the Photo Booth script **manually** after powering on the Raspberry Pi.
 Ideally, however, the script should be run automatically as soon as the Pi starts up.
@@ -53,17 +53,17 @@ To fix this:
 sudo nano /etc/xdg/autostart/autostart_photobooth.desktop
 {% endhighlight %}
 
-- Enter the following file contents...
+- Populate the file with the following content:
 
 {% highlight bash %}
-    [Desktop Entry]
-    Type=Application
-    Name=camera.py
-    Comment=Raspberry Pi Photo Booth 
-    NoDisplay=false
-    Exec=sudo python /home/pi/photo-booth/camera.py
-    NotShowIn=GNOME;KDE;XFCE;
-    Name[en_US]= camera.py
+[Desktop Entry]
+Type=Application
+Name=camera.py
+Comment=Raspberry Pi Photo Booth 
+NoDisplay=false
+Exec=sudo python /home/pi/photo-booth/camera.py
+NotShowIn=GNOME;KDE;XFCE;
+Name[en_US]= camera.py
 {% endhighlight %}
 
 - Save and exit the file (`Ctrl` + `X`).
@@ -79,13 +79,13 @@ sudo mv ~/autostart_photobooth.desktop /etc/xdg/autostart/autostart_photobooth.d
 {% endhighlight %}
 
 
-### Optional Extras
+## Optional Extras
 
 Finally, here are some other ideas that you can add to your own photo booth.
 
 (If you do implement any of these, be sure to let me know via the comments :smile: )
 
-#### Adding a real time clock (Optional extra)
+### Real Time Clock (RTC) module
 
 If your Pi photo booth has internet access, then the Pi's clock will automatically be updated to the correct time upon connecting.
 
@@ -95,7 +95,7 @@ You can choose to rectify this by installing a "Real-time clock" (RTC) module on
 
 You can pick-up this piece of hardware from a local electronic store, or online from your favourite electronics supplier.
 
-#### Adding shutdown button
+### Shutdown button
 
 Turning off the Pi by simply cutting the power can have side effects, specifically: data loss. This is similar to removing a USB stick from your computer without using the "safely eject" menu.
 
@@ -103,7 +103,7 @@ If you find that any of your photos get "corrupted" (usually the last one the wa
 
 There are plenty of tutorials for doing this online and is a great feature to include.
 
-#### Saving photos to the cloud
+### Saving photos to the cloud
 
 Another method to prevent data loss is to backup your photos to the cloud.
 
