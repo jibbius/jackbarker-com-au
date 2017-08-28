@@ -17,7 +17,7 @@ img: "/2017/photo_booth/photoBoothReqs"
 Before we go into the specifics of how I built my Photo Booth, you should begin to think about the features and constraints affecting your (potential) photo booth.
 
 > "Requirements?!
-> <br/> ...typical bleeding Business Analyst!"
+> <br/> ...typical bleeping Business Analyst!"
 
 {% include image-2.html
     img="/2017/photo_booth/photoBoothReqs"

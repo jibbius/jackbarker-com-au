@@ -91,6 +91,11 @@ I'd also like to thank the following;
 - The [Ballarat Hackerspace](https://ballarathackerspace.org.au/){:target="_blank"}, and awesome community for their ideas and assistance.
 - [DrumminHands' Photo Booth](http://www.drumminhands.com/2014/06/15/raspberry-pi-photo-booth/){:target="_blank"} which provided inspiration for parts of this build.
 
+## Remixes
+I love hearing from people that have built their own "photo booth" versions;
+- Eric built [this brilliant photo booth](https://youtu.be/pOE7_-OhYhQ){:target="_blank"}. His version includes an impressive-looking marquee, a video light, and it writes the photos to a USB stick (if connected).
+ 
+
 ## Next article
 For the [next article]({{ "/photo-booth/1" | prepend: site.url }}) in this series, I'll be talking about <strong>the requirements process</strong> that I went through when planning my photo booth.
 
