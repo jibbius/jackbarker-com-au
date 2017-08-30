@@ -10,7 +10,7 @@ adverts: disable
 <div class="column" markdown="1">
 Jack Barker is a Business Analyst, and Coder, based in Melbourne Australia.
 
-By day he works as a BA for **DST Bluedoor Ltd**.
+By day he works as a BA for **DST Systems** on the Bluedoor Wealth Management Platform.
 
 By night he writes code, blogs, and muses on all things technology.
 
