@@ -304,8 +304,9 @@ article.post .post-meta {
  * Abbreviations
 */
 abbr {
-    border-bottom: 1px dotted;
+    // border-bottom: 1px dotted;
     cursor: help;
+    text-decoration: underline dotted;
 }
 
 /*
