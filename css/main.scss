@@ -478,3 +478,19 @@ ul.social-media-list li {
     list-style-type: none;
     margin-left: 0;
 }
+
+/* About page */
+.footnote {
+    background: #edfdff;
+    padding: 12px 6px 6px 6px;
+    font-size: 0.8em;
+    margin-top: 20px;
+
+    h4,
+    ol {
+        margin-left: 6px;
+    }
+    h4 {
+        font-size: 16px;
+    }
+}

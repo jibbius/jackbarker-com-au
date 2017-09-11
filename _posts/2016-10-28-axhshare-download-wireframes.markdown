@@ -4,7 +4,7 @@ title:  "How To Download Wireframe Images from AxShare"
 desc:   "My tutorial on bulk downloading images of wireframes, which have been hosted using Axure's AxShare cloud hosting service."
 date:   2016-10-28
 author: Jack Barker
-tags:   [Axure, hacks]
+tags:   [Axure, hacks, javascript]
 ---
 Here is a guide for bulk downloading images of wireframes, where the wireframes have been hosted using Axure's
 cloud hosting service; AxShare.

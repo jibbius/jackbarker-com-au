@@ -80,7 +80,7 @@ LEDs have a very low resistance - and **as a rule**, you should never connect an
 
 However - **most LED strips will already include the necessary resistors** as part of the strip, which means you don't have to worry.
 
-We can check for the presence of such resistors by attaching the LEDs to a multimeter in resistance mode ({%include ohm.html %}).
+We can check for the presence of such resistors by attaching the LEDs to a multimeter in resistance mode ({%include symbol_ohm.html %}).
 
 {%include todo.html todo="
     <br/>

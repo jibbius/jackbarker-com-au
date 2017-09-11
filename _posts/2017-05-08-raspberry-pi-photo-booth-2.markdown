@@ -5,7 +5,7 @@ desc:   "Breadboarders, assemble!"
 permalink: /photo-booth/2
 date:   2017-05-08
 author: Jack Barker
-tags:   [ Raspberry Pi , hacks ]
+tags:   [ Raspberry Pi , hacks, Python ]
 img: "/2017/photo_booth/1_Breadboarding_2"
 
 ---

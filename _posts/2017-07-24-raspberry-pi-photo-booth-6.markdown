@@ -5,7 +5,7 @@ desc: "Personalising the UI; Adding an autostart script; and more!"
 permalink: /photo-booth/6
 date: 2017-08-28
 author: Jack Barker
-tags: [ Raspberry Pi , hacks, Python ]
+tags: [ Raspberry Pi , hacks ]
 img: "/2017/photo_booth/part6_image_assets"
 img-ext: ".png"
 ---

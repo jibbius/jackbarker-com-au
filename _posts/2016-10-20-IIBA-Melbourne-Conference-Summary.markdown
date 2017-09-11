@@ -68,8 +68,7 @@ In any case, immediate takeaways I took were:
   - 3rd order design (actions / transactions)
   - 4th order design (systems / environments)
   <br>*Note: this model is based on [the work of Richard Buchanan][design-research]{:target="_blank"}*.
-- That often when considering a large problem (i.e. crime), we should resist the urge to jump to obvious solutions (i.e. more police on the
-  street). Instead, targeting a small aspect of the problem with a targeted solution, can be much more effective). 
+- That often when considering a large problem (i.e. crime), we should resist the urge to jump to obvious solutions (i.e. more police on the street). Instead targeting a small aspect of the problem, with a targeted solution, can be much more effective. 
 
 ## Sonia McDonald - Leadership is an Attitude (Closing keynote)
 The final talk of the day, posed the question "what is leadership?".
