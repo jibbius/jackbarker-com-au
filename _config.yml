@@ -45,14 +45,14 @@ header_pages:
 img_root: /images/dist
 img_size:
   banner:
-   w : 600
-   h : 314
+   w : 700
+   h : 366
   banner_2x:
-   w : 1200
-   h : 628
+   w : 1400
+   h : 732
   thumb:
-   w : 1200
-   h : 1200
+   w : 1400
+   h : 1400
   standard_width:
    - 700
    - 1400

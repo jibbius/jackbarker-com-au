@@ -25,7 +25,13 @@
         title="{{ include.alt }}"
 
         srcset="{{srcset_all}}"
-        sizes="100vw"
+
+    {% if class contains "medium" %}
+        {% include image-sizes-medium.html %}
+    {% else%}
+        {% include image-sizes-fullwidth.html %}
+    {% endif %}
+
     />
     {% if include.caption and caption_placement=='bottom'%}
     <figcaption>{{ include.caption }}</figcaption>

@@ -4,7 +4,7 @@ src_instruction_path=./src
 ouput_path=./dist
 
 req_img_widths=( 700 1400 )
-req_img_resolutions=( 1200x1200 600x314 1200x628 )
+req_img_resolutions=( 1400x1400 700x366 1400x732 600x314 )
 
 #Common image sizes:
 # - Twitter / FB "Large" = 600 x 314

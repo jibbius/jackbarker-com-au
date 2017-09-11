@@ -35,9 +35,23 @@
             srcset="
                 {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
                 {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
-            sizes="100vw"
             alt="{{ post.title | escape }}"
+            {% if thecycle == '1of1' %}
+              {% include image-sizes-fullwidth.html %}
+            {% else %}
+              {% include image-sizes-halfwidth.html %}
+            {% endif %}
             >
+        {% else %}
+          {% if post.draft == true %}
+          
+            {% if thecycle == '1of1' %}
+              {% include draft-post-image.html width="full" %}
+            {% else %}
+              {% include draft-post-image.html width="half" %}
+            {% endif %}
+            
+          {% endif %}
         {% endif %}
         </div><!-- end post-list-li -->
     </div><!-- end column -->

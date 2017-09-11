@@ -1,0 +1,24 @@
+{% assign placeholder_url="http://via.placeholder.com" %}
+{% if include.width=="half" %}
+    {% assign textcolor="ffffff" %}
+    {% assign imgcolor="ff0089" %}
+{% else%}
+    {% assign textcolor="ffffff" %}
+    {% assign imgcolor="ad00ff" %}
+{% endif %}
+
+<img
+class="post-image"
+src="{{placeholder_url}}/{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}/{{imgcolor}}/{{textcolor}}"
+srcset="
+{{placeholder_url}}/{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}/{{imgcolor}}/{{textcolor}} {{ site.img_size.banner.w }}w,
+{{placeholder_url}}/{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}/{{imgcolor}}/{{textcolor}} {{ site.img_size.banner_2x.w}}w"
+
+{% if include.width=="half" %}
+    {% include image-sizes-halfwidth.html %}
+{% else%}
+    {% include image-sizes-fullwidth.html %}
+{% endif %}
+
+alt="{{ post.title | escape }}"
+>
