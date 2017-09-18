@@ -67,12 +67,12 @@ I'll be hanging out at the Ballarat outpost of the event, and am excited to see 
 
 <div class="row">
 <div class="column center-text" markdown="1">
-[GovHack.org](https://govhack.org/)
+[GovHack.org](https://govhack.org/){:target="_blank"}
 
 </div><!-- end: column -->
 <div class="column center-text" markdown="1">
 
-[PyCon-au.org](https://pycon-au.org/)
+[PyCon-au.org](https://pycon-au.org/){:target="_blank"}
 
 </div><!-- end: column -->
 </div><!-- end: row -->
