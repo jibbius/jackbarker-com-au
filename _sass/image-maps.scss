@@ -1,9 +1,14 @@
+.image-map{
+    position:relative;
+}
 .hotspot {
     position: absolute;
-    border: 1px solid blue;
 }
-.hotspot:hover {
-    border: 1px solid red;
+.image-map:hover .hotspot {
+    border: 1px solid blue;
+    &:hover {
+        border: 1px solid red;
+    }
 }
 .hotspot + * {
     pointer-events: none;
@@ -18,21 +23,29 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.6);
 }
 .wash-text {
     position: absolute;
     color: red;
     font-size: 16px;
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding:2px; 
 }
-.image-map{
-    position:relative;
+
+@include media-query($on-laptop) {
+    .hotspot,
+    .image-map .hotspot,
+    .wash,
+    .wash-text{
+        display: none;
+    }
 }
 @include media-query($on-palm) {
     .hotspot,
+    .image-map .hotspot,
     .wash,
     .wash-text{
-        display:none;
+        display: none;
     }
 }
