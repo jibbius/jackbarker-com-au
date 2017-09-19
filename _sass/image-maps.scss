@@ -15,9 +15,11 @@
 .hotspot + * {
     pointer-events: none;
     opacity: 0;
+    display: none; // Required by IE (v11)
 }
 .hotspot:hover + * {
     opacity: 1.0;
+    display: block; // Required by IE (v11)
 }
 .wash {
     position: absolute;
