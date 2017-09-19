@@ -90,6 +90,9 @@ I picked up all of the above from the local hardware store.
     {% include hotspot.html x="260" y="160" w="50" h="40" title="Arcade button" %}
     {% include hotspot.html x="210" y="210" w="120" h="60" title="PiCamera v2" %}
 
+    {% include hotspot.html x="374" y="70" w="42" h="66" title="Wood Glue" %}
+    {% include hotspot.html x="420" y="100" w="50" h="50" title="Double-sided tape" %}
+
     {% include hotspot.html x="500" y="30" w="170" h="130" title="Power drill" %}
     {% include hotspot.html x="500" y="164" w="150" h="92" title="Drill bits" %}
     {% include hotspot.html x="460" y="164" w="34" h="92" title="Spade bit" %}
