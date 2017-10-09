@@ -21,10 +21,12 @@ If you want to skip that step, then feel free to jump ahead.
 ## Getting Started with Pi and PiCamera
 To start breadboarding out the photo booth, you will need:
  - A Raspberry Pi
-   - I am version 3 of the Raspberry Pi
-   - I have also tested my code against Pi version 2B (also works fine)
+   - I am using version 3 of the Raspberry Pi
+   - I have also tested my code against;
+     - Pi version 2B (works fine)
+     - Pi zero (works fine)
  - An SD card
-   - I am using a 16Gb card, although smaller cards will probably be fine.
+   - I am using a 16Gb card, smaller cards will also work fine.
  - A Pi Camera
    - I am using PiCamera version 2
    - The earlier version of the camera will also be fine (although fewer megapixels)
@@ -32,14 +34,14 @@ To start breadboarding out the photo booth, you will need:
    - a spare USB phone charger, and
    - a spare micro USB cable
  - Jumper wires
-   - Get a mix of M-M, M-F, and F-F
+   - Get a mix of {% include abbr.html abbr="M-M" full="Male-to-male" %}, {% include abbr.html abbr="M-F" full="Male-to-female" %}, and {% include abbr.html abbr="F-F" full="Female-to-female" %}
  - A momentary push button
    - Later on in the project, we will use a large arcade button w/ LED
    - If you don't have this right now, then you can proceed with a simple momentary switch button, or by just connecting and disconnecting a wire within the circuit
  - A breadboard
  - A keyboard you can borrow, and connect up to the Pi.
  - **Optional materials**:
-   - A raspberry Pi breakout breadboard<br>(you will see that I was using this in a couple of the images below. I should note that for this project, it's overkill and not required)
+   - A raspberry Pi breakout breadboard<br>(you will see that I was using this in a couple of the images below; but, for this project it's overkill and really not required)
 
 
 ## Preparing your Pi
@@ -155,7 +157,9 @@ The impact of these changes is as follows;
  - **hdmi_cvt=800 480 60 6 0 0 0**
    - These are the display settings for our screen: (i.e. 800x480 pixels, 60Hz, 15:9 ratio, no margins, progressive interlace, normal)
 
-These changes will also require us to reboot the Pi.
+To exit the file press `CTRL` + `X`; and then specifying `Y` to save changes.
+
+After making these changes, you should `reboot` the Pi.
 
 If you've made a mistake whilst changing any of these settings, you can boot the Pi in recovery mode (hold the right `SHIFT` key), and then edit the config file (`e`).
 
