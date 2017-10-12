@@ -124,7 +124,7 @@ exclude:
   - win_start_server.bat
   - win_update_gem_versions.bat
 
-gems:
+plugins:
   - jemoji
   - jekyll-sitemap
   - jekyll-feed
