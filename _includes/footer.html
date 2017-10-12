@@ -6,7 +6,7 @@
 
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+
         <ul class="contact-list">
           <li>
             {% if site.author %}
@@ -14,36 +14,44 @@
             {% else %}
               {{ site.title | escape }}
             {% endif %}
-            </li>
+          </li>
+
+          <li>
+            <p>{{ site.description | escape }}</p>
+          </li>
+
             {% if site.mailhide %}
               {% include mailhide.html %}
             {% else %}
               {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
               {% endif %}
             {% endif %}
-        </ul>
-      </div>
 
-      <div class="footer-col footer-col-2">
+        </ul>
+
         <ul class="social-media-list">
           {% if site.github_username %}
-          <li>
+          <li class="social-icon github">
             {% include icon-github.html username=site.github_username %}
           </li>
           {% endif %}
 
           {% if site.twitter_username %}
-          <li>
+          <li class="social-icon twitter">
             {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
+
+          {% if site.linkedin %}
+          <li class="social-icon linkedin">
+            {% include icon-linkedin.html label=site.author url=site.linkedin %}
+          </li>
+          {% endif %}
         </ul>
+
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
-      </div>
     </div>
 
   </div>

@@ -479,7 +479,18 @@ ul.social-media-list li {
     list-style-type: none;
     margin-left: 0;
 }
-
+ul.social-media-list li {
+    display: inline-block;
+}
+ul.social-media-list li span.label {
+    display: none;
+}
+span.icon:hover svg path {
+    fill: black;
+}
+.footer-col-wrapper{
+    margin-left: 0;
+}
 /* About page */
 .footnote {
     background: #edfdff;

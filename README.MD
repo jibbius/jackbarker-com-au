@@ -24,6 +24,7 @@
 
 ## Installing drafts:
 
+- Add bitbucket credentials
 - `git clone git@bitbucket.org:jack_barker/jackbarker-com-au_drafts.git _drafts`
 
 ## Test suite
