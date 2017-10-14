@@ -111,8 +111,6 @@ Dropbox is a great (free) solution to this problem, and can be installed on a Ra
 
 
 ## Next article
-For the next article in this series, I'll be talking about some tips for your <strong>photo booth's debut</strong>, and ideally how to keep your big day "stress free".
-
-{%include todo.html todo="Link to next post"%}
+For the [next article]({{ "/photo-booth/7" | prepend: site.url }}) in this series, I'll be talking about some tips for your <strong>photo booth's debut</strong>, and ideally how to keep your big day "stress free".
 
 [Subscribe]({{ "/subscribe" | prepend: site.url }}) to my blog to stay informed of my progress.
