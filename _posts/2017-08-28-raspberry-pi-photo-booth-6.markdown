@@ -17,12 +17,28 @@ In part 6 of this series we'll look at some additional improvements we can make 
 ## Personalised images
 The `assets` directory contains a number of images.
 
-{% include image-2.html img="/2017/photo_booth/part6_image_assets" ext=".png" alt="Contents of: /photo-booth/assets" caption="Directory contents: /photo-booth/assets" class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/part6_image_assets"
+    ext=".png"
+    alt="Contents of: /photo-booth/assets"
+    caption="Directory contents: /photo-booth/assets"
+    class="medium"
+%}
 These images are used as the different "screens" within the photo booth application.
 
 You can enhance the photo booth experience for your guests by personalising these images;
-{% include image-2.html img="/2017/photo_booth/part6_image_asset_update_one" ext=".png" alt="Personalised image assets (1 of 2)" class="large no-border" %}
-{% include image-2.html img="/2017/photo_booth/part6_image_asset_update_two" ext=".png" alt="Personalised image assets (2 of 2)" class="large no-border" %}
+{% include image-2.html
+    img="/2017/photo_booth/part6_image_asset_update_one"
+    ext=".png"
+    alt="Personalised image assets (1 of 2)"
+    class="large no-border"
+%}
+{% include image-2.html
+    img="/2017/photo_booth/part6_image_asset_update_two"
+    ext=".png"
+    alt="Personalised image assets (2 of 2)"
+    class="large no-border"
+%}
 
 ## Automatically launching the Photo Booth app when the Pi starts
 

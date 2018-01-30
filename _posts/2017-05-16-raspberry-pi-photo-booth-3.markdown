@@ -77,7 +77,11 @@ I picked up all of the above from the local hardware store.
 
 <div class="image-map">
 
-    {% include image-2.html img="/2017/photo_booth/tools_part3" alt="Parts and Tools for this step" caption="Parts and Tools for this step" %}
+    {% include image-2.html
+        img="/2017/photo_booth/tools_part3"
+        alt="Parts and Tools for this step"
+        caption="Parts and Tools for this step"
+    %}
 
     {% include hotspot.html x="4" y="4" w="180" h="503" title="Wood" %}
     {% include hotspot.html x="260" y="4" w="220" h="60" title="Hand saw" %}
@@ -115,7 +119,12 @@ If you look closely you can see the pencil lines that I have ruled to help deter
 You should also **pre-drill your holes** to prevent the wood from splitting.
 Plywood is generally pretty good in this regard (i.e. better than MDF), but better to be safe than sorry.
 
-{% include image-2.html img="/2017/photo_booth/2_Cabinet_1" alt="Photo booth base" caption="The base section of the photo booth." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/2_Cabinet_1"
+    alt="Photo booth base"
+    caption="The base section of the photo booth."
+    class="medium"
+%}
 
 The base of the photo booth is pretty sturdy and heavy (in comparison to the sides).
 This definitely worked in my favour, as it kept the centre of gravity low.
@@ -131,7 +140,12 @@ Note that when pre-drilling your holes, you will want to leave plenty of space t
 
 The metal brackets are, of course, optional.
 
-{% include image-2.html img="/2017/photo_booth/2_Cabinet_5" alt="Photo booth side walls" caption="The photo booth side walls." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/2_Cabinet_5"
+    alt="Photo booth side walls"
+    caption="The photo booth side walls."
+    class="medium"
+%}
 
 ### The Brass Backets
 If you follow the screenshots below, closely, you'll note that I've been attaching some brass brackets to the build.
@@ -161,7 +175,12 @@ Ensure to keep;
 
 Once you have determined the correct position for the screen with the paper guide, trace the shape onto the wood to be cut out.
 
-{% include image-2.html img="/2017/photo_booth/2_Cabinet_6" alt="Cutting the hole for the LED screen" caption="Cutting the hole for the LED screen." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/2_Cabinet_6"
+    alt="Cutting the hole for the LED screen"
+    caption="Cutting the hole for the LED screen."
+    class="medium"
+%}
 
 In the above screenshot I have already attached the front panel, but I would strongly recommend keeping the front panel detached, while drilling and cutting the required holes.
 
@@ -174,7 +193,12 @@ In my case, the hole was slightly too small.
 I spent the next hour with a wood file, gradually increasing the size of the hole, until it fit **exactly**.
 The process was time consuming, however the end result was a perfect fit.
 
-{% include image-2.html img="/2017/photo_booth/2_Cabinet_8" alt="Fits like a glove" caption="LED screen. Fits like a glove." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/2_Cabinet_8"
+    alt="Fits like a glove"
+    caption="LED screen. Fits like a glove."
+    class="medium"
+%}
 
 
 #### Drilling the Holes for the Button and Camera
@@ -183,7 +207,12 @@ I don't have detailed instructions for this part, but essentially you just need 
 The button includes a threaded shaft, and plastic nut.
 It affixes to the front panel pretty easily.
 
-{% include image-2.html img="/2017/photo_booth/3_Lights_1" alt="Finished front panel, getting ready to attach the LED lights" caption="Finished front panel. Getting ready to attach the LED lights <br> (the lights will get discussed in a future post)." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/3_Lights_1"
+    alt="Finished front panel, getting ready to attach the LED lights"
+    caption="Finished front panel. Getting ready to attach the LED lights <br> (the lights will get discussed in a future post)."
+    class="medium"
+%}
 
 The camera needs to be attached to the back of the panel, to line up with the hole you have drilled.
 
@@ -193,7 +222,12 @@ This isn't entirely necessary however, as I am sure you can come up with other m
 I've also attached my Raspberry Pi (inside it's case) to the back of this panel, using double-sided tape.
 
 
-{% include image-2.html img="/2017/photo_booth/4_Wiring_4" alt="Back of the cabinet" caption="Back of the cabinet<br>(I'll explain the lights and wiring shortly)." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/4_Wiring_4"
+    alt="Back of the cabinet"
+    caption="Back of the cabinet<br>(I'll explain the lights and wiring shortly)."
+    class="medium"
+%}
 
 ### The Flash Diffuser
 The final piece of wood that I cut was a "flash diffuser" (I will be discussing the LEDs in detail later).
@@ -203,7 +237,12 @@ However, when I was installing the lights, I found that "direct light" off of th
 By "hacking" a grooved angle into an additional piece of wood (off which the light would then bounce), the comfort was improved substantially.
 
 
-{% include image-2.html img="/2017/photo_booth/3_Lights_4" alt="Close up of the flash diffuser" caption="Close up of the flash diffuser." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/3_Lights_4"
+    alt="Close up of the flash diffuser"
+    caption="Close up of the flash diffuser."
+    class="medium"
+%}
 
 This completes the woodwork section of the build.
 

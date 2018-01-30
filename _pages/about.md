@@ -21,7 +21,10 @@ On weekends you can find him at the **Ballarat Hackerspace** or taking on the tr
 </div><!--end column-->
 <div class="column">
 <div class="container img-container"  markdown="1">
-{% include image-2.html img="/2017/JackBarker" alt="Jack Barker" %}
+{% include image-2.html
+    img="/2017/JackBarker"
+    alt="Jack Barker"
+%}
 </div><!--end img-container-->
 </div><!--end column-->
 </div><!--end row-->
