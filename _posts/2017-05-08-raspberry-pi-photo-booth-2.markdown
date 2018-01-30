@@ -72,12 +72,7 @@ Alternatively, you can access a similar set of options via the command line (usi
   - Make sure you click `Change password`
   <br>(Even though "it's only a Pi", it's **never** a good idea to keep using the default password `raspberry`).
 
-{% include image-2.html
-    img="/2017/photo_booth/part2-pi_config_system"
-    ext=".png"
-    alt="Raspberry Pi Config: System"
-    class="medium"
-%}
+{% include image-2.html img="/2017/photo_booth/part2-pi_config_system" ext=".png" alt="Raspberry Pi Config: System" class="medium" %}
 
 - Within **Interfaces**;
   - You must enable 'Camera'.
@@ -85,24 +80,14 @@ Alternatively, you can access a similar set of options via the command line (usi
     - 'VNC', which lets you remotely connect to the Pi from another computer (after downloading the **RealVNC Viewer** _client_ application, onto another computer).
     - 'SSH', which allows you to connect remotely to the pi via an SSH terminal. This is an option for advanced users, and not required for this tutorial.
 
-{% include image-2.html
-    img="/2017/photo_booth/part2-pi_config_interfaces"
-    ext=".png"
-    alt="Raspberry Pi Config: Interfaces"
-    class="medium"
-%}
+{% include image-2.html img="/2017/photo_booth/part2-pi_config_interfaces" ext=".png" alt="Raspberry Pi Config: Interfaces" class="medium" %}
 
 - Within **Localisation**;
   - By default, your Pi is probably configured to use a UK **Keyboard**.
   - If your keyboard doesn't have a pound key (£) on it, then you probably need to switch to a US keyboard (or whichever keyboard is appropriate to you).
   - It's also worth changing your **Locale**, **Timezone**, and **WiFi country** while here.
 
-{% include image-2.html
-    img="/2017/photo_booth/part2-pi_config_localisation"
-    ext=".png"
-    alt="Raspberry Pi Config: Localisation"
-    class="medium"
-%}
+{% include image-2.html img="/2017/photo_booth/part2-pi_config_localisation" ext=".png" alt="Raspberry Pi Config: Localisation" class="medium" %}
 
 Click `OK`, to save.
 
@@ -241,13 +226,7 @@ Once the button is attached we can safely boot up the Pi again.
 
 Connect your button to the Pi, as follows:
 
-{% include image-2.html
-    img="/2017/photo_booth/part2_photo_booth_camera_test_circuit"
-    ext=".png"
-    alt="wiring diagram"
-    caption="Photo booth: Wiring diagram."
-    class="more-padding large"
-%}
+{% include image-2.html img="/2017/photo_booth/part2_photo_booth_camera_test_circuit" ext=".png" alt="wiring diagram" caption="Photo booth: Wiring diagram." class="more-padding large" %}
 
 ## Running a "Test app"
 Once the button is connected we can run a simplified version of our photo booth code.
@@ -278,12 +257,7 @@ python simple-photo-booth.py
 
 Press the button to test the code.
 
-{% include image-2.html
-    img="/2017/photo_booth/1_Breadboarding_2"
-    alt="Testing the photo booth components"
-    caption="Testing the photo booth components"
-    class="large"
-%}
+{% include image-2.html img="/2017/photo_booth/1_Breadboarding_2" alt="Testing the photo booth components" caption="Testing the photo booth components" class="large" %}
 
 To exit the **simple photo booth** app, press `ctrl` + `c`.
 
