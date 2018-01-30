@@ -3,13 +3,29 @@
 
 ## Pre-requisites:
 
-- Ruby (v2.0.0 or higher)
+- Ruby ( >= v2.0.0 , < 2.5 )
+- Python ( v2.7.x )
+
+In Windows, you can install the Chocolatey package manager (and subsequently, Ruby + Python2), via the following Powershell command (must be run with Administrator privileges):
+
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+Then:
+
+    choco install ruby --version 2.4.3.1
+    choco install Python2
 
 ## Installation:
 
+- Execute: `gem install bundler`
 - Execute: `bundle install`
 - Execute: `bundle update` (also run to update Jekyll where required)
 
+## Troubleshooting installation
+If confronted with the following error in when attempting to run `bundle install` PowerShell, *MSYS2 could not be found. Please run 'ridk install'*, then:
+- Execute: `Set-ExecutionPolicy -Scope CurrentUser`
+- Specify: `remotesigned`, and select `[A] Yes to All`
+- Execute: `ridk install`
 
 ## Run locally:
 
