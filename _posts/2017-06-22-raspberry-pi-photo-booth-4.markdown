@@ -54,7 +54,11 @@ We will need the following parts and tools (in addition to the photo booth cabin
 </div><!-- end: row -->
 </div><!-- end: container -->
 
-{% include image-2.html img="/2017/photo_booth/tools_part4" alt="Parts and Tools for this step" caption="Parts and Tools for this step" %}
+{% include image-2.html
+    img="/2017/photo_booth/tools_part4"
+    alt="Parts and Tools for this step"
+    caption="Parts and Tools for this step"
+%}
 
 ## The Lights
 ### Intro to LED strips
@@ -65,16 +69,27 @@ Common to all LED strips are **dotted line markings** which will occur at variou
 
 Measure the width of the photo booth, and cut the strip at the appropriate length.
 
-{% include image-2.html img="/2017/photo_booth/LED_strip_close_up" alt="The dotted lines indicate where you can cut the strip into smaller segments" caption="The dotted lines indicate where you can cut the strip into smaller segments." %}
+{% include image-2.html
+    img="/2017/photo_booth/LED_strip_close_up"
+    alt="The dotted lines indicate where you can cut the strip into smaller segments"
+    caption="The dotted lines indicate where you can cut the strip into smaller segments."
+%}
 
 ### Checking the electrical resistance of the LED strip
 LEDs have a very low resistance - and **as a rule**, you should never connect an LED directly to a power supply without the inclusion of a resistor within the circuit.
 
 However - **most LED strips will already include the necessary resistors** as part of the strip, which means you don't have to worry.
 
-We can check for the presence of such resistors by attaching the LEDs to a multimeter in resistance mode ({% include symbol_ohm.html %}).
+We can check for the presence of such resistors by attaching the LEDs to a multimeter in resistance mode ({%include symbol_ohm.html %}).
 
-{% include todo.html todo="<br/>Here is how to test the circuit:<br/>(Photo: Multimeter test circuit)<br/>If the multimeter displays a value that is similar to mine (or larger), then it will be safe to connect the LED strip directly to your 12v power supply."%}
+{%include todo.html todo="
+    <br/>
+    Here is how to test the circuit:
+    <br/>
+    (Photo: Multimeter test circuit)
+    <br/>
+    If the multimeter displays a value that is similar to mine (or larger), then it will be safe to connect the LED strip directly to your 12v power supply.
+"%}
 
 ### A quick LED test
 You should always get in the habit of testing your circuits early.
@@ -82,7 +97,13 @@ You should always get in the habit of testing your circuits early.
 In this case, we should test that our LED strip lights up when connected to power.
 This will also allow you to determine the lights' brightness, which may influence your design.
 
-{% include todo.html todo="<br/>Here's the circuit I ran to test my lights:<br/>**Photo**: Lighting the strip<br/>"%}
+{%include todo.html todo="
+    <br/>
+    Here's the circuit I ran to test my lights:
+    <br/>
+    **Photo**: Lighting the strip
+    <br/>
+"%}
 
 If your lights don't illuminate, check that you have the +ve and -ve connected to the correct terminals.
 
@@ -92,7 +113,12 @@ Based on the brightness of my lights, I was keen to ensure that the LED Lights w
 
 Regardless of your decision in this regard, you will need to drill a hole that will allow your hookup wires to connect up with the rest of the circuit.
 
-{% include image-2.html img="/2017/photo_booth/3_Lights_1" alt="The mounting position for the lights." caption="The mounting position for the lights." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/3_Lights_1"
+    alt="The mounting position for the lights."
+    caption="The mounting position for the lights."
+    class="medium"
+%}
 
 ### Attaching some hookup wires
 Attach some hookup wires to your LED strip.
@@ -114,11 +140,16 @@ This step should be relatively simple.
 - Remove the sticky adhesive from the back of the light strip, and attach to the booth.
 
 
-{% include image-2.html img="/2017/photo_booth/3_Lights_4" alt="Close up of the flash diffuser" caption="Close up of the mounted lights (and flash diffuser)."  lass="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/3_Lights_4"
+    alt="Close up of the flash diffuser"
+    caption="Close up of the mounted lights (and flash diffuser)."
+    class="medium"
+%}
 
 My light strip refused to stay flat against the booth, particularly where the hookup wires were attached. I fixed this with some wood glue, and clamping the stubborn section until the glue dried.
 
-{% include todo.html todo="**Photo**: Diagram of clamp technique"%}
+{%include todo.html todo="**Photo**: Diagram of clamp technique"%}
 
 ## Wiring the Booth
 ### Version 1: The "Power Board Method"
@@ -126,11 +157,22 @@ For the first version, I relied on multiple power adapters to provide each of th
 
 Note that (in my photo booth) the LEDs in both the arcade button &amp; and LED strip include resistors which allow them to safely operate at 12v (your parts may vary).
 
-{% include image-2.html img="/2017/photo_booth/photo_booth_power_board" ext=".png" alt="wiring diagram" caption="Photo booth: Wiring diagram." class="more-padding" %}
+{% include image-2.html
+    img="/2017/photo_booth/photo_booth_power_board"
+    ext=".png"
+    alt="wiring diagram"
+    caption="Photo booth: Wiring diagram."
+    class="more-padding"
+%}
 
 Rigged up in the wooden cabinet, the circuit looks like this:
 
-{% include image-2.html img="/2017/photo_booth/4_Wiring_1" alt="Finished product" caption="Finished product" class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/4_Wiring_1"
+    alt="Finished product"
+    caption="Finished product"
+    class="medium"
+%}
 
 ### Version 2: A Single Power Source
 The circuit design can be improved so as to include only one power source.

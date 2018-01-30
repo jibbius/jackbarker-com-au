@@ -18,16 +18,31 @@ img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
 
 {%include todo.html todo="Include Youtube video"%}
 
-{% include image-2.html img="/2017/photo_booth/0_FinishedBooth_2b" alt="My kickass photo booth!" caption="Weddings, Parties, Anything: My kickass photo booth!" class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/0_FinishedBooth_2b"
+    alt="My kickass photo booth!"
+    caption="Weddings, Parties, Anything: My kickass photo booth!"
+    class="medium"
+%}
 
 ## Back story
 Last weekend, I had an absolute blast at my wedding.
 
 So too, apparently, did my guests - who absolutely loved taking shots with the photo booth!
 
-{% include image-2.html img="/2017/photo_booth/JWLPhotography_201704152105_LANG1749" alt="Photo credit: Jonathan Lang Photography" caption="Photo credit: <a href='http://jonathanlangphotography.com.au/' target='_blank'>Jonathan Lang Photography</a>." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/JWLPhotography_201704152105_LANG1749"
+    alt="Photo credit: Jonathan Lang Photography"
+    caption="Photo credit: <a href='http://jonathanlangphotography.com.au/' target='_blank'>Jonathan Lang Photography</a>."
+    class="medium"
+%}
 
-{% include image-2.html img="/2017/photo_booth/JWLPhotography_201704152106_LANG1753" alt="Photo credit: Jonathan Lang Photography" caption="Photo credit: <a href='http://jonathanlangphotography.com.au/' target='_blank'>Jonathan Lang Photography</a>." class="medium" %}
+{% include image-2.html
+    img="/2017/photo_booth/JWLPhotography_201704152106_LANG1753"
+    alt="Photo credit: Jonathan Lang Photography"
+    caption="Photo credit: <a href='http://jonathanlangphotography.com.au/' target='_blank'>Jonathan Lang Photography</a>."
+    class="medium"
+%}
 
 
 ## Where can I see the code?
@@ -48,10 +63,24 @@ My photo booth is unique for the following reasons;
 Since writing about my photo booth, it's been featured in the following publications:
 <div class="row">
 <div class="column">
-{% include image-2.html img="/2017/photo_booth/part0-DIYODE_1" ext=".png" alt="Photo credit: Jonathan Lang Photography" caption="<a href='https://diyodemag.com/features/pi_booth/' target='_blank'>DIYODE, #1</a>" class="medium" caption_placement="top" %}
+{% include image-2.html
+    img="/2017/photo_booth/part0-DIYODE_1"
+    ext=".png"
+    alt="Photo credit: Jonathan Lang Photography"
+    caption="<a href='https://diyodemag.com/features/pi_booth/' target='_blank'>DIYODE, #1</a>"
+    class="medium"
+    caption_placement="top"
+%}
 </div>
 <div class="column" markdown="1">
-{% include image-2.html img="/2017/photo_booth/part0-TheMagPi_60" ext=".png" alt="Photo credit: Jonathan Lang Photography" caption="<a href='https://www.raspberrypi.org/magpi-issues/MagPi60.pdf#page=30' target='_blank'>The MagPi, #60</a>" class="medium" caption_placement="top" %}
+{% include image-2.html
+    img="/2017/photo_booth/part0-TheMagPi_60"
+    ext=".png"
+    alt="Photo credit: Jonathan Lang Photography"
+    caption="<a href='https://www.raspberrypi.org/magpi-issues/MagPi60.pdf#page=30' target='_blank'>The MagPi, #60</a>"
+    class="medium"
+    caption_placement="top"
+%}
 </div>
 </div>
 

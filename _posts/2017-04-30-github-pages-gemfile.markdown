@@ -3,13 +3,17 @@ layout: post
 title:  "Working Offline with Github Pages"
 desc:   "How (not) to tailor your Gemfile, to ensure your local Jekyll environment uses Github Pages' plugin versions even when offline."
 date:   2017-04-30
-last-modified: 2017-05-08 00:00:00
+last-modified: 2017-05-08
 author: Jack Barker
 tags:   [ Jekyll, Github Pages, hacks ]
 img: "/2017/gemfile2"
 ---
 
-{% include update.html heading="Update - 8 May 2017" text="Whilst the below is a novel solution to this problem, I have since found a far simpler solution (discussed at the end of the article). There are merits for each, and it provides for interesting discussion. Have a read and judge for yourself?" %}
+{%include update.html
+heading="Update - 8 May 2017"
+text="Whilst the below is a novel solution to this problem, I have since found a far simpler solution (discussed at the end of the article). There are merits for each, and it provides for interesting discussion.
+Have a read and judge for yourself?"
+%}
 
 ## The Problem
 When you run a (Jekyll) GitHub pages site locally, how do you ensure that you are using the same gems (plugins) and versions as will be used on GitHub?
@@ -161,7 +165,10 @@ gem 'guard-livereload'
 {% endhighlight %}
 
 ## An even simpler solution?
-{% include update.html heading="Update - 8 May 2017" text="Per earlier comment, I came across this simpler solution after posting the original article." %}
+{%include update.html
+heading="Update - 8 May 2017"
+text="Per earlier comment, I came across this simpler solution after posting the original article."
+%}
 It's actually possible to completely ignore this entire post, and instead make sure that you are running Jekyll via: `bundle exec jekyll serve` instead of `jekyll serve`.
 
 But, you also need to make sure that you are:
@@ -176,13 +183,17 @@ Interestingly, the two solutions work in a very similar same way, ie;
  - Both solutions write a file to the project directory (versions.json / Gemfile.lock), listing out the gem versions that were utilised within the previous successful build.
  - The files even look loosely the same:
 
-{% include image-2.html img="/2017/compare-versions-json-gemfile-lock" alt="Gemfile.lock versus Versions.json" caption="<strong>Gemfile.lock</strong> versus <strong>Versions.json</strong>" %}
+{% include image-2.html
+    img="/2017/compare-versions-json-gemfile-lock"
+    alt="Gemfile.lock versus Versions.json"
+    caption="<strong>Gemfile.lock</strong> versus <strong>Versions.json</strong>"
+%}
 
 As I alluded to at the start of the article; the **Bundler** solution **is** somewhat simpler and clearly more widely recognised. It also tracks changes to your local environment's other Jekyll dependencies. For these reasons it is currently the solution I would recommend.
 
 A further argument is that the development tenant "{% include abbr.html abbr="DRY" full="Don't Repeat Yourself" %}", can be extended to encompass "Don't Repeat Your Framework". Clearly the custom solution above breaches this.
 
-That said; **Bundler** does require you to run `bundle update` (and you must remember to do this regularly), whereas my **custom** _(read as: "proceed with caution")_ solution doesn't require you to do this. For this reason, I'm leaving this post here as food for thought.
+That said; **Bundler** does require you to run `bundle update` (and you must remember to do this regularly), whereas my **custom** _(read as: "proceed with caution"_) solution doesn't require you to do this. For this reason, I'm leaving this post here as food for thought.
 
 Comments (constructive) are welcome :smile:.
 

@@ -9,11 +9,15 @@ img: "/2016/IIBA_day_gear"
 img-thumb: "/2016/IIBA_day_gear"
 ---
 
-Yesterday, I attended the {% include abbr.html abbr="IIBA's" full="International Institute of Business Analysis" %} **Business Analysis Professional Day** in Melbourne.
+Yesterday, I attended the {% include abbr.html abbr="IIBA" full="International Institute of Business Analysis" %}'s **Business Analysis Professional Day** in Melbourne.
 
 The day had some excellent talks and workshops, all of which left me with plenty to muse upon after the event.
 
-{% include image-2.html img="/2016/IIBA_day_gear" alt="Geared up and ready!" caption="Geared up and ready; for the IIBA's <em>Business Analysis Professional Day</em> 2016!" %}
+{% include image-2.html
+    img="/2016/IIBA_day_gear"
+    alt="Geared up and ready!"
+    caption="Geared up and ready; for the IIBA's <em>Business Analysis Professional Day</em> 2016!"
+%}
 
 ## Rita Panahi - Good Thinking (Keynote)
 Rita provided a fantastic introduction to the event.
