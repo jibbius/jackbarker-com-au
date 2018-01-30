@@ -18,12 +18,7 @@ I am super excited to see the following in my calendar this month;
 #### Australia-wide
 ##### July 28th to 30th
 
-{% include image-2.html
-    img="/2017/govhack_logo"
-    ext=".png"
-    alt="GovHack Logo"
-    class="medium no-border"
-%}
+{% include image-2.html img="/2017/govhack_logo" ext=".png" alt="GovHack Logo" class="medium no-border" %}
 
 </div><!-- end: column -->
 <div class="column center-text" markdown="1">
@@ -32,12 +27,7 @@ I am super excited to see the following in my calendar this month;
 #### Melbourne
 ##### August 3rd to 8th
 
-{% include image-2.html
-    img="/2017/pycon_logo"
-    ext=".png"
-    alt="PyCon AU logo"
-    class="medium no-border"
-%}
+{% include image-2.html img="/2017/pycon_logo" ext=".png" alt="PyCon AU logo" class="medium no-border" %}
 
 </div><!-- end: column -->
 </div><!-- end: row -->

@@ -40,13 +40,7 @@ git clone https://github.com/jibbius/raspberry_pi_photo_booth.git ~/photo-booth
 
 The above will create a new directory (`/home/pi/photo-booth/`), and then download the *Raspberry Pi Photo Booth* code, for you to use.
 
-{% include image-2.html
-    img="/2017/photo_booth/part5-git-clone-photo-booth"
-    ext=".png"
-    alt="Downloading the code with 'git clone'"
-    caption="Downloading the code with 'git clone'"
-    class="large"
-%}
+{% include image-2.html img="/2017/photo_booth/part5-git-clone-photo-booth" ext=".png" alt="Downloading the code with 'git clone'" caption="Downloading the code with 'git clone'" class="large" %}
 
 ## Getting the code to run
 Now that the code has downloaded, we can open up Python and run the Photo Booth code.
@@ -57,32 +51,16 @@ _Note:_
 
 - _My code is also compatible with `Python 2`, but `Python 3` is currently recommended._
 
-{% include image-2.html
-    img="/2017/photo_booth/part5-python-3-idle"
-    ext=".png"
-    alt="Locating the Python 3 GUI in Raspian"
-    caption="Locating the Python 3 GUI in Raspian"
-    class="large"
-%}
+{% include image-2.html img="/2017/photo_booth/part5-python-3-idle" ext=".png" alt="Locating the Python 3 GUI in Raspian" caption="Locating the Python 3 GUI in Raspian" class="large" %}
 
 Within the Python GUI, you can then the code we downloaded via `File`&gt;`Open`.
 
 Within `/home/pi/photo-booth`, locate and open `camera.py`: 
 
-{% include image-2.html
-    img="/2017/photo_booth/part5-open-python-3"
-    ext=".png"
-    alt="Opening camera.py"
-    class="medium"
-%}
+{% include image-2.html img="/2017/photo_booth/part5-open-python-3" ext=".png" alt="Opening camera.py" class="medium" %}
 
 We can then run the code via `File`&gt;`Run Module`:
-{% include image-2.html
-    img="/2017/photo_booth/part5-run-module"
-    ext=".png"
-    alt="Run module"
-    class="large"
-%}
+{% include image-2.html img="/2017/photo_booth/part5-run-module" ext=".png" alt="Run module" class="large" %}
 
 ## Examining the code
 ### Looking under the hood

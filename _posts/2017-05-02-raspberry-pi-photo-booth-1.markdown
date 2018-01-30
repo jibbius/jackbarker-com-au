@@ -19,12 +19,7 @@ Before we go into the specifics of how I built my Photo Booth, you should begin 
 > "Requirements?!
 > <br/> ...typical bleeping Business Analyst!"
 
-{% include image-2.html
-    img="/2017/photo_booth/photoBoothReqs"
-    alt="Planning"
-    caption="Make sure you are clear of your photo booth's requirements, before delving too far into the design."
-    class="medium"
-%}
+{% include image-2.html img="/2017/photo_booth/photoBoothReqs" alt="Planning" caption="Make sure you are clear of your photo booth's requirements, before delving too far into the design." class="medium" %}
 
 ### How will the booth be powered?
 For the photo booth I built, I needed the following;
