@@ -30,13 +30,13 @@ You can enhance the photo booth experience for your guests by personalising thes
 {% include image-2.html
     img="/2017/photo_booth/part6_image_asset_update_one"
     ext=".png"
-    alt=""
+    alt="Personalised image assets (1 of 2)"
     class="large no-border"
 %}
 {% include image-2.html
     img="/2017/photo_booth/part6_image_asset_update_two"
     ext=".png"
-    alt=""
+    alt="Personalised image assets (2 of 2)"
     class="large no-border"
 %}
 
