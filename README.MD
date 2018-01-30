@@ -20,7 +20,9 @@
 ## Live reload support (not supported by Windows... yet?):
 
 - Install Livereload plugin for Chrome
-- Execute: `guard`
+- Execute (Windows only): `gem install win32console`
+- Execute: `bundler exec guard`
+
 
 ## Installing drafts:
 
