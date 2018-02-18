@@ -1,0 +1,11 @@
+[
+ { "name" : "Customer", "parent" : "null" }
+,{ "name" : "Surname", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Address", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Street Number", "parent" : "Address", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Street Name", "parent" : "Address", "dataType" : "", "occurrence" : ""}
+,{ "name" : "State", "parent" : "Address", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Suburb", "parent" : "Address", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Account", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Account Number", "parent" : "Account", "dataType" : "", "occurrence" : ""}
+]
