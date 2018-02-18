@@ -44,7 +44,8 @@
 <script>
 var data=[
  { "name" : "Customer", "parent" : "null" }
-,{ "name" : "First name", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Customer ID", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Given name", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
 ,{ "name" : "Surname", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
 ,{ "name" : "Address", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
 ,{ "name" : "Street Number", "parent" : "Address", "dataType" : "", "occurrence" : ""}
@@ -52,7 +53,7 @@ var data=[
 ,{ "name" : "State", "parent" : "Address", "dataType" : "", "occurrence" : ""}
 ,{ "name" : "Suburb", "parent" : "Address", "dataType" : "", "occurrence" : ""}
 ,{ "name" : "Account", "parent" : "Customer", "dataType" : "", "occurrence" : ""}
-,{ "name" : "Account Number", "parent" : "Account", "dataType" : "", "occurrence" : ""}
+,{ "name" : "Account ID", "parent" : "Account", "dataType" : "", "occurrence" : ""}
 ,{ "name" : "Account Type", "parent" : "Account", "dataType" : "", "occurrence" : ""}
 ];
 
@@ -73,8 +74,8 @@ function makeTree(treeData) {
     var root;
 
     // size of the diagram
-    var viewerWidth = $(document).width();
-    var viewerHeight = $(document).height();
+    var viewerWidth = Math.min( 680 , $(document).width()-20 );
+    var viewerHeight = Math.min( 200 , $(document).height()/2 );
 
     var tree = d3.layout.tree()
         .size([viewerHeight, viewerWidth]);
@@ -367,6 +368,19 @@ function makeTree(treeData) {
         zoomListener.translate([x, y]);
     }
 
+    function centerNodeAlt(source) {
+        scale = zoomListener.scale();
+        x = -source.y0;
+        y = -source.x0;
+        x = x * scale + viewerWidth / 4;
+        y = y * scale + viewerHeight / 2;
+        d3.select('g').transition()
+            .duration(duration)
+            .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
+        zoomListener.scale(scale);
+        zoomListener.translate([x, y]);
+    }
+
     // Toggle children function
 
     function toggleChildren(d) {
@@ -572,7 +586,7 @@ function makeTree(treeData) {
 
     // Layout the tree initially and center on the root node.
     update(root);
-    centerNode(root);
+    centerNodeAlt(root);
 };
 
 
