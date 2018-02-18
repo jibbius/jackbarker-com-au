@@ -63,6 +63,7 @@ include_font_awesome: false #Used for icons: 'tag', 'drafts'.
 logo: /favicons/favicon_400x400.png
 twitter_username: jackbarker
 github_username:  jibbius
+linkedin_username: jackbarker1
 linkedin:  https://au.linkedin.com/in/jackbarker1
 mailhide:
   token: http://www.google.com/recaptcha/mailhide/d?k=01-sBNq2eC9n-vtrDvcD6OFA==&c=NLYXbMiWVrSGpjrhDXi-Vg-fye9Rr2HCkeUuiWUphmI=
