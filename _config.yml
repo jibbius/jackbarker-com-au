@@ -37,6 +37,7 @@ header_pages:
   - '_pages/blog_index.md'
   - '_pages/tags.md'
   - '_pages/about.md'
+  - '_pages/donate.md'
   - '_pages/subscribe.md'
 
 # ImageSizes
