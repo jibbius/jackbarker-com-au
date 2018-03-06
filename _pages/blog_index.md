@@ -2,6 +2,7 @@
 layout: page
 permalink: /blog/
 title: Latest Posts
+nav_title: Blog
 adverts: disable
 ---
 
