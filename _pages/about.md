@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+desc: About the blog's author Jack
 adverts: disable
 ---
 <div class="container">

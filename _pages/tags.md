@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tags
+desc: Blog posts ordered by Category
 permalink: /tags/
 adverts: disable
 ---
