@@ -17,9 +17,9 @@ function fileExists()
     if
         test -n "$(find ${dirname} -maxdepth 1 -name ${filename} -print -quit)"
     then
-        echo True
+        return 0
     else
-        echo False
+        return 1
     fi
 }
 
