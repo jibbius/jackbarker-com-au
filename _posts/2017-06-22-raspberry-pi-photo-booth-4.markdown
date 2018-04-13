@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Photo Booth (Part 4):  Wiring up the Circuit"
-desc:   "( and adding the LED lights )"
+title: "Photo Booth (Part 4):  Wiring up the Circuit"
+desc: "( and adding the LED lights )"
 permalink: /photo-booth/4
-date:   2017-06-22
+date: 2017-06-22
 author: Jack Barker
-tags:   [ Raspberry Pi , hacks, electronics ]
-img:       "/2017/photo_booth/photo_booth_power_board"
-img-ext: '.png'
+tags: [ Raspberry Pi , hacks, electronics ]
+img: "/2017/photo_booth/photo_booth_power_board"
+img-ext: ".png"
 ---
 
 {% include multi-post-photo-booth.html part=4 %}
