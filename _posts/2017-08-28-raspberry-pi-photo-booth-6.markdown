@@ -101,14 +101,17 @@ Turning off the Pi by simply cutting the power can have side effects, specifical
 
 If you find that any of your photos get "corrupted" (usually the last one the was saved), then installing a shutdown button is one method to correct this.
 
-There are plenty of tutorials for doing this online and is a great feature to include.
+There are [plenty of tutorials](https://www.raspberrypi.org/magpi/off-switch-raspberry-pi/){:target="_blank"} for doing this online and is a great feature to include.
+
+My code actually includes an "Exit app" feature if you attach a button across GPIO pin 13 and ground (which can also be used to avoid corrupting images).
 
 ### Saving photos to the cloud
 
 Another method to prevent data loss is to backup your photos to the cloud.
 
-Dropbox is a great (free) solution to this problem, and can be installed on a Raspberry Pi without difficulty.
+Dropbox is a great (free) solution to this problem, and can be installed on a Raspberry Pi - albeit with some challenge.
 
+We'll be looking at this further in **part 8**, but there are some other ways to do this described [here](https://www.raspberrypi.org/magpi/dropbox-raspberry-pi/){:target="_blank"}.
 
 ## Next article
 For the [next article]({{ "/photo-booth/7" | prepend: site.url }}) in this series, I'll be talking about some tips for your <strong>photo booth's debut</strong>, and ideally how to keep your big day "stress free".

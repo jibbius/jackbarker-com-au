@@ -126,7 +126,13 @@ screen_w = 800      # resolution of the photo booth display
 screen_h = 480
 {% endhighlight %}
 
-You can modify any of the values above, to adjust the behaviour of the photo booth.
+{% include callout.html callout="
+Update (April 2018):
+ - The photo booth is now version 2.
+ - The **Configurable options** are now defined within **config.yaml** instead (otherwise, the behaviour is the same).
+ " %}
+
+You can modify any of the values above to adjust the behaviour of the photo booth.
 
 Additional configuration applies when initialising the camera:
 

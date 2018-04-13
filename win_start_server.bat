@@ -11,9 +11,9 @@ REM ------------
 start bundle exec jekyll serve -D
 
 REM -----------------------------------------------
-REM Live-reload is not supported for windows (yet).
+REM LiveReloadX
 REM -----------------------------------------------
-REM start bundle exec guard
+start livereloadx _site
 
 REM ------------
 REM Open Browser
