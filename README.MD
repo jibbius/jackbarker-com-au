@@ -29,16 +29,27 @@ If confronted with the following error in when attempting to run `bundle install
 
 ## Run locally:
 
-- Execute: `bundle exec jekyll serve` (or `bundle exec jekyll serve -D` to include 'Draft' content)
+- Execute: `bundler exec jekyll serve` (or `bundler exec jekyll serve -D` to include 'Draft' content)
 - Preview your local Jekyll site in your web browser at [localhost:4000](http://localhost:4000).
 
 
 ## Live reload support (not supported by Windows... yet?):
 
 - Install Livereload plugin for Chrome
-- Execute (Windows only): `gem install win32console`
 - Execute: `bundler exec guard`
 
+## LiveReloadX (including Windows support):
+
+ - Install node from command prompt (w/ admin privileges): `choco install nodejs`
+ - Reopen command prompt
+ - Run: `npm install -g livereloadx`
+ - Install the applicable [Browser Extension](http://livereload.com/extensions/)
+
+ Once installed, run the following command in the project directory:
+
+ - `livereloadx _site`
+
+Further command line options are described within the [LiveReloadX documentation](http://nitoyon.github.io/livereloadx/).
 
 ## Installing drafts:
 
@@ -72,3 +83,6 @@ To install imagemagick within WSL (Windows Subsystem for Linux):
 Then, to compile images:
     cd /mnt/c/.../jackbarker-com-au/images
     ./build_images.sh
+
+## Emoji
+Supported Markdown / Github emoji, is listed [here](https://gist.github.com/rxaviers/7360908).
