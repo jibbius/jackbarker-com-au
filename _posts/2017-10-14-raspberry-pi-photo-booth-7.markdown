@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to build a Photo Booth (Part 7): Photo Day!"
+title:  "Photo Booth (Part 7): Photo Day!"
 desc:   "My 'Top 10 Tips' for ensuring your Photo Booth's debut is stress-free."
 permalink: /photo-booth/7
 author: Jack Barker
