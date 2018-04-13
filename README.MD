@@ -57,9 +57,11 @@ If confronted with the following error in when attempting to run `bundle install
 Requires bash shell and imagemagick.
 
 To install imagemagick within WSL (Windows Subsystem for Linux):
+
     sudo apt-get update
-    sudo apt-get install build-essential checkinstall
-    sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev libmagic-dev
+    sudo apt-get install -y build-essential checkinstall
+    sudo apt-get install -y imagemagick libmagickcore-dev libmagickwand-dev libmagic-dev
+    cd
     wget https://www.imagemagick.org/download/ImageMagick.tar.gz
     tar xvzf ImageMagick.tar.gz
     cd ImageMagick-*
@@ -70,5 +72,6 @@ To install imagemagick within WSL (Windows Subsystem for Linux):
     sudo ldconfig /usr/local/lib
 
 Then, to compile images:
+
     cd /mnt/c/.../jackbarker-com-au/images
     ./build_images.sh
