@@ -15,6 +15,8 @@ REM LiveReloadX
 REM -----------------------------------------------
 start livereloadx _site
 
+pause
+
 REM ------------
 REM Open Browser
 REM ------------
