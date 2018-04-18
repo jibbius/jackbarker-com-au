@@ -5,16 +5,18 @@ desc:  "Converting your photos into a website."
 permalink: /photo-booth/8
 author: Jack Barker
 tags:   [ Raspberry Pi, hacks, Python ]
-date: 2017-40-17
+date: 2017-04-17
 img: "/2018/post_production"
 img-ext: ".jpg"
 ---
 {% include multi-post-photo-booth.html part=8 %}
 
-(A quick thank you to everyone who waited so patiently for this post to come out.
-It's been a journey to get this working "just right", so I hope you like it!)
+# Post-production Overview
+Before I get into the detail I'd just like to say a quick **thank you** to everyone who's followed along with all the steps thus far. Also a **thanks** to those who waited so patiently for this post to come out.
 
-## A new "photo processing" application
+It's been a journey to get this working *just right* (so I hope you like it!).
+
+## Introducing: The "Photo Processing" application
 In parts 1 through 7, we built a photo booth that is able to **save photos** and **store them on the Raspberry Pi's SD card**.
 
 In this, part 8, we'll be looking to achieve the following:
@@ -39,12 +41,16 @@ The applications can either be run **simultaneously** (Photos will be captured, 
 
 When the photo publishing application is running, it will routinely check our photo directory to determine if any new photos have been saved, and will then execute the applicable logic.
 
-## Additional things to install
-Let's install some additional apps onto our Raspberry Pi to help us with the tasks I've listed above;
+# Installing and running the app
+## Step 1 : Install Pre-requisisites
+Let's install some additional apps onto our Raspberry Pi to help us with the tasks I've listed above.
 
-{% highlight bash %}
+### 1.1 : Installing ImageMagick
+Imagemagick will help us fine tune our images (compression; brightness; layouts ...etc.).
 
-    # Imagemagick will help us fine tune our images:
+We install ImageMagick from our `terminal` with the following commands:
+
+{% highlight sh %}
     sudo apt-get update
     sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev libmagic-dev build-essential -y
     cd
@@ -56,115 +62,283 @@ Let's install some additional apps onto our Raspberry Pi to help us with the tas
     make
     sudo make install
     sudo ldconfig /usr/local/lib
+{% endhighlight %}
 
+We can confirm that the application installed correctly, by entering `magick -version`:
+{% include image-2.html
+    img="/2018/magick-version"
+    ext=".jpg"
+    alt="Checking the version of ImageMagick"
+    class="large"
+%}
+
+### 1.2 : Installing the Dropbox Python SDK
+We're also going to start interacting with Dropbox from within our Python application.
+
+In order to do that we need to install the Dropbox Python SDK, also from the `terminal`:
+
+{% highlight sh %}
     # This python library will help us upload our images to Dropbox:
     pip install dropbox
 
     # Or, if using Python 3 instead:
     python3 -m pip install dropbox
-
 {% endhighlight %}
 
-TODO: Also install YAML support
+### 1.3 : Installing YAML parser
+The configuration file for our application will be written using the YAML language.
 
-## Obtaining the code
-The code for the application is available as of version 2.1 of the Photo Booth (April 2018).
+To assist Python in being able to interpret this file, we are also going to ensure that the our YAML-parsing library is installed:
 
-The file is: `postproduction.py`
-
-If you are using an older version of the photo booth code, and want to upgrade to the latest version, the following commands should allow you to do that:
 {% highlight sh %}
-cd ~/photo-booth
-git clone https://github.com/jibbius/raspberry_pi_photo_booth.git ~/photo-booth
+    # This python library will help us upload our images to Dropbox:
+    pip install dropbox
+
+    # Or, if using Python 3 instead:
+    python3 -m pip install dropbox
+{% endhighlight %}
+
+## Step 2 : Installing the "Photo processing" application
+As of version 2.1 of the Photo Booth (April 2018), the two applications (i.e. the 'Photo Booth' and the 'Photo Processor') are packaged together in the one download.
+
+If you already have this verion of the code downloaded, then the file you are looking for is: `photo-post-production.py`
+
+If you are using an older version of the photo booth code (and want to upgrade to the latest version), the following commands should allow you to do that:
+
+{% highlight sh %}
+    cd ~/photo-booth
+    git clone https://github.com/jibbius/raspberry_pi_photo_booth.git ~/photo-booth
 {% endhighlight %}
 
 TODO: Fix the above; clone is not the correct command.
 
-Alternatively, you can remove the previous version (remember to back up your photos first), and then reinstall the application per [Part 5](/photo-booth/5) of this series.
+Alternatively (if you encounter errors), you can:
 
-## What does the code do?
-The first time the code is run, a file is created called "".
+1. Remove the previous version (remember to back up your photos first), and then
+2. Reinstall the application per [Part 5](/photo-booth/5) of this series.
 
-This file contains a number of configuration options/settings that you might want to modify as part of customising your photo booth.
+## Step 3 : Run the application
+Notice that our application now appears to be watching for files:
 
-If you make a mistake, there is an example configuration file here:
+Also notice that we now have a set of additional folders created in our project directory:
 
-TODO: Can I embed a config file here?
+## Step 4 : Testing the application
+Now, as an experiment we can drop a set of 4 photos into `/photos-in`:
 
-### Step 1: Reads a config file
+Our application will start spitting out information to us:
 
-### Step 2: Creates folders if they don't exist
+Finally, if we check our `/photos-out` folder, we can see a number of things have happened to our photos:
+1. Each of our 4 images has been reduced in file size. The files are now 1/4 their previous size, without a noticable drop in quality.
+1. The 4 images have also each been "auto-levelled" to help optimise their brightness / contrast (Note: this may only be noticable in poor lighting conditions).
+1. We now have an animated "thumbnail" image, which can great for posting on the web.
+1. We have a couple of "photo strip" layouts (1x4) and (2x2); which may be useful if we want to print our images.
 
-### Step 3: Validates Dropbox credentials
-By default, I've disabled Dropbox.
-In order to enable Dropbox uploads, we need to do some additional setup which I've described below.
+Nice one!
 
-### Step 2: Monitors "input" folder for new files
+## Step 5 : Configuring our application
+A configuration file gets created the 1st time the application is run.
+
+If we close our 'photo processing' application (via `Ctrl` + `\`) then we can have a look at the configuration file `post-production-config.yaml`.
+
+All of the images that are output by the application can be enabled/disabled/customised, within this file:
+
+## Step 6 : Dropbox Integration
+By default 'Dropbox Upload' is disabled.
+
+In order to enable Dropbox uploads we need to do some additional setup which I've described below.
+
+### 6.1 : Get a Dropbox Account
+Dropbox is an online service which helps you to "store, share, and securely access files".
+
+If you don't have a Dropbox Account, you can signup for a free account [here](https://db.tt/v2aokyF4) (using this link will give you an extra 500Mb of storage space).
+
+### 6.2 : Create a Dropbox App within the Developer page
+After signing into your account, you need to navigate to the Developer section of the Dropbox website, and create an 'Dropbox app'.
+
+To do this:
+ - Go to the Dropbox [App Console](https://www.dropbox.com/developers/apps) page.
+
+Click the "Create app" button:
+
+{% include image-2.html
+    img="/2018/dropbox-create-app"
+    ext=".jpg"
+    alt="Click the 'Create app' button"
+    class="large"
+%}
+
+Specify:
+
+ - 'Dropbox API'
+ - 'App folder'
+ - A name for your app (`pi-photo-booth` or whatever else you would like to use :smile:)
+
+{% include image-2.html
+    img="/2018/dropbox-create-app-form"
+    ext=".jpg"
+    alt="The Dropbox 'Create app' form"
+    class="large"
+%}
+
+Click "Create app".
+
+### 6.3 : Generate a API token
+
+After recording the details of our "app" with Dropbox, we also need to create a "token".
+
+The token is similar to a password.
+It allows our Raspberry Pi's **Photo booth** app to talk to the "app" we created within Dropbox.
+
+To generate a token, we need to click the "Generate" button, per the illustration below:
+
+{% include image-2.html
+    img="/2018/dropbox-generate-token-button"
+    ext=".jpg"
+    alt="The Dropbox 'Generate token' button"
+    class="medium"
+%}
+
+Once the token is generated, you need to copy it...
+
+{% include image-2.html
+    img="/2018/dropbox-token"
+    ext=".jpg"
+    alt="An example. Not my real Dropbox token."
+    caption="An example. Not my real Dropbox token."
+    class="large"
+%}
 
 
-### Step 3: Monitors "input" folder for new files
+... and paste the token into our configuration file:
 
-### Step 3: Monitors "input" folder for new files
+qwertyuiopAAA_This_Is_Not_My_Real_Token_But_You_Get_The_Idea_AAAplkdfnvlskdmf
 
+**Save** and **close** the configuration file.
 
-Consider the following:
+### 6.4 : Test our changes
 
-    import os, time
-    path_to_watch = "/home/pi/photo-booth/photos/"
-    while True:
-    print('---------------')
-    file_groups = array()
-    
-    for f in os.listdir(path_to_watch):
-        filename = os.path.splitext(f)[0]
-        ext = os.path.splitext(f)[1]
-        if(filename.count('_') == 2 and ext == '.jpg'):
-            #Filename matches our expected format;
-            #(e.g. 2018-04-11_15-39-29_1of4.jpg )
+Start up the PPP app again.
 
-            #Break filename into it's respective components:
-            date_stamp,time_stamp,x_of_y=filename.split('_')
-            x,y=x_of_y.split('of')
-            file_group_id = date_stamp + '_' + time_stamp
-            print(file_group_id + ' [' + x +'] of ['+ y + ']')
-            
-    time.sleep(5)
+Put another set of photos into the IN directory.
 
-### Step 2: Adjusting the image brightness
+Now watch as the photos also get uploaded to Dropbox.
 
-http://www.imagemagick.org/script/command-line-options.php#auto-level
+## Step 7 : Completing the file pipeline
 
-### Step 3: Creating animated thumbnails
+By default:
+ - Our photo booth saves all the photos it captures into a folder called `photos`.
+ - Our ppp application watches the folder called `photos-IN`.
+ - We need to manually copy our photos from the `photos` into the `photos-IN` folder.
 
-{% highlight bash %}
-#script1.sh
-prev_filename_no_inc=""
+If we want this manual step to be performed automatically, then we will make one more change to our configuration file:
 
-for jpg_file in ./full-res-images/*.jpg;
-do
-    filename_no_ext="${jpg_file%.*}" # Example: 2017-04-15_15-07-08_1
-    filename_no_inc="${filename_no_ext::${#filename_no_ext}-2}" # Example: 2017-04-15_15-07-08
-    
-    if [ "${prev_filename_no_inc}" != "${filename_no_inc}" ]; then
-        echo "Processing: "${filename_no_inc}
-
-        #Compression with ImageMagick
-        GM convert -quality 50% -delay 100 -resize 200x120 ${filename_no_inc}*.jpg ${filename_no_inc}.gif
-
-        #Don't double process any images
-        prev_filename_no_inc=${filename_no_inc}
-    fi
-done
-{% endhighlight %}
-
-### Step 4: Uploading to Dropbox
-
-### Step 5: Posting to social media with ITTT
-
-## Create website
-The script above will result in the following directory structure;
+TODO: insert config file change.
 
 
-## Preview the website
-The script above will result in the following directory structure;
+## Step 8 : Updating our "Auto-start" script to also include the PPP application.
 
+TODO: insert step
+
+
+## Step 9 (BONUS): Automatically posting images to social media and other sites
+
+One of the great benefts of choosing Dropbox, is that is can be used in conjunction with ITTT. ITTT is a website that can be used to automate actions between different online platforms.
+
+When a photo gets uploaded to Dropbox, when can use ITTT to trigger additional events such as:
+ - We send a tweet on Twitter
+ - We publish the photo on Tumbler
+ - We share the photo on Facebook
+
+ITTT is super easy to use and **you don't need to write any code**. Instead, ITTT provides a set of simple screens that are built around the phrase "If __this__ then __that__".
+
+As an example, lets get our photo booth to start integrating with Twitter:
+
+1. Go to [ifttt.com](https://ifttt.com), and Login / Register for an account.
+1. Start a `New applet`
+1. Click on the "if this", to specifiy the condition under which our workflow event will commence:{% include image-2.html
+    img="/2018/ITTT-01"
+    ext=".jpg"
+    alt="1"
+    caption="1"
+    class="medium"
+%}
+4. Locate Dropbox
+{% include image-2.html
+    img="/2018/ITTT-02"
+    ext=".jpg"
+    alt="2"
+    caption="2"
+    class="medium"
+%}
+1. Complete the steps of connecting your Dropbox account with ITTT
+{% include image-2.html
+    img="/2018/ITTT-03"
+    ext=".jpg"
+    alt="3"
+    caption="3"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-04"
+    ext=".jpg"
+    alt="4"
+    caption="4"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-05"
+    ext=".jpg"
+    alt="5"
+    caption="5"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-06"
+    ext=".jpg"
+    alt="6"
+    caption="6"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-07"
+    ext=".jpg"
+    alt="7"
+    caption="7"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-08"
+    ext=".jpg"
+    alt="8"
+    caption="8"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-09"
+    ext=".jpg"
+    alt="9"
+    caption="9"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-10"
+    ext=".jpg"
+    alt="10"
+    caption="10"
+    class="large"
+%}
+
+{% include image-2.html
+    img="/2018/ITTT-11"
+    ext=".jpg"
+    alt="11"
+    caption="11"
+    class="large"
+%}
