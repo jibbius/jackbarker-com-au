@@ -4,7 +4,7 @@
   {% if include.stagger=="false" %}
     {% assign thecycle='1of1' %}
   {% else %}
-    {% capture thecycle %}{% cycle '1of2', '2of2', '1of1' %}{% endcapture %}
+    {% capture thecycle %}{% cycle '1of1', '1of2', '2of2' %}{% endcapture %}
   {% endif %}
 
   {% if thecycle == '1of2' or thecycle == '1of1' %}

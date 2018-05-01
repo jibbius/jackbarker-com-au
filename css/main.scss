@@ -195,6 +195,9 @@ figure.post-image{
     &.no-border img{
         border: none;
     }
+    &.small img{
+        max-width: 40%;
+    }
     &.medium img{
         max-width: 60%;
     }
