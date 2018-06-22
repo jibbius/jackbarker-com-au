@@ -57,7 +57,7 @@ img_size:
    - 1400
 
 # 3rd party scripts
-include_google_adsense: false
+include_google_adsense: true
 include_font_awesome: false #Used for icons: 'tag', 'drafts'.
 
 # Social / Contact info
