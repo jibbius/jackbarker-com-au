@@ -1,9 +1,7 @@
-@REM ------------
-@REM Download updated versions JSON
-@REM ------------
-REM bitsadmin  /transfer mydownloadjob  /download  /priority normal https://pages.github.com/versions.json  %cd%\versions.json
+@echo off
 
-@REM ------------
-@REM Update bundles
-@REM ------------
+REM ------------
+REM Update bundles
+REM ------------
 bundle update
+pause
