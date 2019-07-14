@@ -5,5 +5,4 @@ _site
 .sass-cache
 .jekyll-metadata
 _drafts
-*.lock
 images/output
