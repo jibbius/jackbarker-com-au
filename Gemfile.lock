@@ -246,9 +246,9 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.1.1)
     nenv (0.3.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.3-x64-mingw32)
+    nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -290,8 +290,6 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
-    wdm (0.1.1)
-    win32console (1.3.2)
     yell (2.2.0)
 
 PLATFORMS
@@ -306,8 +304,6 @@ DEPENDENCIES
   guard-livereload
   html-proofer
   minima
-  wdm (>= 0.1.0)
-  win32console
 
 BUNDLED WITH
    1.17.2
