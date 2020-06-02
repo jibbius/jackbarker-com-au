@@ -2,6 +2,11 @@
   "files.exclude": {
     "_site/": true,
     ".sass-cache/": true,
-    "Gemfile.lock": false
+    "Gemfile.lock": false,
+    "_site": "explorerExcludedFiles",
+    ".sass-cache": "explorerExcludedFiles",
+    ".jekyll-metadata": "explorerExcludedFiles",
+    "_drafts": "explorerExcludedFiles",
+    "images/output": "explorerExcludedFiles"
   }
 }
