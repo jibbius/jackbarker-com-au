@@ -23,13 +23,17 @@ To start breadboarding out the photo booth, you will need:
  - A Raspberry Pi
    - I am using version 3 of the Raspberry Pi
    - I have also tested my code against;
+     - Pi version 4 (works fine)
      - Pi version 2B (works fine)
      - Pi zero (works fine)
  - An SD card
-   - I am using a 16Gb card, smaller cards will also work fine.
+   - I am using a 16Gb card, smaller cards will also work.
  - A Pi Camera
    - I am using PiCamera version 2
    - The earlier version of the camera will also be fine (although fewer megapixels)
+   - The Pi "High Quality" camera will also work.
+     - For a photo booth using the HQ camera, you should use the 6mm (wide angle) lens.
+     - It might be tempting to use the 16mm (Telephoto) lens, but your photos will be "too zoomed in" to photograph a group of people.
  - An LCD screen, such as: the XPT2046<br>To power the screen, you will also need:
    - a spare USB phone charger, and
    - a spare micro USB cable
@@ -48,16 +52,29 @@ To start breadboarding out the photo booth, you will need:
 
 ### Installing the Operating System
 For prototyping, I am running:
- - [The NOOBs version of Raspian][noobs]{:target="_blank"}
+ - [Raspberry Pi OS Legacy (Buster)][pi-os-buster]{:target="_blank"}
 
-If this is new to you, there are plenty of [online tutorials][pi-software-guide]{:target="_blank"} that will help you in completing this step. For this reason I won't bother detailing it further here.
+**Currently, we cannot use the latest version of Pi OS**.
+This is because a number of changes were made to the handling of cameras in the latest version of Pi OS (Bullseye).
+In future, I will update my code to work with the latest Pi OS, once the relevant Python code libraries (i.e. PiCamera2) are available.**
 
-The NOOBs install of Raspian (**not Raspian Lite**) is by far the easiest method for doing this.
+To install the Pi OS onto an SD card, you will need to download the [Raspberry Pi Imager][pi-imager]{:target="_blank"}
+
+For additional support in flashing Pi OS to an SD card, refer: [Pi Software Guide][pi-software-guide]{:target="_blank"} that will help you in completing this step.
+
+{% include image-2.html
+    img="/2022/buster"
+    alt="Installing Raspberry Pi OS Legacy (Buster)"
+    caption="Installing Raspberry Pi OS Legacy (Buster)"
+    class="large"
+%}
+
 
 #### Alternatives
 Using Raspian, the boot time for the Photo Booth is roughly <strong>40 seconds</strong>, and (for me) I was content enough with this duration that I haven't looked too far into alternatives at this stage.
 
-If you want the booth to boot faster, then you may want to look at running a more light-weight OS. This is not a topic that I intend to cover right now, but I may cover this later after testing a few different options out.
+If you want the booth to boot faster, then you may want to look at running a more light-weight OS.
+This is not a topic that I intend to cover right now, but I may cover this later after testing a few different options out.
 
 ### Raspberry Pi Configuration
 If you haven't already done so, make sure you've got a keyboard and mouse plugged in to your Pi, and that the Pi is hooked up to a screen (which can even be the photo booth's LCD screen if you like).
@@ -294,5 +311,6 @@ For the [next article]({{ "/photo-booth/3" | prepend: site.url }}) in this serie
 If you'd prefer to skip that step, you can jump ahead to [Part 5]({{ "/photo-booth/5" | prepend: site.url }}), where we extend our "simple photo booth" code into a **Fully-featured Photo Booth app**.
 
 
-[noobs]: https://www.raspberrypi.org/downloads/noobs/ "The NOOBs version of Raspian"
+[pi-imager]: https://www.raspberrypi.com/software/ "RaspberryPi.org - Raspberry Pi Imager"
 [pi-software-guide]: https://www.raspberrypi.org/learning/software-guide/ "RaspberryPi.org - Software Guide"
+[pi-os-buster]: https://www.raspberrypi.com/software/operating-systems#raspberry-pi-os-legacy "RaspberryPi.org - Pi OS (Legacy)"

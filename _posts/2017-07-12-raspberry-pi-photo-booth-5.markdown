@@ -48,6 +48,15 @@ The above will create a new directory (`/home/pi/photo-booth/`), and then downlo
     class="large"
 %}
 
+## Installing prerequisite packages
+The code relies upon some additional Python libraries being downloaded also.
+We can download these from the terminal:
+
+{% highlight sh %}
+cd ~/photo-booth
+python3 -m pip install -r requirements.txt
+{% endhighlight %}
+
 ## Getting the code to run
 Now that the code has downloaded, we can open up Python and run the Photo Booth code.
 
