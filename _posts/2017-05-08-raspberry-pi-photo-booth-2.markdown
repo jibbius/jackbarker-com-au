@@ -64,9 +64,10 @@ For additional support in flashing Pi OS to an SD card, refer: [Pi Software Guid
 
 {% include image-2.html
     img="/2022/buster"
+    ext=".png"
     alt="Installing Raspberry Pi OS Legacy (Buster)"
     caption="Installing Raspberry Pi OS Legacy (Buster)"
-    class="large"
+    class="medium"
 %}
 
 
