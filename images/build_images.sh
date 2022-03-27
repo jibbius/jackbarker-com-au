@@ -30,7 +30,7 @@ function createImageAtSize()
     local dest_filename=$3
     local resize=$4
 
-    magick "${src}" \
+    convert "${src}" \
         -resize ${resize} \
     ${dest_dirname}/${dest_filename}
 }
@@ -43,7 +43,7 @@ function createImageAtSizeAndGravity()
     local resize=$4
     local gravity=$5
 
-    magick "${src}" \
+    convert "${src}" \
         -resize ${resize}^ \
         -gravity ${gravity} -extent ${resize} \
     ${dest_dirname}/${dest_filename}
