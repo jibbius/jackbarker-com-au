@@ -3,21 +3,32 @@
 
 ## Pre-requisites:
 
-- Ruby ( >= v2.0.0 , < 2.5 )
-- Python ( v2.7.x )
+- Ruby (see below)
 
-In Windows, you can install the Chocolatey package manager (and subsequently, Ruby + Python2), via the following Powershell command (must be run with Administrator privileges):
+
+### Ruby On WSL (preferred Windows method)
+
+1. Install RVM: https://github.com/rvm/ubuntu_rvm#rvm-package-for-ubuntu
+1. Install the applicable version of Ruby: `rvm install "ruby-3.1.3"`
+
+
+### Ruby on Windows (legacy method)
+
+In Windows, you can install the Chocolatey package manager (and subsequently, Ruby), via the following Powershell command (must be run with Administrator privileges):
 
     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 Then:
 
-    choco install ruby --version 2.4.3.1
-    choco install Python2
+    choco install ruby
+
+
 
 ## Installation:
 
+- `cd` into project directory
 - Execute: `gem install bundler`
+- Execute: `gem install bundler:1.17.2`
 - Execute: `bundle install`
 - Execute: `bundle update` (also run to update Jekyll where required)
 
