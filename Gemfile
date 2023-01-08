@@ -9,3 +9,4 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'win32console' if Gem.win_platform?
 gem 'minima'
 gem 'eventmachine', :git => 'https://github.com/eventmachine/eventmachine.git', :branch => 'master'
+gem "webrick"
