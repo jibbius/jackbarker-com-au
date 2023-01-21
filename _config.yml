@@ -23,7 +23,7 @@ description: Business Analyst, Coder, Food Truck aficionado, and Mountain bike e
 
 # URL Settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://jackbarker.com.au" # the base hostname & protocol for your site
+url: "https://jackbarker.com.au" # the base hostname & protocol for your site
 
 # Permalink structure
 permalink: /blog/:year/:month/:day/:title
