@@ -1,15 +1,26 @@
+{% assign status=include.status | default: 'published' %}
+{% assign format=include.format | default: 'longform' %}
+{% assign stagger=include.stagger | default: 'true' %}
+
 <div class="post-list post-list-grid">
-  {% for post in site.posts %}
+
+{% if status == 'draftsonly' %}
+  {% assign post_list=site.posts_draft %}
+{% else %}
+  {% assign post_list=site.posts %}
+{% endif %}
+
+{% for post in site.posts %}
 
   {% if include.stagger=="false" %}
     {% assign thecycle='1of1' %}
   {% else %}
     {% capture thecycle %}{% cycle '1of2', '2of2', '1of1' %}{% endcapture %}
   {% endif %}
-
   {% if thecycle == '1of2' or thecycle == '1of1' %}
     <div class="row">
   {% endif %}
+
     <div class="column">
     {% if post.draft == true %}
       {% assign postclass="post-list-li draft-post" %}
@@ -60,10 +71,10 @@
     </div><!-- end row -->
   {% endif %}
 
-  {% endfor %}
+{% endfor %}
 
-    {% if thecycle == '1of2' %}
-    </div><!-- end row -->
-  {% endif %}
+{% if thecycle == '1of2' %}
+  </div><!-- end row -->
+{% endif %}
   
 </div>

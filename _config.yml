@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 
 # Summary
-title: This Analyst's Life
+title: JackBarker.Dev
 subtitle: A blog about Business Analysis, Hacking, and Making stuff.
 author: Jack Barker
 
@@ -32,10 +32,18 @@ post_dirs: false
 # Taxonomies
 tag_page: '/tags/'
 
+collections:
+  portfolio:
+    output: true
+    sort_by: date
+  posts_draft:
+    output: true
+    sort_by: title
+
 # Nav
 header_pages:
   - '_pages/blog_index.md'
-  - '_pages/tags.md'
+  - '_pages/portfolio.md'
   - '_pages/about.md'
   - '_pages/donate.md'
   - '_pages/subscribe.md'

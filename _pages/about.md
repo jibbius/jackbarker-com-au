@@ -36,7 +36,7 @@ Jack's projects (past &amp; present) include:
 
 - [WhereTheTruck.at](http://wherethetruck.at){:target="_blank"}
 - The website for the [Royal Melbourne Philharmonic](http://rmp.org.au){:target="_blank"}.
-- (And more on [GitHub](http://github.com/jibbius){:target="_blank"}).
+- (And more on [GitHub](http://github.com/jibbius){:target="_blank"} and [Printables](https://www.printables.com/@jibbius)).
 </div><!--end column-->
 </div><!--end row-->
 

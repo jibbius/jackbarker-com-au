@@ -1,15 +1,6 @@
-{% assign status=include.status | default: 'published' %}
-{% assign format=include.format | default: 'longform' %}
+<ul class="portfolio-list">
+    {% for post in site.portfolio reversed %}
 
-{% if status == 'draftsonly' %}
-  {% assign post_list=site.posts_draft %}
-{% else %}
-  {% assign post_list=site.posts %}
-{% endif %}
-
-<ul class="post-list {{status}}">
-  {% for post in post_list %}
-  
     {% if post.draft == true %}
       {% assign postclass="draft-post" %}
     {% else %}
@@ -17,17 +8,7 @@
     {% endif %}
 
      <li class="{{postclass}}">
-
-      {% if format == "shortform" %}
-        <span>
-          <a class="post-link"
-            href="{{ post.url | prepend: site.baseurl }}"
-            title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
-            >{{ post.title | escape }}</a>
-        </span>
-      {% else %}
-
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <!-- <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
         <h2>
           <a class="post-link"
             href="{{ post.url | prepend: site.baseurl }}"
@@ -37,7 +18,6 @@
           {% if post.desc %}
               <h3 class="post-subtitle">{{ post.desc }}</h3>
           {% endif %}
-
           {% if post.img %}
             {% assign img-ext=post.img-ext | default: '.jpg' %}
             <img
@@ -51,7 +31,14 @@
               >
           {% endif %}
 
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+        {% if post.tags %}
+            <div class="tags post-tags">
+            {% for tag in post.tags %}
+              <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" title="{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+            </div>
+        {% endif %}
+
+      </li>
+    {% endfor %}
+  </ul>

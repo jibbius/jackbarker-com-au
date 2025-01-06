@@ -9,7 +9,10 @@
 ### Ruby On WSL (preferred Windows method)
 
 1. Install RVM: https://github.com/rvm/ubuntu_rvm#rvm-package-for-ubuntu
-1. Install the applicable version of Ruby: `rvm install "ruby-3.1.3"`
+1. `rvm fix-permissions system; rvm fix-permissions user`
+1. Install the applicable version of Ruby: `rvm install "ruby-3.3.4"`
+   Check required Ruby version here: https://pages.github.com/versions/
+   (While you are checking this, update `/.ruby-version` if required)
 
 
 ### Ruby on Windows (legacy method)
@@ -28,15 +31,22 @@ Then:
 
 - `cd` into project directory
 - Execute: `gem install bundler`
-- Execute: `gem install bundler:1.17.2`
+<!-- - Execute: `gem install bundler:1.17.2` -->
 - Execute: `bundle install`
 - Execute: `bundle update` (also run to update Jekyll where required)
 
 ## Troubleshooting installation
+For most with error with `bundle install`; delete `Gemfile.lock` and retry.
+
 If confronted with the following error in when attempting to run `bundle install` PowerShell, *MSYS2 could not be found. Please run 'ridk install'*, then:
 - Execute: `Set-ExecutionPolicy -Scope CurrentUser`
 - Specify: `remotesigned`, and select `[A] Yes to All`
 - Execute: `ridk install`
+
+Another error (`bundle install` fails to build `bigdecimal`, per: [rubygems/issues/8015](https://github.com/rubygems/rubygems/issues/8015) ):
+- Execute: `sudo apt install clang`
+- Execute: `export CC=/usr/bin/clang`
+- Execute: `export CXX=/usr/bin/clang++`
 
 ## Run locally:
 

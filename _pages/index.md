@@ -11,8 +11,12 @@ Hi there!
 Welcome to Jack Barker's personal blog.
 
 <div class="blog-roll">
+
+    <h2>Drafts</h2>
+    {% include post-list.html status="draftsonly" format="shortform"%}
+
     <h2>Latest Posts</h2>
-    {% include post-list-grid.html stagger="true" %}
+    {% include post-list-grid.html stagger="true" status="published" %}
 </div>
 
 

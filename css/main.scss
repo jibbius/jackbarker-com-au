@@ -151,6 +151,12 @@ li > ol {
 /*
  * Post-list
  */
+
+ul.post-list,
+ul.post-list>li{
+list-style: none
+}
+
 ul.post-list li,
 div.post-list-li {
     padding: 20px;
@@ -159,6 +165,12 @@ div.post-list-li {
 }
 div.post-list-li {
     margin-bottom: 16px;
+}
+
+ul.post-list.draftsonly li,
+div.post-list.draftsonly-li {
+    margin-bottom: 0px;
+    padding: 0px;
 }
 
 ul.post-list li h2,
@@ -272,8 +284,9 @@ a.tag-post-link:hover span.tag-post-title{
   font-size: 20px;
 }
 h1.draft-post,
-.draft-post h2 a.post-link {
+.draft-post a.post-link {
   color: $draft-link-color;
+  display: inline;
 }
 
 /*
@@ -419,7 +432,7 @@ aside.multi-post li.current-post a {
   text-align: right;
 }
 .PageNavigation .prev:last-child,
-.PageNavigation .next:first-child,
+.PageNavigation .next:first-child
 {
     width:100%;
 }
