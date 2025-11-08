@@ -22,10 +22,10 @@
             {% assign img-ext=post.img-ext | default: '.jpg' %}
             <img
               class="post-image"
-              src="{{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
+              src="{{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
               srcset="
-                  {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
-                  {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
+                  {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
+                  {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
               sizes="100vw"
               alt="{{ post.title | escape }}"
               >

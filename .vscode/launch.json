@@ -1,0 +1,80 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Serve Jekyll Site",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle exec jekyll serve --host 0.0.0.0 --port 4000 --livereload",
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "name": "Serve Jekyll Site (with drafts)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle exec jekyll serve --host 0.0.0.0 --port 4000 --drafts --livereload",
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "name": "Build Jekyll Site",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle exec jekyll build",
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "name": "Clean Jekyll Site",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle exec jekyll clean",
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "name": "Install/Update Dependencies",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle install",
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        }
+    ]
+}

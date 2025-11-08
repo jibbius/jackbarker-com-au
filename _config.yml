@@ -37,13 +37,26 @@ collections:
     output: true
     sort_by: date
   posts_draft:
-    output: true
+    output: false
     sort_by: title
+  career_roles:
+    output: true
+    sort_by: start_date
+  career_projects:
+    output: true
+    sort_by: date
+  career_qualifications:
+    output: true
+    sort_by: completion_date
+  career_skills:
+    output: true
+    sort_by: category
 
 # Nav
 header_pages:
   - '_pages/blog_index.md'
   - '_pages/portfolio.md'
+  - '_pages/resume.md'
   - '_pages/about.md'
   - '_pages/donate.md'
   - '_pages/subscribe.md'

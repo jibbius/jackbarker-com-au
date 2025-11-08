@@ -1,130 +1,102 @@
 ---
-layout: portfolio-item
-title:  "Raspberry Pi Photo Booth"
-desc:   "A complete DIY photo booth project featuring custom hardware design, Python automation, and comprehensive documentation from concept to deployment"
+layout: portfolio-condensed
+title: "Raspberry Pi Photo Booth"
+desc: "Complete DIY hardware/software project with custom electronics, Python automation, and 8-part tutorial series"
 rank: 3
-date:   2017-01-01
-author: Jack Barker
-img:    /2017/photo_booth/0_FinishedBooth_1b
-tags:   [ Python, Raspberry Pi, Hardware, Electronics, Woodworking ]
-draft: false
+tags:
+  - Python
+  - Raspberry Pi
+  - Hardware
+  - Electronics
+  - Woodworking
+img: /2017/photo_booth/0_FinishedBooth_1b
 ---
 
-# Raspberry Pi Photo Booth
+<div class="quick-facts">
+  <strong>Complete DIY hardware/software project with custom electronics and comprehensive documentation</strong>
+  
+  <div class="fact-grid">
+    <div class="fact-item">
+      <div class="label">Project Type</div>
+      <div class="value">Wedding Photo Booth (2017)</div>
+    </div>
+    <div class="fact-item">
+      <div class="label">Publications</div>
+      <div class="value">DIYODE #1, MagPi #60</div>
+    </div>
+    <div class="fact-item">
+      <div class="label">Tutorial Series</div>
+      <div class="value"><a href="/photo-booth/">📚 8-Part Guide</a></div>
+    </div>
+    <div class="fact-item">
+      <div class="label">Source Code</div>
+      <div class="value"><a href="https://github.com/jibbius/raspberry_pi_photo_booth">💻 GitHub</a></div>
+    </div>
+  </div>
+</div>
 
-**A comprehensive hardware and software project that became my first major Raspberry Pi build and launched a popular tutorial series.**
+## Key Features
 
-## Project Overview
+<div class="key-features">
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-title">🔧 Custom Hardware</div>
+      <div class="feature-desc">Hand-wired electronics, wooden enclosure, LED lighting, and arcade button interface</div>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-title">🐍 Python Automation</div>
+      <div class="feature-desc">Cross-platform photo booth app with GPIO control and post-processing pipeline</div>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-title">📖 Documentation</div>
+      <div class="feature-desc">Comprehensive 8-part tutorial series covering every aspect from concept to deployment</div>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-title">☁️ Cloud Integration</div>
+      <div class="feature-desc">Automated image processing, GIF creation, and Dropbox backup system</div>
+    </div>
+  </div>
+</div>
 
-This DIY photo booth project represents a complete journey from concept to real-world deployment, featuring custom electronics, woodworking, Python programming, and post-production automation. Originally built for my wedding in 2017, it became a comprehensive 8-part tutorial series that has been featured in multiple publications.
+## Technical Implementation
 
-### **Real-World Impact**
+<div class="tech-summary">
+  <div class="tech-grid">
+    <div class="tech-item">
+      <strong>Hardware:</strong> Raspberry Pi with custom PCB, LED lighting, arcade buttons, and wooden cabinet construction
+    </div>
+    <div class="tech-item">
+      <strong>Software:</strong> Python with PiCamera, GPIO control, ImageMagick processing, and Dropbox integration
+    </div>
+    <div class="tech-item">
+      <strong>Deployment:</strong> Autostart configuration, SSH management, and unattended 8+ hour operation
+    </div>
+    <div class="tech-item">
+      <strong>Workflow:</strong> Real-time preview, automated processing, GIF generation, and cloud backup
+    </div>
+  </div>
+</div>
 
-- **Successfully deployed** at wedding with 100+ guests using it throughout the event
-- **Featured in publications**: DIYODE Magazine #1 and The MagPi #60
-- **Community adoption**: Multiple builders have created their own versions based on the tutorial
-- **Open source**: Full code available on GitHub with active community engagement
+## Impact & Results
 
-## Technical Architecture
-
-### **Hardware Design**
-- **Custom Electronics**: Hand-wired circuit boards with arcade button integration and LED lighting control
-- **Power Management**: Dual power supply system (5V for Pi, 12V for LED strips)
-- **Enclosure**: Custom-built wooden cabinet designed for portability and guest interaction
-- **Lighting System**: Professional-grade LED strip lighting with proper diffusion for photo quality
-
-### **Software Components**
-
-**Core Photo Booth Application (Python)**
-- Cross-platform compatibility (Python 2.7 and 3.x)
-- Real-time camera preview with PiCamera integration  
-- GPIO control for arcade button interface
-- Customizable UI screens and branding
-- Minimal dependencies for maximum reliability
-
-**Post-Production Pipeline (Python + ImageMagick)**
-- Automated image optimization and brightness adjustment
-- Animated GIF generation from photo sequences
-- Photo strip layout creation with custom branding
-- Dropbox integration for automatic cloud backup
-- Batch processing capabilities for event management
-
-### **System Integration**
-- **Autostart Configuration**: Automatic launch on boot for event reliability
-- **Remote Management**: SSH access for troubleshooting and updates
-- **Modular Design**: Separate applications for booth operation and post-processing
-- **Error Handling**: Robust exception handling for unattended operation
-
-## Development Methodology
-
-### **Requirements-Driven Design**
-Applied formal business analysis practices to hobby project:
-- Comprehensive requirements gathering and documentation
-- Power consumption analysis and electrical safety planning
-- User experience design for intuitive guest interaction
-- Deployment strategy for event-day reliability
-
-### **Iterative Development Process**
-- **Phase 1**: Breadboard prototyping and proof of concept
-- **Phase 2**: Physical construction and circuit integration  
-- **Phase 3**: Software development and testing
-- **Phase 4**: UI customization and performance optimization
-- **Phase 5**: Real-world deployment and post-event analysis
-
-### **Documentation Excellence**
-Created an 8-part tutorial series covering:
-1. **Requirements Analysis** - Planning and constraint identification
-2. **Hardware Setup** - Pi configuration and breadboard prototyping  
-3. **Cabinet Construction** - Woodworking and physical assembly
-4. **Circuit Integration** - Electronics wiring and LED installation
-5. **Software Development** - Python programming and GPIO control
-6. **UI Customization** - Interface personalization and autostart configuration
-7. **Deployment Strategy** - Event-day tips and troubleshooting
-8. **Post-Production** - Image processing and cloud integration
-
-## Technical Achievements
-
-### **Cross-Platform Compatibility**
-- Supports Raspberry Pi models 2B, 3, 4, and Zero
-- Compatible with both Python 2.7 and 3.x environments
-- Minimal external dependencies for broad compatibility
-
-### **Production-Ready Reliability**
-- Unattended operation for 8+ hour events
-- Graceful error handling and recovery
-- Professional-grade lighting for consistent photo quality
-- Robust hardware design withstanding repeated use
-
-### **Scalable Architecture**  
-- Modular design allows independent operation of booth and processing
-- Configurable for different deployment scenarios (with/without internet)
-- Extensible post-processing pipeline for custom workflows
-
-## Community Impact
-
-### **Educational Resource**
-- Beginner-friendly introduction to Raspberry Pi development
-- Comprehensive coverage of hardware, software, and project management
-- Real-world application demonstrating practical IoT concepts
-
-### **Open Source Contribution**
-- Full source code available on GitHub
-- Active community of builders sharing modifications and improvements
-- Documentation that bridges maker community and professional development practices
-
-### **Publication Recognition**
-Featured in respected maker publications for project quality and educational value, demonstrating the crossover appeal between hobby projects and professional development skills.
-
-## Key Technologies
-
-**Hardware**: Raspberry Pi, PiCamera, GPIO programming, LED lighting, arcade buttons, custom PCB design
-
-**Software**: Python, PiCamera library, GPIO control, ImageMagick, Dropbox API, Linux system administration
-
-**Development**: Git workflow, requirements analysis, iterative development, comprehensive documentation, open source collaboration
-
-**Skills Demonstrated**: Full-stack hardware/software integration, project management, technical writing, community engagement, real-world deployment
-
----
-
-**[View Complete Tutorial Series →](/photo-booth/)** | **[GitHub Repository →](https://github.com/jibbius/raspberry_pi_photo_booth)**
+<div class="results-grid">
+  <div class="result-item">
+    <div class="result-metric">🎉 Event Success</div>
+    <div class="result-desc">Successfully deployed at wedding with 100+ guests</div>
+  </div>
+  <div class="result-item">
+    <div class="result-metric">📰 Publications</div>
+    <div class="result-desc">Featured in DIYODE Magazine and The MagPi</div>
+  </div>
+  <div class="result-item">
+    <div class="result-metric">🌐 Community</div>
+    <div class="result-desc">Open source project with active builder community</div>
+  </div>
+  <div class="result-item">
+    <div class="result-metric">📚 Education</div>
+    <div class="result-desc">Comprehensive tutorial teaching full project lifecycle</div>
+  </div>
+</div>

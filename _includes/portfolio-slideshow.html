@@ -4,48 +4,55 @@
     <!-- Main Slideshow Area -->
     <div class="showcase-slides">
       {% assign portfolio_items = site.portfolio | sort: 'rank' %}
+      {% assign slide_index = 0 %}
       {% for post in portfolio_items %}
       
-      {% if post.draft == true %}
-        {% assign postclass = "draft-post" %}
-      {% else %}
-        {% assign postclass = "" %}
-      {% endif %}
-      
-      <div class="showcase-slide {{ postclass }}" data-slide="{{ forloop.index0 }}">
-        <div class="slide-layout">
+        {% assign is_first_in_pair = forloop.index0 | modulo: 2 %}
+        {% if is_first_in_pair == 0 %}
+          {% assign slide_class = "" %}
+          {% if post.draft == true or portfolio_items[forloop.index].draft == true %}
+            {% assign slide_class = "draft-post" %}
+          {% endif %}
           
-          <div class="slide-visual">
+          <div class="showcase-slide {{ slide_class }}" data-slide="{{ slide_index }}">
+            <div class="slide-layout">
+              <div class="slide-pair">
+        {% endif %}
+        
+        {% if post.draft == true %}
+          {% assign postclass = "draft-post" %}
+        {% else %}
+          {% assign postclass = "" %}
+        {% endif %}
+        
+        <div class="portfolio-item {{ postclass }}">
+          <div class="item-visual">
             {% if post.img %}
               {% assign img-ext = post.img-ext | default: '.jpg' %}
               <img
                 class="project-image"
-                src="{{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
+                src="{{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
                 srcset="
-                    {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
-                    {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
-                sizes="50vw"
+                    {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
+                    {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
+                sizes="25vw"
                 alt="{{ post.title | escape }}"
                 >
             {% else %}
               <div class="project-placeholder">
                 <div class="placeholder-icon">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
                   </svg>
                 </div>
                 <p>Coming Soon</p>
               </div>
             {% endif %}
-            
-            {% if post.draft == true %}
-              <div class="status-badge">Draft</div>
-            {% endif %}
           </div>
           
-          <div class="slide-details">
+          <div class="item-details">
             <div class="project-header">
-              <h2 class="project-title">{{ post.title | escape }}</h2>
+              <h3 class="project-title">{{ post.title | escape }}</h3>
               {% if post.desc %}
                 <p class="project-description">{{ post.desc }}</p>
               {% endif %}
@@ -53,7 +60,7 @@
             
             {% if post.tags %}
               <div class="project-tech">
-                {% for tag in post.tags %}
+                {% for tag in post.tags limit: 3 %}
                   <span class="tech-tag">{{ tag }}</span>
                 {% endfor %}
               </div>
@@ -62,15 +69,22 @@
             <div class="project-actions">
               <a href="{{ post.url | prepend: site.baseurl }}" class="action-btn primary">
                 <span>View Details</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M7 17L17 7M17 7H7M17 7V17"/>
                 </svg>
               </a>
             </div>
           </div>
-          
         </div>
-      </div>
+        
+        {% assign is_last_in_pair = forloop.index | modulo: 2 %}
+        {% if is_last_in_pair == 0 or forloop.last %}
+              </div>
+            </div>
+          </div>
+          {% assign slide_index = slide_index | plus: 1 %}
+        {% endif %}
+        
       {% endfor %}
       
       <!-- Navigation Controls -->
@@ -94,19 +108,21 @@
   <!-- Simple Navigation -->
   <div class="showcase-nav">
     <div class="nav-dots">
-      {% for post in portfolio_items %}
+      {% assign total_slides = portfolio_items.size | divided_by: 2.0 | ceil %}
+      {% for i in (1..total_slides) %}
+        {% assign slide_index = forloop.index0 %}
         <button 
           class="nav-dot" 
-          onclick="goToSlide({{ forloop.index0 }})" 
-          data-slide="{{ forloop.index0 }}"
-          aria-label="Go to {{ post.title | escape }}"
-          title="{{ post.title | escape }}">
+          onclick="goToSlide({{ slide_index }})" 
+          data-slide="{{ slide_index }}"
+          aria-label="Go to slide {{ forloop.index }}"
+          title="Slide {{ forloop.index }}">
         </button>
       {% endfor %}
     </div>
     
     <div class="nav-counter">
-      <span class="current-number">1</span> <span class="divider">of</span> <span class="total-number">{{ portfolio_items.size }}</span>
+      <span class="current-number">1</span> <span class="divider">of</span> <span class="total-number">{{ total_slides }}</span>
     </div>
   </div>
   
@@ -166,6 +182,14 @@ function initializeShowcase() {
       slides[currentSlide].classList.add('active');
       updateDisplay();
       
+      // Adjust container height to accommodate active slide
+      const activeSlide = slides[currentSlide];
+      const container = document.querySelector('.showcase-container');
+      if (activeSlide && container) {
+        const slideHeight = activeSlide.scrollHeight;
+        container.style.height = Math.max(500, slideHeight) + 'px';
+      }
+      
       setTimeout(() => {
         isTransitioning = false;
       }, 300);
@@ -222,6 +246,15 @@ function initializeShowcase() {
   const container = document.querySelector('.showcase-container');
   if (container) {
     showSlide(0);
+    
+    // Set initial container height based on first slide
+    setTimeout(() => {
+      const firstSlide = slides[0];
+      if (firstSlide) {
+        const slideHeight = firstSlide.scrollHeight;
+        container.style.height = Math.max(500, slideHeight) + 'px';
+      }
+    }, 100);
     
     // Touch events for mobile swipe
     container.addEventListener('touchstart', function(e) {

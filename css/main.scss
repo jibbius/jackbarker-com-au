@@ -716,7 +716,7 @@ a.tag-post-link:hover span.tag-post-title{
 /*
  * Icons for different content types
  */
-.portfolio-item:before {
+li.portfolio-item:before {
     content: "\f0f2"; /* suitcase icon - represents professional work & business solutions */
     font-family: FontAwesome;
     color: $brand-color;
@@ -743,7 +743,7 @@ a.tag-post-link:hover span.tag-post-title{
 /*
  * Highlight draft posts differently
 */
-.draft-post:before {
+li.draft-post:before {
   content: "\f040";
   font-family: FontAwesome;
   color: $draft-link-color;
@@ -1136,6 +1136,8 @@ span.icon:hover svg path {
     position: relative;
     width: 100%;
     min-height: 500px;
+    height: auto;
+    overflow: hidden;
 }
 
 .showcase-slides {
@@ -1149,7 +1151,8 @@ span.icon:hover svg path {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 500px;
+    height: auto;
     opacity: 0;
     visibility: hidden;
     transform: translateX(30px);
@@ -1161,19 +1164,59 @@ span.icon:hover svg path {
         transform: translateX(0);
     }
     
-    &.draft-post {
-        .slide-layout {
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 193, 7, 0.02) 100%);
-            border-left: 4px solid #ffc107;
-        }
-    }
+
 }
 
 .slide-layout {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
     min-height: 500px;
+    height: auto;
+}
+
+.slide-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    
+    &.draft-post {
+        border: 2px solid #ffc107;
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 193, 7, 0.02) 100%);
+        position: relative;
+        
+        &:after {
+            content: "DRAFT";
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #ffc107;
+            color: #212529;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    }
 }
 
 .slide-visual {
@@ -1184,6 +1227,18 @@ span.icon:hover svg path {
     justify-content: center;
     padding: 2rem;
     min-height: 300px;
+    flex: 1;
+}
+
+.item-visual {
+    position: relative;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    min-height: 200px;
+    flex: 1;
 }
 
 .project-image {
@@ -1199,6 +1254,13 @@ span.icon:hover svg path {
     &:hover {
         transform: scale(1.02);
     }
+}
+
+.portfolio-item .project-image {
+    max-height: 180px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .project-placeholder {
@@ -1247,6 +1309,14 @@ span.icon:hover svg path {
     flex-direction: column;
     background: white;
     flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.item-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-header {
@@ -1259,6 +1329,11 @@ span.icon:hover svg path {
     font-weight: 700;
     line-height: 1.2;
     color: #212529;
+}
+
+.portfolio-item .project-title {
+    font-size: 1.3rem;
+    margin: 0 0 0.6rem 0;
 }
 
 .project-description {
@@ -1327,6 +1402,51 @@ span.icon:hover svg path {
     
     &:hover svg {
         transform: translateX(2px);
+    }
+}
+
+.portfolio-item .action-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    margin-top: auto;
+}
+
+/* Responsive Design for Portfolio Slideshow */
+@media (max-width: 768px) {
+    .slide-pair {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 0;
+    }
+    
+    .item-visual {
+        padding: 1rem;
+        min-height: 150px;
+    }
+    
+    .portfolio-item .project-image {
+        max-height: 140px;
+    }
+    
+    .item-details {
+        padding: 1rem;
+    }
+    
+    .portfolio-item .project-title {
+        font-size: 1.2rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
+    }
+    
+    .portfolio-item .action-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
     }
 }
 
@@ -1431,6 +1551,8 @@ span.icon:hover svg path {
     flex-direction: column;
     gap: 1rem;
     border-top: 1px solid #f0f0f0;
+    position: relative;
+    z-index: 5;
 }
 
 .nav-dots {
@@ -1511,8 +1633,218 @@ span.icon:hover svg path {
     }
 }
 
+/* Condensed Portfolio Item Styles */
+.portfolio-item {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    .portfolio-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    .portfolio-description {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .portfolio-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        
+        .tech-tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+        }
+    }
+}
+
+.portfolio-content {
+    
+    /* Compact sections */
+    .quick-facts {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-left: 4px solid $brand-color;
+        
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .fact-item {
+            .label {
+                font-weight: 600;
+                color: $brand-color;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .value {
+                color: #2c3e50;
+                font-weight: 500;
+                margin-top: 0.3rem;
+            }
+        }
+    }
+    
+    .key-features {
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
+            
+            .feature-title {
+                font-weight: 600;
+                color: $brand-color;
+                margin-bottom: 0.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .feature-desc {
+                font-size: 0.9rem;
+                color: #6c757d;
+                line-height: 1.4;
+            }
+        }
+    }
+    
+    .action-links {
+        text-align: center;
+        margin: 2rem 0;
+        
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            background: $brand-color;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: darken($brand-color, 10%);
+                transform: translateY(-1px);
+                color: white;
+            }
+            
+            &.secondary {
+                background: transparent;
+                color: $brand-color;
+                border: 2px solid $brand-color;
+                
+                &:hover {
+                    background: $brand-color;
+                    color: white;
+                }
+            }
+        }
+    }
+    
+    /* Hide overly detailed sections in condensed view */
+    .detailed-section {
+        display: none;
+    }
+}
+
+.portfolio-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+    
+    a {
+        text-decoration: none;
+        color: $brand-color;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: darken($brand-color, 15%);
+        }
+    }
+    
+    .nav-prev {
+        text-align: left;
+    }
+    
+    .nav-next {
+        text-align: right;
+    }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .portfolio-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    .portfolio-header .portfolio-title {
+        font-size: 1.8rem;
+    }
+    
+    .portfolio-content {
+        .quick-facts .fact-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .key-features .feature-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .portfolio-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
     .showcase-slides {
         min-height: 400px;
     }
