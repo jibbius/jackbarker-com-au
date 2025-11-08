@@ -1,0 +1,325 @@
+<div class="portfolio-showcase">
+  <div class="showcase-container">
+    
+    <!-- Main Slideshow Area -->
+    <div class="showcase-slides">
+      {% assign portfolio_items = site.portfolio | sort: 'rank' %}
+      {% for post in portfolio_items %}
+      
+      {% if post.draft == true %}
+        {% assign postclass = "draft-post" %}
+      {% else %}
+        {% assign postclass = "" %}
+      {% endif %}
+      
+      <div class="showcase-slide {{ postclass }}" data-slide="{{ forloop.index0 }}">
+        <div class="slide-layout">
+          
+          <div class="slide-visual">
+            {% if post.img %}
+              {% assign img-ext = post.img-ext | default: '.jpg' %}
+              <img
+                class="project-image"
+                src="{{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
+                srcset="
+                    {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
+                    {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
+                sizes="50vw"
+                alt="{{ post.title | escape }}"
+                >
+            {% else %}
+              <div class="project-placeholder">
+                <div class="placeholder-icon">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <p>Coming Soon</p>
+              </div>
+            {% endif %}
+            
+            {% if post.draft == true %}
+              <div class="status-badge">Draft</div>
+            {% endif %}
+          </div>
+          
+          <div class="slide-details">
+            <div class="project-header">
+              <h2 class="project-title">{{ post.title | escape }}</h2>
+              {% if post.desc %}
+                <p class="project-description">{{ post.desc }}</p>
+              {% endif %}
+            </div>
+            
+            {% if post.tags %}
+              <div class="project-tech">
+                {% for tag in post.tags %}
+                  <span class="tech-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            
+            <div class="project-actions">
+              <a href="{{ post.url | prepend: site.baseurl }}" class="action-btn primary">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      {% endfor %}
+      
+      <!-- Navigation Controls -->
+      <button class="nav-arrow nav-prev" onclick="changeSlide(-1)" aria-label="Previous project">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12Z"/>
+        </svg>
+        <span class="nav-glyph">‹</span>
+      </button>
+      
+      <button class="nav-arrow nav-next" onclick="changeSlide(1)" aria-label="Next project">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12Z"/>
+        </svg>
+        <span class="nav-glyph">›</span>
+      </button>
+    </div>
+    
+  </div>
+  
+  <!-- Simple Navigation -->
+  <div class="showcase-nav">
+    <div class="nav-dots">
+      {% for post in portfolio_items %}
+        <button 
+          class="nav-dot" 
+          onclick="goToSlide({{ forloop.index0 }})" 
+          data-slide="{{ forloop.index0 }}"
+          aria-label="Go to {{ post.title | escape }}"
+          title="{{ post.title | escape }}">
+        </button>
+      {% endfor %}
+    </div>
+    
+    <div class="nav-counter">
+      <span class="current-number">1</span> <span class="divider">of</span> <span class="total-number">{{ portfolio_items.size }}</span>
+    </div>
+  </div>
+  
+</div>
+
+<script>
+let currentSlide = 0;
+let isAutoPlaying = false;
+let autoPlayInterval = null;
+let isTransitioning = false;
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Wait for DOM to ensure elements are available
+function initializeShowcase() {
+  const slides = document.querySelectorAll('.showcase-slide');
+  const dots = document.querySelectorAll('.nav-dot');
+  const progressFill = document.querySelector('.progress-fill');
+  const currentNumber = document.querySelector('.current-number');
+  const totalSlides = slides.length;
+  
+  if (totalSlides === 0) return;
+
+  function updateDisplay() {
+    // Update progress bar
+    if (progressFill) {
+      const progress = ((currentSlide + 1) / totalSlides) * 100;
+      progressFill.style.width = progress + '%';
+    }
+    
+    // Update counter
+    if (currentNumber) {
+      currentNumber.textContent = currentSlide + 1;
+    }
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+
+  function showSlide(n) {
+    if (isTransitioning) return;
+    
+    isTransitioning = true;
+    
+    // Normalize slide number
+    if (n >= totalSlides) currentSlide = 0;
+    else if (n < 0) currentSlide = totalSlides - 1;
+    else currentSlide = n;
+    
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    // Show current slide with slight delay for smooth transition
+    setTimeout(() => {
+      slides[currentSlide].classList.add('active');
+      updateDisplay();
+      
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 300);
+    }, 50);
+  }
+
+  // Global functions for onclick handlers
+  window.changeSlide = function(direction) {
+    showSlide(currentSlide + direction);
+    resetAutoPlay();
+  };
+
+  window.goToSlide = function(n) {
+    showSlide(n);
+    resetAutoPlay();
+  };
+
+  // Auto-play functionality
+  function startAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 7000);
+    isAutoPlaying = true;
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+    isAutoPlaying = false;
+  }
+  
+  function resetAutoPlay() {
+    if (isAutoPlaying) {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+  }
+
+  // Touch/Swipe Support
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        changeSlide(1); // Swipe left - next slide
+      } else {
+        changeSlide(-1); // Swipe right - previous slide  
+      }
+    }
+  }
+
+  // Initialize
+  const container = document.querySelector('.showcase-container');
+  if (container) {
+    showSlide(0);
+    
+    // Touch events for mobile swipe
+    container.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    container.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+    
+    // Mouse drag support
+    let mouseDown = false;
+    let mouseStartX = 0;
+    
+    container.addEventListener('mousedown', function(e) {
+      mouseDown = true;
+      mouseStartX = e.clientX;
+      e.preventDefault();
+    });
+    
+    container.addEventListener('mousemove', function(e) {
+      if (!mouseDown) return;
+      e.preventDefault();
+    });
+    
+    document.addEventListener('mouseup', function(e) {
+      if (!mouseDown) return;
+      mouseDown = false;
+      
+      const diff = mouseStartX - e.clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) changeSlide(1);
+        else changeSlide(-1);
+      }
+    });
+    
+    // Pause auto-play on interaction
+    container.addEventListener('mouseenter', stopAutoPlay);
+    container.addEventListener('mouseleave', () => {
+      // Optional: uncomment to enable auto-play
+      // startAutoPlay();
+    });
+    
+    container.addEventListener('focusin', stopAutoPlay);
+    container.addEventListener('focusout', () => {
+      // Optional: uncomment to enable auto-play  
+      // startAutoPlay();
+    });
+  }
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Only handle keys when showcase is in view
+    const showcase = document.querySelector('.portfolio-showcase');
+    if (!showcase) return;
+    
+    const rect = showcase.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    
+    if (!inView) return;
+    
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      changeSlide(-1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      changeSlide(1);
+    } else if (e.key >= '1' && e.key <= '9') {
+      const slideIndex = parseInt(e.key) - 1;
+      if (slideIndex < totalSlides) {
+        e.preventDefault();
+        goToSlide(slideIndex);
+      }
+    } else if (e.key === ' ') {
+      e.preventDefault();
+      if (isAutoPlaying) stopAutoPlay();
+      else startAutoPlay();
+    }
+  });
+  
+  // Pause when tab is not visible
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else if (isAutoPlaying) {
+      startAutoPlay();
+    }
+  });
+  
+  // Optional: Start auto-play (uncomment to enable)
+  // startAutoPlay();
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeShowcase);
+} else {
+  initializeShowcase();
+}
+</script>

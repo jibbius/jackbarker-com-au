@@ -1,5 +1,6 @@
 {% assign status=include.status | default: 'published' %}
 {% assign format=include.format | default: 'longform' %}
+{% assign limit=include.limit | default: 999 %}
 
 {% if status == 'draftsonly' %}
   {% assign post_list=site.posts_draft %}
@@ -8,7 +9,7 @@
 {% endif %}
 
 <ul class="post-list {{status}}">
-  {% for post in post_list %}
+  {% for post in post_list limit:limit %}
   
     {% if post.draft == true %}
       {% assign postclass="draft-post" %}

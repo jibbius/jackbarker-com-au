@@ -1,25 +1,26 @@
 # The source code for jackbarker.com.au
+
 [![Build Status](https://travis-ci.org/jibbius/jackbarker-com-au.svg?branch=gh-pages)](https://travis-ci.org/jibbius/jackbarker-com-au)
 
-## Pre-requisites:
+## Pre-requisites
 
 - Ruby (see below)
 
-
 ### Ruby On WSL (preferred Windows method)
 
-1. Install RVM: https://github.com/rvm/ubuntu_rvm#rvm-package-for-ubuntu
-1. Install the applicable version of Ruby: 
+1. Install RVM: <https://github.com/rvm/ubuntu_rvm#rvm-package-for-ubuntu>
+1. Install the applicable version of Ruby:
 
-    curl https://raw.githubusercontent.com/github/pages-gem/refs/heads/master/.ruby-version -o .ruby-version
+    curl <https://raw.githubusercontent.com/github/pages-gem/refs/heads/master/.ruby-version> -o .ruby-version
 
-# install rbenv + ruby-build (instructions vary; using installer)
+### install rbenv + ruby-build (instructions vary; using installer)
 
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 
-# Use rbenv to install the required version of Ruby
+### Use rbenv to install the required version of Ruby
+
     rbenv install $(< .ruby-version)
 
 ### Ruby on Windows (legacy method)
@@ -32,9 +33,7 @@ Then:
 
     choco install ruby
 
-
-
-## Installation:
+## Installation
 
 - `cd` into project directory
 
@@ -43,43 +42,45 @@ Then:
     bundle update
 
 ## Troubleshooting installation
+
 For most with error with `bundle install`; delete `Gemfile.lock` and retry.
 
 If confronted with the following error in when attempting to run `bundle install` PowerShell, *MSYS2 could not be found. Please run 'ridk install'*, then:
+
 - Execute: `Set-ExecutionPolicy -Scope CurrentUser`
 - Specify: `remotesigned`, and select `[A] Yes to All`
 - Execute: `ridk install`
 
 Another error (`bundle install` fails to build `bigdecimal`, per: [rubygems/issues/8015](https://github.com/rubygems/rubygems/issues/8015) ):
+
 - Execute: `sudo apt install clang`
 - Execute: `export CC=/usr/bin/clang`
 - Execute: `export CXX=/usr/bin/clang++`
 
-## Run locally:
+## Run locally
 
 - Execute: `bundler exec jekyll serve` (or `bundler exec jekyll serve -D` to include 'Draft' content)
 - Preview your local Jekyll site in your web browser at [localhost:4000](http://localhost:4000).
 
-
-## Live reload support (not supported by Windows... yet?):
+## Live reload support (not supported by Windows... yet?)
 
 - Install Livereload plugin for Chrome
 - Execute: `bundler exec guard`
 
-## LiveReloadX (including Windows support):
+## LiveReloadX (including Windows support)
 
- - Install node from command prompt (w/ admin privileges): `choco install nodejs`
- - Reopen command prompt
- - Run: `npm install -g livereloadx`
- - Install the applicable [Browser Extension](http://livereload.com/extensions/)
+- Install node from command prompt (w/ admin privileges): `choco install nodejs`
+- Reopen command prompt
+- Run: `npm install -g livereloadx`
+- Install the applicable [Browser Extension](http://livereload.com/extensions/)
 
  Once installed, run the following command in the project directory:
 
- - `livereloadx _site`
+- `livereloadx _site`
 
 Further command line options are described within the [LiveReloadX documentation](http://nitoyon.github.io/livereloadx/).
 
-## Installing drafts:
+## Installing drafts
 
 - Add bitbucket credentials
 - `git clone git@bitbucket.org:jack_barker/jackbarker-com-au_drafts.git _drafts`
@@ -93,6 +94,7 @@ Further command line options are described within the [LiveReloadX documentation
 - `bundle exec yaspeller ./_site/**/*.html --ignore-urls`
 
 ## Image compile
+
 Requires bash shell and imagemagick.
 
 To install imagemagick within WSL (Windows Subsystem for Linux):
@@ -116,4 +118,5 @@ Then, to compile images:
     ./build_images.sh
 
 ## Emoji
+
 Supported Markdown / Github emoji, is listed [here](https://gist.github.com/rxaviers/7360908).

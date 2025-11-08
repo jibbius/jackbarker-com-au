@@ -1,0 +1,13 @@
+{% assign limit=include.limit | default: 999 %}
+{% assign sorted_projects = site.portfolio | sort: 'rank' %}
+
+<div class="project-highlights">
+{% for project in sorted_projects limit:limit %}
+  <a href="{{ project.url | prepend: site.baseurl }}" class="project-card-link">
+    <div class="project-card">
+      <h4>{{ project.title }}</h4>
+      <p>{{ project.desc | default: project.excerpt | strip_html | truncate: 200 }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>

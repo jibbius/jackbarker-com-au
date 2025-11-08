@@ -2,10 +2,13 @@
 layout: portfolio-item
 title:  "Where the truck.at"
 desc:   "Website and iPhone app for locating gourmet food trucks"
+rank: 4
 date:   2015-12-31
 author: Jack Barker
+img:    /portfolio/wherethetruck
+img-ext: .png
 tags:   [ WordPress, IOS, Full Stack, API integration]
-draft: true
+draft: false
 ---
 
 WhereTheTruck.At is a web and iPhone application that enables users to locate Gourmet Food vans across Australia. I started this project with two others (Tom Kinsman - business strategist; and Xavier Verhoeven - graphic designer).

@@ -1,10 +1,12 @@
 ---
 layout: portfolio-item
 title:  "Royal Melbourne Philharmonic Choir"
-desc:   "xxx"
+desc:   "Website development and digital presence for Melbourne's premier choir"
+rank: 5
 date:   2020-01-01
 author: Jack Barker
-tags:   [ WordPress, IOS, Full Stack, API integration]
+img:    /portfolio/rmp
+tags:   [ WordPress, Web Development, Digital Marketing ]
 draft: true
 ---
 
