@@ -9,11 +9,18 @@
 ### Ruby On WSL (preferred Windows method)
 
 1. Install RVM: https://github.com/rvm/ubuntu_rvm#rvm-package-for-ubuntu
-1. `rvm fix-permissions system; rvm fix-permissions user`
-1. Install the applicable version of Ruby: `rvm install "ruby-3.3.4"`
-   Check required Ruby version here: https://pages.github.com/versions/
-   (While you are checking this, update `/.ruby-version` if required)
+1. Install the applicable version of Ruby: 
 
+    curl https://raw.githubusercontent.com/github/pages-gem/refs/heads/master/.ruby-version -o .ruby-version
+
+# install rbenv + ruby-build (instructions vary; using installer)
+
+    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+
+# Use rbenv to install the required version of Ruby
+    rbenv install $(< .ruby-version)
 
 ### Ruby on Windows (legacy method)
 
@@ -30,10 +37,10 @@ Then:
 ## Installation:
 
 - `cd` into project directory
-- Execute: `gem install bundler`
-<!-- - Execute: `gem install bundler:1.17.2` -->
-- Execute: `bundle install`
-- Execute: `bundle update` (also run to update Jekyll where required)
+
+    gem install bundler
+    bundle install
+    bundle update
 
 ## Troubleshooting installation
 For most with error with `bundle install`; delete `Gemfile.lock` and retry.

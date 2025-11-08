@@ -101,26 +101,6 @@ To assist Python in being able to interpret this file, we are also going to ensu
 ## Step 2 : Installing the "Photo processing" application
 As of version 3.0 of the Photo Booth (May 2018), the two applications (i.e. the 'Photo Booth' and the 'Photo Processor') are packaged together in the one download.
 
-If you already have this verion of the code downloaded, then the file you are looking for is: `photo-processor.py`
-
-If you are using an older version of the photo booth code (and want to upgrade to the latest version), the commands below will allow you to do that.
-
-****
-
-{% highlight sh %}
-    #Please save any photos/config you wish to keep (into another folder), and then run the following:
-    cd ~/photo-booth 
-    git reset --hard 
-    git fetch origin 
-    git checkout master 
-    git merge origin/master
-{% endhighlight %}
-
-Alternatively (if you encounter errors), you can:
-
-1. Remove the previous version (remember to back up your photos first), and then
-2. Reinstall the application per [Part 5](/photo-booth/5) of this series.
-
 ## Step 3 : Run the application
 {% highlight sh %}
     cd ~/photo-booth 
