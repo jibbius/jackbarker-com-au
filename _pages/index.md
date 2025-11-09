@@ -38,7 +38,7 @@ Explore my **[portfolio](/portfolio/)** of technical projects:
 
 ## **Blog**
 
-{% include post-list.html limit=1 %}
+{% include post-list.html limit=1 include_children=false search_limit=20 %}
 
 **[Read All Posts →](/blog/)**
 

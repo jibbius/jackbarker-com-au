@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 
 # Summary
-title: JackBarker.Dev
-subtitle: A blog about Business Analysis, Hacking, and Making stuff.
+title: JackBarker.com.au
+subtitle: A blog about Hacking, and Making stuff.
 author: Jack Barker
 
 description: Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
@@ -37,20 +37,28 @@ collections:
     output: true
     sort_by: date
   posts_draft:
-    output: false
+    output: true
     sort_by: title
-  career_roles:
+    permalink: /blog/drafts/:name/
+  resume_roles:
     output: true
     sort_by: start_date
-  career_projects:
+    permalink: /resume/roles/:name/
+  resume_projects:
     output: true
     sort_by: date
-  career_qualifications:
+  resume_qualifications:
     output: true
     sort_by: completion_date
-  career_skills:
+    permalink: /resume/qualifications/:name/
+  resume_skills:
     output: true
     sort_by: category
+    permalink: /resume/skills/:name/
+  resume_accomplishments:
+    output: true
+    sort_by: year
+    permalink: /resume/accomplishments/:name/
 
 # Nav
 header_pages:
@@ -132,6 +140,7 @@ exclude:
   - .yaspellerrc
   - CNAME
   - cSpell.json
+  - fritzing
   - Gemfile
   - Gemfile.lock
   - Guardfile
@@ -149,4 +158,9 @@ plugins:
   - jemoji
   - jekyll-sitemap
   - jekyll-feed
+
+# Draft management
+# Set to true to show draft posts and portfolio items in development
+# This is automatically set to true when using 'jekyll serve --drafts' or '-D'
+show_drafts: false
   

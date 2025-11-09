@@ -38,7 +38,9 @@ img-ext: .png
 </div>
 
 {% include image-2.html
-    img="/portfolio/flask-tic-tac-toe"
+    img="/portfolio/python-tictactoe"
+    ext=".gif"
+    raw="true"
     alt="UI"
     caption="Modern web interface with game board, player management, and real-time gameplay"
 %}

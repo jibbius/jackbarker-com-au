@@ -1,6 +1,12 @@
 {% assign status=include.status | default: 'published' %}
 {% assign format=include.format | default: 'longform' %}
 {% assign limit=include.limit | default: 999 %}
+{% assign search_limit=include.search_limit | default: limit %}
+{% if include.include_children == false or include.include_children == "false" %}
+  {% assign include_children = false %}
+{% else %}
+  {% assign include_children = true %}
+{% endif %}
 
 {% if status == 'draftsonly' %}
   {% assign post_list=site.posts_draft %}
@@ -9,50 +15,56 @@
 {% endif %}
 
 <ul class="post-list {{status}}">
-  {% for post in post_list limit:limit %}
-  
-    {% if post.draft == true %}
-      {% assign postclass="draft-post" %}
-    {% else %}
-      {% assign postclass="" %}
-    {% endif %}
+{% assign posts_shown = 0 %}
+  {% for post in post_list limit:search_limit %}
+    {% unless include_children == false and post.parent_post %}
+      {% if posts_shown < limit %}
+        {% assign posts_shown = posts_shown | plus: 1 %}
+        
+        {% if post.draft == true %}
+          {% assign postclass="draft-post" %}
+        {% else %}
+          {% assign postclass="" %}
+        {% endif %}
 
-     <li class="{{postclass}}">
+        <li class="{{postclass}}">
 
-      {% if format == "shortform" %}
-        <span>
-          <a class="post-link"
-            href="{{ post.url | prepend: site.baseurl }}"
-            title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
-            >{{ post.title | escape }}</a>
-        </span>
-      {% else %}
+        {% if format == "shortform" %}
+          <span>
+            <a class="post-link"
+              href="{{ post.url | prepend: site.baseurl }}"
+              title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
+              >{{ post.title | escape }}</a>
+          </span>
+        {% else %}
 
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
-          <a class="post-link"
-            href="{{ post.url | prepend: site.baseurl }}"
-            title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
-            >{{ post.title | escape }}</a>
-        </h2>
-          {% if post.desc %}
-              <h3 class="post-subtitle">{{ post.desc }}</h3>
-          {% endif %}
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link"
+              href="{{ post.url | prepend: site.baseurl }}"
+              title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
+              >{{ post.title | escape }}</a>
+          </h2>
+            {% if post.desc %}
+                <h3 class="post-subtitle">{{ post.desc }}</h3>
+            {% endif %}
 
-          {% if post.img %}
-            {% assign img-ext=post.img-ext | default: '.jpg' %}
-            <img
-              class="post-image"
-              src="{{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
-              srcset="
-                  {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
-                  {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
-              sizes="100vw"
-              alt="{{ post.title | escape }}"
-              >
-          {% endif %}
+            {% if post.img %}
+              {% assign img-ext=post.img-ext | default: '.jpg' %}
+              <img
+                class="post-image"
+                src="{{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
+                srcset="
+                    {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
+                    {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
+                sizes="100vw"
+                alt="{{ post.title | escape }}"
+                >
+            {% endif %}
 
+        {% endif %}
+        </li>
       {% endif %}
-    </li>
+    {% endunless %}
   {% endfor %}
 </ul>

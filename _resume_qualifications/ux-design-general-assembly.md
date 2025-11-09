@@ -1,5 +1,5 @@
 ---
-layout: career-qualification
+layout: resume-qualification
 title: User Experience Design
 institution: General Assembly
 type: Course/Certificate

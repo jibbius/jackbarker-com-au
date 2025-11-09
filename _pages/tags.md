@@ -14,7 +14,9 @@ adverts: disable
 {% capture tags %}
   {% for tag in site.tags %}|{{ tag[0] }}{% endfor %}
   {% for project in site.portfolio %}
-    {% for tag in project.tags %}|{{ tag }}{% endfor %}
+    {% unless project.draft %}
+      {% for tag in project.tags %}|{{ tag }}{% endfor %}
+    {% endunless %}
   {% endfor %}
 {% endcapture %}
 
@@ -44,13 +46,15 @@ adverts: disable
     {% comment %}If not found in blog tags, check portfolio tags{% endcomment %}
     {% if found == false %}
       {% for project in site.portfolio %}
-        {% for portfolio_tag in project.tags %}
-          {% assign tag2 = portfolio_tag | downcase %}
-          {% if tag1 == tag2 and found == false %}
-            |{{ portfolio_tag }}
-            {% assign found = true %}
-          {% endif %}
-        {% endfor %}
+        {% unless project.draft %}
+          {% for portfolio_tag in project.tags %}
+            {% assign tag2 = portfolio_tag | downcase %}
+            {% if tag1 == tag2 and found == false %}
+              |{{ portfolio_tag }}
+              {% assign found = true %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
       {% endfor %}
     {% endif %}
   {% endfor %}
@@ -81,7 +85,13 @@ adverts: disable
     {% comment %}
     # Get portfolio projects with this tag
     {% endcomment %}
-    {% assign tag_projects = site.portfolio | where_exp: "project", "project.tags contains clean_tag" %}
+    {% assign all_tag_projects = site.portfolio | where_exp: "project", "project.tags contains clean_tag" %}
+    {% assign tag_projects = '' | split: '' %}
+    {% for project in all_tag_projects %}
+      {% unless project.draft %}
+        {% assign tag_projects = tag_projects | push: project %}
+      {% endunless %}
+    {% endfor %}
     
     {% if tag_posts.size > 0 or tag_projects.size > 0 %}
     <ul class="tags-expo-posts">

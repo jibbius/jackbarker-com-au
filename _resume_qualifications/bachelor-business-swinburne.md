@@ -1,5 +1,5 @@
 ---
-layout: career-qualification
+layout: resume-qualification
 title: Bachelor of Business (Finance, Economics)
 institution: Swinburne University
 type: Bachelor Degree

@@ -1,5 +1,5 @@
 ---
-layout: career-qualification
+layout: resume-qualification
 title: Graduate Diploma of Information Systems Management
 institution: Swinburne University
 type: Graduate Diploma

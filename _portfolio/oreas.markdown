@@ -3,6 +3,7 @@ layout: portfolio-condensed
 title: "OREAS Enterprise Web Platform"
 desc: "Multi-system integration featuring MYOB Advanced, PayPal/Stripe payments, and specialized e-commerce for the mineral reference materials industry"
 rank: 1
+draft: true
 tags:
   - MYOB Advanced
   - PayPal/Stripe

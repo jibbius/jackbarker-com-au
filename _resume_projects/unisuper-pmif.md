@@ -1,5 +1,5 @@
 ---
-layout: career-project
+layout: resume-project
 title: UniSuper - Putting Members' Interest First
 role_id: qmv-senior-consultant
 company: UniSuper

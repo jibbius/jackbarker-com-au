@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article class="accomplishment-item">
+  <header class="accomplishment-header">
+    <h1 class="accomplishment-title">{{ page.title }}</h1>
+    <div class="accomplishment-meta">
+      {% if page.year %}
+        <span class="year">{{ page.year }}</span>
+      {% endif %}
+      {% if page.duration %}
+        <span class="duration">{{ page.duration }}</span>
+      {% endif %}
+      {% if page.type %}
+        <span class="type">{{ page.type }}</span>
+      {% endif %}
+      {% if page.location %}
+        <span class="location">{{ page.location }}</span>
+      {% endif %}
+    </div>
+    {% if page.summary %}
+      <div class="accomplishment-summary">{{ page.summary }}</div>
+    {% endif %}
+  </header>
+
+  <div class="accomplishment-content">
+    {{ content }}
+  </div>
+
+  <footer class="accomplishment-footer">
+    <a href="/resume/" class="back-link">← Back to Resume</a>
+  </footer>
+</article>

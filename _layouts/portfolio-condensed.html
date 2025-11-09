@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="portfolio-item" itemscope itemtype="http://schema.org/CreativeWork">
+<article class="portfolio-item{% if page.draft == true %} draft-post{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
 
   <header class="portfolio-header">
     <h1 class="portfolio-title" itemprop="name">{{ page.title | escape }}</h1>

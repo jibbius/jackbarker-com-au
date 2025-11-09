@@ -3,18 +3,24 @@
     
     <!-- Main Slideshow Area -->
     <div class="showcase-slides">
-      {% assign portfolio_items = site.portfolio | sort: 'rank' %}
+      {% assign include_drafts=include.include_drafts | default: false %}
+      {% if include_drafts == true or include_drafts == "true" or site.show_drafts == true %}
+        {% assign portfolio_items = site.portfolio | sort: 'rank' %}
+      {% else %}
+        {% assign non_draft_portfolio = '' | split: '' %}
+        {% for item in site.portfolio %}
+          {% unless item.draft %}
+            {% assign non_draft_portfolio = non_draft_portfolio | push: item %}
+          {% endunless %}
+        {% endfor %}
+        {% assign portfolio_items = non_draft_portfolio | sort: 'rank' %}
+      {% endif %}
       {% assign slide_index = 0 %}
       {% for post in portfolio_items %}
       
         {% assign is_first_in_pair = forloop.index0 | modulo: 2 %}
         {% if is_first_in_pair == 0 %}
-          {% assign slide_class = "" %}
-          {% if post.draft == true or portfolio_items[forloop.index].draft == true %}
-            {% assign slide_class = "draft-post" %}
-          {% endif %}
-          
-          <div class="showcase-slide {{ slide_class }}" data-slide="{{ slide_index }}">
+          <div class="showcase-slide" data-slide="{{ slide_index }}">
             <div class="slide-layout">
               <div class="slide-pair">
         {% endif %}

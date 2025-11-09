@@ -1,5 +1,5 @@
 ---
-layout: career-qualification
+layout: resume-qualification
 title: Diploma of Financial Services (Superannuation)
 institution: Association of Superannuation Funds of Australia (ASFA)
 type: Professional Diploma

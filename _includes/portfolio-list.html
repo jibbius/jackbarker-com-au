@@ -1,5 +1,18 @@
 <ul class="portfolio-list">
-    {% for post in site.portfolio reversed %}
+{% assign include_drafts=include.include_drafts | default: false %}
+{% if include_drafts == true or include_drafts == "true" or site.show_drafts == true %}
+  {% assign portfolio_items = site.portfolio | reverse %}
+{% else %}
+  {% assign non_draft_portfolio = '' | split: '' %}
+  {% for item in site.portfolio reversed %}
+    {% unless item.draft %}
+      {% assign non_draft_portfolio = non_draft_portfolio | push: item %}
+    {% endunless %}
+  {% endfor %}
+  {% assign portfolio_items = non_draft_portfolio %}
+{% endif %}
+
+    {% for post in portfolio_items %}
 
     {% if post.draft == true %}
       {% assign postclass="draft-post" %}

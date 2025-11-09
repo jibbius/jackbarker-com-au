@@ -11,7 +11,7 @@ img-thumb: "/2017/photo_booth/0_FinishedBooth_2b"
 
 ---
 
-{% include multi-post-photo-booth.html part=0 %}
+{% include multi-post-summary.html %}
 
 ## My DIY Photo Booth
 ### The Finished Product

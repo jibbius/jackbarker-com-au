@@ -1,6 +1,11 @@
 {% assign status=include.status | default: 'published' %}
 {% assign format=include.format | default: 'longform' %}
 {% assign stagger=include.stagger | default: 'true' %}
+{% if include.include_children == false or include.include_children == "false" %}
+  {% assign include_children = false %}
+{% else %}
+  {% assign include_children = true %}
+{% endif %}
 
 <div class="post-list post-list-grid">
 
@@ -10,7 +15,8 @@
   {% assign post_list=site.posts %}
 {% endif %}
 
-{% for post in site.posts %}
+{% for post in post_list %}
+  {% unless include_children == false and post.parent_post %}
 
   {% if include.stagger=="false" %}
     {% assign thecycle='1of1' %}
@@ -71,6 +77,7 @@
     </div><!-- end row -->
   {% endif %}
 
+  {% endunless %}
 {% endfor %}
 
 {% if thecycle == '1of2' %}

@@ -1,5 +1,5 @@
 ---
-layout: career-qualification
+layout: resume-qualification
 title: Certified Business Analysis Professional
 institution: International Institute of Business Analysis (IIBA)
 type: Professional Certification

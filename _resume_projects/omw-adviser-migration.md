@@ -1,5 +1,5 @@
 ---
-layout: career-project
+layout: resume-project
 title: Adviser Frontend and Platform Migration
 role_id: dst-business-analyst
 company: Old Mutual Wealth (UK)

@@ -1,5 +1,5 @@
 ---
-layout: career-project
+layout: resume-project
 title: Queensland Government Super Development Team
 role_id: qmv-senior-consultant
 company: QSuper

@@ -7,9 +7,11 @@ author: Jack Barker
 tags:   [ Raspberry Pi, hacks, Python ]
 date: 2018-04-18
 img: "/2018/post_production"
+parent_post: "/photo-booth/"
+series_order: 8
 img-ext: ".jpg"
 ---
-{% include multi-post-photo-booth.html part=8 %}
+{% include multi-post-summary.html %}
 
 # Post-production Overview
 Before I get into the detail I'd just like to say a quick **thank you** to everyone who's followed along with all the steps thus far. Also a **thanks** to those who waited so patiently for this post to come out.

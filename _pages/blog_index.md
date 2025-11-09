@@ -11,11 +11,9 @@ adverts: disable
 
     {% if site.show_drafts %}
     <h2>Drafts</h2>
-    {% include post-list.html status="draftsonly" format="shortform"%}
+    {% include post-list.html status="draftsonly" format="shortform" include_children=true %}
     {% endif %}
 
     <h2>Latest Posts</h2>
-    {% include post-list-grid.html stagger="true" status="published" %}
+    {% include post-list-grid.html stagger="true" status="published" include_children=true %}
 </div>
-
-{% include post-list-grid.html %}

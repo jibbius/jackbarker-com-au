@@ -3,6 +3,7 @@ layout: portfolio-condensed
 title: "JackBarker.com.au"
 desc: "Personal blog and portfolio website built with Jekyll and hosted on GitHub Pages"
 rank: 99
+draft: true
 tags:
   - GitHub Pages
   - Jekyll
