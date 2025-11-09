@@ -34,9 +34,9 @@ On weekends you can find him at the **Ballarat Hackerspace** or descending the t
 ### Projects
 Jack's projects (past &amp; present) include:
 
-- [WhereTheTruck.at](http://wherethetruck.at){:target="_blank"}
-- The website for the [Royal Melbourne Philharmonic](http://rmp.org.au){:target="_blank"}.
-- (And more on [GitHub](http://github.com/jibbius){:target="_blank"} and [Printables](https://www.printables.com/@jibbius)).
+- [WhereTheTruck.at](https://wherethetruck.at){:target="_blank"}
+- The website for the [Royal Melbourne Philharmonic](https://rmp.org.au){:target="_blank"}.
+- (And more on [GitHub](https://github.com/jibbius){:target="_blank"} and [Printables](https://www.printables.com/@jibbius)).
 </div><!--end column-->
 </div><!--end row-->
 
