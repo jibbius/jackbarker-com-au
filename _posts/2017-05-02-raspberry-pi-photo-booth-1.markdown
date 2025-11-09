@@ -7,10 +7,12 @@ author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
 permalink: /photo-booth/1
 img: "/2017/photo_booth/photoBoothReqs"
+parent_post: "/photo-booth/"
+series_order: 1
 
 ---
 
-{% include multi-post-photo-booth.html part=1 %}
+{% include multi-post-summary.html %}
 
 ## Step 1 : Listing out the requirements
 

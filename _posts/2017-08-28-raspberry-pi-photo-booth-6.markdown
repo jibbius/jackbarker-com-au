@@ -7,9 +7,11 @@ date: 2017-08-28
 author: Jack Barker
 tags: [ Raspberry Pi , hacks ]
 img: "/2017/photo_booth/part6_image_assets"
+parent_post: "/photo-booth/"
+series_order: 6
 img-ext: ".png"
 ---
-{% include multi-post-photo-booth.html part=6 %}
+{% include multi-post-summary.html %}
 
 ## Overview of Part 6
 In part 6 of this series we'll look at some additional improvements we can make for the photo booth.

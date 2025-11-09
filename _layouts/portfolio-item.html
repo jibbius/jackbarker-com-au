@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+
+    <h1 class="post-title {% if page.draft == true %}draft-post{% endif %}" itemprop="name headline">{{ page.title | escape }}</h1>
+    {% if page.desc %}
+    <h2 class="post-subtitle" itemprop="description">{{ page.desc }}</h2>
+    {% endif %}
+    <p class="post-meta">
+    {% if page.last-modified %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>* {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+      <br><small>*(last modified on <time datetime="{{ page.last-modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.last-modified | date: "%b %-d, %Y" }}</time>)</small>
+    {% else %}
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+    {% endif %}
+    </p>
+
+
+  {% if page.tags %}
+    <div class="tags post-tags">
+    {% for tag in page.tags %}
+      <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" title="{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+    </div>
+  {% endif %}
+
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+
+</article>
+
+  <nav class="PageNavigation">
+    {% if page.previous.url %}
+      <a class="prev"
+      href="{{page.previous.url}}"
+      title="{{ page.previous.title | escape }}{% if page.previous.desc %}{% include linebreak.html %}{{ page.previous.desc }}{% endif %}"
+      >&laquo; {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="next"
+      href="{{page.next.url}}"
+      title="{{ page.next.title | escape }}{% if page.next.desc %}{% include linebreak.html %}{{ page.next.desc }}{% endif %}"
+      >{{page.next.title}} &raquo;</a>
+    {% endif %}
+  </nav>
+
+
+
+

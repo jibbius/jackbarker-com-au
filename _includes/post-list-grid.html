@@ -1,15 +1,32 @@
+{% assign status=include.status | default: 'published' %}
+{% assign format=include.format | default: 'longform' %}
+{% assign stagger=include.stagger | default: 'true' %}
+{% if include.include_children == false or include.include_children == "false" %}
+  {% assign include_children = false %}
+{% else %}
+  {% assign include_children = true %}
+{% endif %}
+
 <div class="post-list post-list-grid">
-  {% for post in site.posts %}
+
+{% if status == 'draftsonly' %}
+  {% assign post_list=site.posts_draft %}
+{% else %}
+  {% assign post_list=site.posts %}
+{% endif %}
+
+{% for post in post_list %}
+  {% unless include_children == false and post.parent_post %}
 
   {% if include.stagger=="false" %}
     {% assign thecycle='1of1' %}
   {% else %}
-    {% capture thecycle %}{% cycle '1of2', '2of2', '1of1' %}{% endcapture %}
+    {% capture thecycle %}{% cycle '1of1', '1of2', '2of2' %}{% endcapture %}
   {% endif %}
-
   {% if thecycle == '1of2' or thecycle == '1of1' %}
     <div class="row">
   {% endif %}
+
     <div class="column">
     {% if post.draft == true %}
       {% assign postclass="post-list-li draft-post" %}
@@ -31,10 +48,10 @@
           {% assign img-ext=post.img-ext | default: '.jpg' %}
           <img
             class="post-image"
-            src="{{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
+            src="{{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
             srcset="
-                {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
-                {{ site.url }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
+                {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
+                {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
             alt="{{ post.title | escape }}"
             {% if thecycle == '1of1' %}
               {% include image-sizes-fullwidth.html %}
@@ -60,10 +77,11 @@
     </div><!-- end row -->
   {% endif %}
 
-  {% endfor %}
+  {% endunless %}
+{% endfor %}
 
-    {% if thecycle == '1of2' %}
-    </div><!-- end row -->
-  {% endif %}
+{% if thecycle == '1of2' %}
+  </div><!-- end row -->
+{% endif %}
   
 </div>

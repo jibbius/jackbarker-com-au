@@ -7,10 +7,12 @@ date: 2017-06-22
 author: Jack Barker
 tags: [ Raspberry Pi , hacks, electronics ]
 img: "/2017/photo_booth/photo_booth_power_board"
+parent_post: "/photo-booth/"
+series_order: 4
 img-ext: ".png"
 ---
 
-{% include multi-post-photo-booth.html part=4 %}
+{% include multi-post-summary.html %}
 
 ## Overview of Part 4
 Part 4 describes:
