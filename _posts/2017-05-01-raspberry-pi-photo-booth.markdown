@@ -89,7 +89,7 @@ Thanks to all the above for their support.
 ## Acknowledgements
 I'd also like to thank the following;
 - The [Ballarat Hackerspace](https://ballarathackerspace.org.au/){:target="_blank"} (an awesome community) for their ideas and assistance.
-- [DrumminHands' Photo Booth](http://www.drumminhands.com/2014/06/15/raspberry-pi-photo-booth/){:target="_blank"} which provided inspiration for parts of this build.
+- [DrumminHands' Photo Booth](https://www.drumminhands.com/2014/06/15/raspberry-pi-photo-booth/){:target="_blank"} which provided inspiration for parts of this build.
 
 ## Remixes
 I love hearing from people that have built their own "photo booth" versions;

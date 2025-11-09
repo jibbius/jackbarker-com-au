@@ -45,7 +45,7 @@ Jack's projects (past &amp; present) include:
 <div class="column">
 <div class="footnote" markdown="1">
 #### Note:
-1. <a id="note-1"></a>All views expressed in this blog are Jack's own and are not necessarily shared by his employer.
+1. <span id="note-1"></span>All views expressed in this blog are Jack's own and are not necessarily shared by his employer.
 </div><!--end footnote-->
 </div><!--end column-->
 </div><!--end row-->

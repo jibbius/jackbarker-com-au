@@ -5,7 +5,7 @@ year: 2017
 location: "Ballarat"
 type: "Competition"
 order: 1
-project_url: "http://2017.hackerspace.govhack.org/project/cityzenspace"
+project_url: "https://2017.hackerspace.govhack.org/project/cityzenspace"
 summary: "Multiple award winner for CityZen.space project - a comprehensive data visualization platform comparing city versus regional living standards"
 ---
 
@@ -13,7 +13,7 @@ summary: "Multiple award winner for CityZen.space project - a comprehensive data
 
 Multiple award winner at the 2017 GovHack Hackathon in Ballarat, Victoria. Our team "CityZen" developed CityZen.space, a comprehensive data comparison platform analyzing city versus regional living standards. The project won **6 different awards** across multiple categories, demonstrating exceptional technical and analytical capabilities.
 
-**Project Link:** [CityZen.space on GovHack 2017](http://2017.hackerspace.govhack.org/project/cityzenspace)
+**Project Link:** [CityZen.space on GovHack 2017](https://2017.hackerspace.govhack.org/project/cityzenspace)
 
 ## Awards Received
 

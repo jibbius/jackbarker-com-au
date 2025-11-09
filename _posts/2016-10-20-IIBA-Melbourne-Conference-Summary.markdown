@@ -83,9 +83,9 @@ The clip provided a terrific example as to how small action can lead to great ev
 grand gestures.
 
 
-[squatters]: http://www.heraldsun.com.au/news/opinion/rita-panahi/rita-panahi-squatters-win-hurts-the-real-victims-of-domestic-violence/news-story/ea6d0df5ed0e1c62b17984c1f730636b "Squatters win hurts the real victims of domestic violence"
-[gender-pay-gap]: http://www.heraldsun.com.au/blogs/rita-panahi/gender-pay-gap-mystery/news-story/3b05bde578500b5df10160a4d0a47597  "Gender pay gap mystery"
-[trigger-warning]: http://www.heraldsun.com.au/news/opinion/rita-panahi/too-many-modern-students-refuse-to-learn-tolerance-and-respect-for-diversity-of-opinion/news-story/6f60755f738a13cca87291148798a5bb "Too many modern students refuse to learn tolerance and respect for diversity of opinion"
-[east-meets-west]: http://bsix12.com/east-meets-west/ "East Meets West: An Infographic Portrait by Yang Liu"
-[design-research]: http://www.ida.liu.se/~steho87/desres/buchanan.pdf "Design Research and the New Learning"
+[squatters]: https://www.heraldsun.com.au/news/opinion/rita-panahi/rita-panahi-squatters-win-hurts-the-real-victims-of-domestic-violence/news-story/ea6d0df5ed0e1c62b17984c1f730636b "Squatters win hurts the real victims of domestic violence"
+[gender-pay-gap]: https://www.heraldsun.com.au/blogs/rita-panahi/gender-pay-gap-mystery/news-story/3b05bde578500b5df10160a4d0a47597  "Gender pay gap mystery"
+[trigger-warning]: https://www.heraldsun.com.au/news/opinion/rita-panahi/too-many-modern-students-refuse-to-learn-tolerance-and-respect-for-diversity-of-opinion/news-story/6f60755f738a13cca87291148798a5bb "Too many modern students refuse to learn tolerance and respect for diversity of opinion"
+[east-meets-west]: https://bsix12.com/east-meets-west/ "East Meets West: An Infographic Portrait by Yang Liu"
+[design-research]: https://www.ida.liu.se/~steho87/desres/buchanan.pdf "Design Research and the New Learning"
 [lollipop-moments]: https://www.ted.com/talks/drew_dudley_everyday_leadership "Drew Dudley: Everyday leadership"
