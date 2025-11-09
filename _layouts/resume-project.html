@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+<article class="career-project">
+  <header class="project-header">
+    <h1>{{ page.title }}</h1>
+    <div class="project-meta">
+      <div class="company">{{ page.company }}</div>
+      <div class="duration">{{ page.duration }}</div>
+    </div>
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  <nav class="project-navigation">
+    <a href="/resume/" class="back-to-resume">← Back to Resume</a>
+  </nav>
+</article>
+
+<style>
+.career-project {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.project-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.project-header h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.project-meta {
+  display: flex;
+  gap: 2rem;
+  color: #666;
+}
+
+.company {
+  font-weight: bold;
+}
+
+.duration {
+  font-style: italic;
+}
+
+.project-content {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.project-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 0.5rem;
+}
+
+.project-navigation {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e1e1;
+}
+
+.back-to-resume {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  transition: background-color 0.2s;
+}
+
+.back-to-resume:hover {
+  background: #e9e9e9;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .career-project {
+    padding: 1rem;
+  }
+}
+</style>

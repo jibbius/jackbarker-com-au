@@ -1,0 +1,57 @@
+<ul class="portfolio-list">
+{% assign include_drafts=include.include_drafts | default: false %}
+{% if include_drafts == true or include_drafts == "true" or site.show_drafts == true %}
+  {% assign portfolio_items = site.portfolio | reverse %}
+{% else %}
+  {% assign non_draft_portfolio = '' | split: '' %}
+  {% for item in site.portfolio reversed %}
+    {% unless item.draft %}
+      {% assign non_draft_portfolio = non_draft_portfolio | push: item %}
+    {% endunless %}
+  {% endfor %}
+  {% assign portfolio_items = non_draft_portfolio %}
+{% endif %}
+
+    {% for post in portfolio_items %}
+
+    {% if post.draft == true %}
+      {% assign postclass="draft-post" %}
+    {% else %}
+      {% assign postclass="" %}
+    {% endif %}
+
+     <li class="{{postclass}}">
+        <!-- <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+        <h2>
+          <a class="post-link"
+            href="{{ post.url | prepend: site.baseurl }}"
+            title="{{ post.title | escape }}{% if post.desc %}{% include linebreak.html %}{{ post.desc }}{% endif %}"
+            >{{ post.title | escape }}</a>
+        </h2>
+          {% if post.desc %}
+              <h3 class="post-subtitle">{{ post.desc }}</h3>
+          {% endif %}
+          {% if post.img %}
+            {% assign img-ext=post.img-ext | default: '.jpg' %}
+            <img
+              class="post-image"
+              src="{{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}}"
+              srcset="
+                  {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner.w }}x{{ site.img_size.banner.h }}{{img-ext}} {{ site.img_size.banner.w }}w,
+                  {{ site.baseurl }}{{ site.img_root }}{{ post.img }}-{{ site.img_size.banner_2x.w}}x{{ site.img_size.banner_2x.h}}{{img-ext}} {{ site.img_size.banner_2x.w}}w"
+              sizes="100vw"
+              alt="{{ post.title | escape }}"
+              >
+          {% endif %}
+
+        {% if post.tags %}
+            <div class="tags post-tags">
+            {% for tag in post.tags %}
+              <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag" title="{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+            </div>
+        {% endif %}
+
+      </li>
+    {% endfor %}
+  </ul>

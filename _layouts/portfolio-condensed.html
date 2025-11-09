@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<article class="portfolio-item{% if page.draft == true %} draft-post{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
+
+  <header class="portfolio-header">
+    <h1 class="portfolio-title" itemprop="name">{{ page.title | escape }}</h1>
+    {% if page.desc %}
+    <p class="portfolio-description" itemprop="description">{{ page.desc }}</p>
+    {% endif %}
+
+    {% if page.tags %}
+      <div class="portfolio-tags">
+      {% for tag in page.tags %}
+        <span class="tech-tag">{{ tag }}</span>
+      {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="portfolio-content" itemprop="text">
+    {{ content }}
+  </div>
+
+  <nav class="portfolio-navigation">
+    {% if page.previous.url %}
+      <a class="nav-prev" href="{{page.previous.url}}" title="{{ page.previous.title | escape }}">
+        ← {{page.previous.title}}
+      </a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="nav-next" href="{{page.next.url}}" title="{{ page.next.title | escape }}">
+        {{page.next.title}} →
+      </a>
+    {% endif %}
+  </nav>
+
+</article>

@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 
 # Summary
-title: This Analyst's Life
-subtitle: A blog about Business Analysis, Hacking, and Making stuff.
+title: JackBarker.com.au
+subtitle: A blog about Hacking, and Making stuff.
 author: Jack Barker
 
 description: Business Analyst, Coder, Food Truck aficionado, and Mountain bike enthusiast.
@@ -32,10 +32,39 @@ post_dirs: false
 # Taxonomies
 tag_page: '/tags/'
 
+collections:
+  portfolio:
+    output: true
+    sort_by: date
+  posts_draft:
+    output: true
+    sort_by: title
+    permalink: /blog/drafts/:name/
+  resume_roles:
+    output: true
+    sort_by: start_date
+    permalink: /resume/roles/:name/
+  resume_projects:
+    output: true
+    sort_by: date
+  resume_qualifications:
+    output: true
+    sort_by: completion_date
+    permalink: /resume/qualifications/:name/
+  resume_skills:
+    output: true
+    sort_by: category
+    permalink: /resume/skills/:name/
+  resume_accomplishments:
+    output: true
+    sort_by: year
+    permalink: /resume/accomplishments/:name/
+
 # Nav
 header_pages:
   - '_pages/blog_index.md'
-  - '_pages/tags.md'
+  - '_pages/portfolio.md'
+  - '_pages/resume.md'
   - '_pages/about.md'
   - '_pages/donate.md'
   - '_pages/subscribe.md'
@@ -111,6 +140,7 @@ exclude:
   - .yaspellerrc
   - CNAME
   - cSpell.json
+  - fritzing
   - Gemfile
   - Gemfile.lock
   - Guardfile
@@ -128,4 +158,9 @@ plugins:
   - jemoji
   - jekyll-sitemap
   - jekyll-feed
+
+# Draft management
+# Set to true to show draft posts and portfolio items in development
+# This is automatically set to true when using 'jekyll serve --drafts' or '-D'
+show_drafts: false
   

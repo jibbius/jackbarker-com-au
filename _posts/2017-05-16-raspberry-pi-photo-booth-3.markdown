@@ -6,11 +6,13 @@ permalink: /photo-booth/3
 date:   2017-05-16
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks ]
-img:       "/2017/photo_booth/2_Cabinet_3"
+img:    "/2017/photo_booth/2_Cabinet_3"
+parent_post: "/photo-booth/"
+series_order: 3
 
 ---
 
-{% include multi-post-photo-booth.html part=3 %}
+{% include multi-post-summary.html %}
 
 ## Overview of Part 3
 Part 3 describes the steps I took in **making the wooden cabinet** for my Photo Booth.

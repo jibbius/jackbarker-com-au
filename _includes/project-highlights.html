@@ -1,0 +1,24 @@
+{% assign limit=include.limit | default: 999 %}
+{% assign include_drafts=include.include_drafts | default: false %}
+{% if include_drafts == true or include_drafts == "true" or site.show_drafts == true %}
+  {% assign sorted_projects = site.portfolio | sort: 'rank' %}
+{% else %}
+  {% assign non_draft_projects = '' | split: '' %}
+  {% for project in site.portfolio %}
+    {% unless project.draft == true %}
+      {% assign non_draft_projects = non_draft_projects | push: project %}
+    {% endunless %}
+  {% endfor %}
+  {% assign sorted_projects = non_draft_projects | sort: 'rank' %}
+{% endif %}
+
+<div class="project-highlights">
+{% for project in sorted_projects limit:limit %}
+  <a href="{{ project.url | prepend: site.baseurl }}" class="project-card-link">
+    <div class="project-card{% if project.draft == true %} draft-post{% endif %}">
+      <h4>{{ project.title }}</h4>
+      <p>{{ project.desc | default: project.excerpt | strip_html | truncate: 200 }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>

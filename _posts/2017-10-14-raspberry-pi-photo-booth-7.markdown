@@ -7,9 +7,11 @@ author: Jack Barker
 tags:   [ Raspberry Pi, hacks ]
 date: 2017-10-14
 img: "/2017/photo_booth/JWLPhotography_201704152105_LANG1749"
+parent_post: "/photo-booth/"
+series_order: 7
 img-ext: ".jpg"
 ---
-{% include multi-post-photo-booth.html part=7 %}
+{% include multi-post-summary.html %}
 
 ## My "Top 10 Tips" for ensuring your Photo Booth's debut is stress-free
 
