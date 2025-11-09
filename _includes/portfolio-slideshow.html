@@ -142,6 +142,27 @@ let isTransitioning = false;
 let touchStartX = 0;
 let touchEndX = 0;
 
+// Define global functions immediately to prevent "not defined" errors
+window.changeSlide = function(direction) {
+  console.log('changeSlide called with direction:', direction);
+  if (window.portfolioSlideShow && window.portfolioSlideShow.changeSlide) {
+    window.portfolioSlideShow.changeSlide(direction);
+  } else {
+    console.log('Portfolio slideshow not yet initialized, storing call...');
+    setTimeout(() => window.changeSlide(direction), 100);
+  }
+};
+
+window.goToSlide = function(n) {
+  console.log('goToSlide called with n:', n);
+  if (window.portfolioSlideShow && window.portfolioSlideShow.goToSlide) {
+    window.portfolioSlideShow.goToSlide(n);
+  } else {
+    console.log('Portfolio slideshow not yet initialized, storing call...');
+    setTimeout(() => window.goToSlide(n), 100);
+  }
+};
+
 // Wait for DOM to ensure elements are available
 function initializeShowcase() {
   const slides = document.querySelectorAll('.showcase-slide');
@@ -202,15 +223,25 @@ function initializeShowcase() {
     }, 50);
   }
 
-  // Global functions for onclick handlers
+  // Create the portfolio slideshow object with actual functions
+  window.portfolioSlideShow = {
+    changeSlide: function(direction) {
+      showSlide(currentSlide + direction);
+      resetAutoPlay();
+    },
+    goToSlide: function(n) {
+      showSlide(n);
+      resetAutoPlay();
+    }
+  };
+
+  // Update global functions to use the slideshow object
   window.changeSlide = function(direction) {
-    showSlide(currentSlide + direction);
-    resetAutoPlay();
+    window.portfolioSlideShow.changeSlide(direction);
   };
 
   window.goToSlide = function(n) {
-    showSlide(n);
-    resetAutoPlay();
+    window.portfolioSlideShow.goToSlide(n);
   };
 
   // Auto-play functionality
