@@ -468,7 +468,7 @@ body.page-resume .post-content li {
 </style>
 
 <script>
-// Add page-specific class for CSS targeting
+/* Add page-specific class for CSS targeting */
 document.documentElement.classList.add('page-resume');
 document.body.classList.add('page-resume');
 </script>

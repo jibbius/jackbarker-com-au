@@ -1,0 +1,76 @@
+name: JavaScript Minification Tests
+
+on:
+  push:
+    branches: [ gh-pages, main, master ]
+  pull_request:
+    branches: [ gh-pages, main, master ]
+  
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  test-js-minification:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Set up Ruby (for Jekyll)
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+        bundler-cache: true
+        
+    - name: Install Jekyll dependencies
+      run: bundle install
+      
+    - name: Run JavaScript minification tests (source files)
+      run: |
+        echo "Testing source files only..."
+        python3 test_javascript_minification.py --source-only --report js_source_report.md
+        
+    - name: Run JavaScript minification tests (with drafts)
+      run: |
+        echo "Testing with drafts included..."
+        python3 test_javascript_minification.py --build-with-drafts --ci --report js_full_report.md
+        
+    - name: Upload test reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: js-minification-reports
+        path: |
+          js_source_report.md
+          js_full_report.md
+        
+    - name: Comment PR with results
+      if: github.event_name == 'pull_request' && failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          let comment = '## ❌ JavaScript Minification Test Failed\n\n';
+          
+          if (fs.existsSync('js_source_report.md')) {
+            const sourceReport = fs.readFileSync('js_source_report.md', 'utf8');
+            comment += '### Source Files Report\n\n' + sourceReport + '\n\n';
+          }
+          
+          if (fs.existsSync('js_full_report.md')) {
+            const fullReport = fs.readFileSync('js_full_report.md', 'utf8');
+            comment += '### Full Build Report (with drafts)\n\n' + fullReport;
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
