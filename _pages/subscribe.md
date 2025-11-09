@@ -14,16 +14,18 @@ Provide your email address to be notified of new articles.
     action="https://tinyletter.com/jackbarker"
     method="post"
     target="popupwindow"
-    onsubmit="window.open('https://tinyletter.com/jackbarker', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+    onsubmit="window.open('https://tinyletter.com/jackbarker', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"
+    aria-label="Email subscription form">
     <p>
         <label for="tlemail">Enter your email address</label>
     </p>
     <p>
-        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="email" style="width:140px" name="email" id="tlemail" required aria-describedby="subscribe-help" />
     </p>
+    <p id="subscribe-help" class="help-text">You'll receive notifications when new articles are published.</p>
     <input type="hidden" value="1" name="embed"/>
-    <input type="submit" value="Subscribe" />
-    <p class="poweredByTL">
+    <input type="submit" value="Subscribe" aria-describedby="powered-by"/>
+    <p id="powered-by" class="poweredByTL">
         <a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>
     </p>
  </form>

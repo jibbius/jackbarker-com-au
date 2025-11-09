@@ -84,6 +84,7 @@ img_size:
   standard_width:
    - 700
    - 1400
+   - 2100
 
 # 3rd party scripts
 include_google_adsense: true

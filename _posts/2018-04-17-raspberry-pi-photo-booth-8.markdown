@@ -393,7 +393,7 @@ As an example, lets get our photo booth to start integrating with Twitter:
 {% include image-2.html
     img="/2018/ITTT-05"
     ext=".jpg"
-    alt="5"
+    alt="IFTTT trigger selection showing 'New photo in your folder' option highlighted"
     class="medium"
     caption="Note: There is a limitation here. ITTT will post a maximum of 15 images per polling period (~per hour)." 
 %}
@@ -403,7 +403,7 @@ This will be `Apps\` + the name of your Dropbox app + `\thumbnails`:
 {% include image-2.html
     img="/2018/ITTT-06"
     ext=".jpg"
-    alt="6"
+    alt="Dropbox folder path configuration showing Apps subfolder with thumbnails directory"
     class="medium"
 %}
 {:start="8"}
@@ -411,7 +411,7 @@ This will be `Apps\` + the name of your Dropbox app + `\thumbnails`:
 {% include image-2.html
     img="/2018/ITTT-07"
     ext=".jpg"
-    alt="7"
+    alt="IFTTT action selection interface with 'Then that' button to specify Instagram posting action"
     class="medium"
 %}
 {:start="9"}
