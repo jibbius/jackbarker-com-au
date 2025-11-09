@@ -142,7 +142,7 @@ let isTransitioning = false;
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Define global functions immediately to prevent "not defined" errors
+/* Define global functions immediately to prevent "not defined" errors */
 window.changeSlide = function(direction) {
   console.log('changeSlide called with direction:', direction);
   if (window.portfolioSlideShow && window.portfolioSlideShow.changeSlide) {
@@ -163,7 +163,7 @@ window.goToSlide = function(n) {
   }
 };
 
-// Wait for DOM to ensure elements are available
+/* Wait for DOM to ensure elements are available */
 function initializeShowcase() {
   const slides = document.querySelectorAll('.showcase-slide');
   const dots = document.querySelectorAll('.nav-dot');
@@ -174,18 +174,18 @@ function initializeShowcase() {
   if (totalSlides === 0) return;
 
   function updateDisplay() {
-    // Update progress bar
+    /* Update progress bar */
     if (progressFill) {
       const progress = ((currentSlide + 1) / totalSlides) * 100;
       progressFill.style.width = progress + '%';
     }
     
-    // Update counter
+    /* Update counter */
     if (currentNumber) {
       currentNumber.textContent = currentSlide + 1;
     }
     
-    // Update dots
+    /* Update dots */
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentSlide);
     });
@@ -196,20 +196,20 @@ function initializeShowcase() {
     
     isTransitioning = true;
     
-    // Normalize slide number
+    /* Normalize slide number */
     if (n >= totalSlides) currentSlide = 0;
     else if (n < 0) currentSlide = totalSlides - 1;
     else currentSlide = n;
     
-    // Hide all slides
+    /* Hide all slides */
     slides.forEach(slide => slide.classList.remove('active'));
     
-    // Show current slide with slight delay for smooth transition
+    /* Show current slide with slight delay for smooth transition */
     setTimeout(() => {
       slides[currentSlide].classList.add('active');
       updateDisplay();
       
-      // Adjust container height to accommodate active slide
+      /* Adjust container height to accommodate active slide */
       const activeSlide = slides[currentSlide];
       const container = document.querySelector('.showcase-container');
       if (activeSlide && container) {
@@ -223,7 +223,7 @@ function initializeShowcase() {
     }, 50);
   }
 
-  // Create the portfolio slideshow object with actual functions
+  /* Create the portfolio slideshow object with actual functions */
   window.portfolioSlideShow = {
     changeSlide: function(direction) {
       showSlide(currentSlide + direction);
@@ -235,7 +235,7 @@ function initializeShowcase() {
     }
   };
 
-  // Update global functions to use the slideshow object
+  /* Update global functions to use the slideshow object */
   window.changeSlide = function(direction) {
     window.portfolioSlideShow.changeSlide(direction);
   };
@@ -244,7 +244,7 @@ function initializeShowcase() {
     window.portfolioSlideShow.goToSlide(n);
   };
 
-  // Auto-play functionality
+  /* Auto-play functionality */
   function startAutoPlay() {
     if (autoPlayInterval) clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(() => {
@@ -265,26 +265,26 @@ function initializeShowcase() {
     }
   }
 
-  // Touch/Swipe Support
+  /* Touch/Swipe Support */
   function handleSwipe() {
     const swipeThreshold = 50;
     const diff = touchStartX - touchEndX;
     
     if (Math.abs(diff) > swipeThreshold) {
       if (diff > 0) {
-        changeSlide(1); // Swipe left - next slide
+        changeSlide(1); /* Swipe left - next slide */
       } else {
-        changeSlide(-1); // Swipe right - previous slide  
+        changeSlide(-1); /* Swipe right - previous slide */
       }
     }
   }
 
-  // Initialize
+  /* Initialize */
   const container = document.querySelector('.showcase-container');
   if (container) {
     showSlide(0);
     
-    // Set initial container height based on first slide
+    /* Set initial container height based on first slide */
     setTimeout(() => {
       const firstSlide = slides[0];
       if (firstSlide) {
@@ -293,7 +293,7 @@ function initializeShowcase() {
       }
     }, 100);
     
-    // Touch events for mobile swipe
+    /* Touch events for mobile swipe */
     container.addEventListener('touchstart', function(e) {
       touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
@@ -303,7 +303,7 @@ function initializeShowcase() {
       handleSwipe();
     }, { passive: true });
     
-    // Mouse drag support
+    /* Mouse drag support */
     let mouseDown = false;
     let mouseStartX = 0;
     
@@ -329,23 +329,23 @@ function initializeShowcase() {
       }
     });
     
-    // Pause auto-play on interaction
+    /* Pause auto-play on interaction */
     container.addEventListener('mouseenter', stopAutoPlay);
     container.addEventListener('mouseleave', () => {
-      // Optional: uncomment to enable auto-play
-      // startAutoPlay();
+      /* Optional: uncomment to enable auto-play */
+      /* startAutoPlay(); */
     });
     
     container.addEventListener('focusin', stopAutoPlay);
     container.addEventListener('focusout', () => {
-      // Optional: uncomment to enable auto-play  
-      // startAutoPlay();
+      /* Optional: uncomment to enable auto-play */
+      /* startAutoPlay(); */
     });
   }
   
-  // Keyboard navigation
+  /* Keyboard navigation */
   document.addEventListener('keydown', function(e) {
-    // Only handle keys when showcase is in view
+    /* Only handle keys when showcase is in view */
     const showcase = document.querySelector('.portfolio-showcase');
     if (!showcase) return;
     
@@ -373,7 +373,7 @@ function initializeShowcase() {
     }
   });
   
-  // Pause when tab is not visible
+  /* Pause when tab is not visible */
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
       stopAutoPlay();
@@ -382,11 +382,11 @@ function initializeShowcase() {
     }
   });
   
-  // Optional: Start auto-play (uncomment to enable)
-  // startAutoPlay();
+  /* Optional: Start auto-play (uncomment to enable) */
+  /* startAutoPlay(); */
 }
 
-// Initialize when DOM is ready
+/* Initialize when DOM is ready */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeShowcase);
 } else {
