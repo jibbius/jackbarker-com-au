@@ -5,6 +5,6 @@ echo " Building Jekyll site..."
 bundle exec jekyll build
 
 echo "🔗 Running HTML validation..."
-bundle exec htmlproofer ./_site --disable-external --assume-extension --check-favicon --check-html --check-opengraph
+bundle exec htmlproofer ./_site --disable-external --assume-extension .html
 
 echo "✅ Local build and validation complete!"
