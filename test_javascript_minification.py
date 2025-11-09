@@ -37,10 +37,22 @@ class JavaScriptMinificationTester:
             ".", # root level
         ]
         
+        # Directories to exclude from scanning (vendor dependencies, build artifacts, etc.)
+        exclude_dirs = {"vendor", "_site", "node_modules", ".git", ".bundle"}
+        
         for dir_name in search_dirs:
             dir_path = self.site_root / dir_name
             if dir_path.exists():
-                html_files.extend(dir_path.glob("**/*.html"))
+                if dir_name == ".":
+                    # For root directory, scan files but exclude problematic subdirectories
+                    for html_file in dir_path.glob("*.html"):
+                        html_files.append(html_file)
+                else:
+                    # For other directories, scan recursively but check for excluded paths
+                    for html_file in dir_path.glob("**/*.html"):
+                        # Check if any part of the path contains excluded directories
+                        if not any(excluded in str(html_file) for excluded in exclude_dirs):
+                            html_files.append(html_file)
                 
         return html_files
     
@@ -310,12 +322,17 @@ def main():
         def find_source_files():
             html_files = []
             search_dirs = ["_includes", "_layouts", "_pages"]
+            exclude_dirs = {"vendor", "_site", "node_modules", ".git", ".bundle"}
             
             for dir_name in search_dirs:
                 dir_path = tester.site_root / dir_name
                 if dir_path.exists():
-                    html_files.extend(dir_path.glob("**/*.html"))
-                    html_files.extend(dir_path.glob("**/*.md"))
+                    for html_file in dir_path.glob("**/*.html"):
+                        if not any(excluded in str(html_file) for excluded in exclude_dirs):
+                            html_files.append(html_file)
+                    for md_file in dir_path.glob("**/*.md"):
+                        if not any(excluded in str(md_file) for excluded in exclude_dirs):
+                            html_files.append(md_file)
             return html_files
         
         tester.find_html_files = find_source_files
