@@ -35,6 +35,24 @@ img: /2017/photo_booth/0_FinishedBooth_1b
   </div>
 </div>
 
+## Raspberry Pi Photo Booth
+
+{% include image-2.html
+    img="/2017/photo_booth/0_FinishedBooth_2b"
+    alt="The completed Raspberry Pi photo booth showing its polished wooden cabinet, LED lighting, and professional finish"
+    caption="The finished photo booth - handcrafted wooden cabinet with custom electronics and LED lighting system"
+    class="medium"
+%}
+
+This project became so popular that I wrote an **extensive 8-part tutorial series** covering every single detail - from initial concept and electronics to software development and deployment day. Whether you're a complete beginner or experienced maker, the tutorials guide you through each step with detailed photos, code samples, and troubleshooting tips.
+
+**👉 [Start with Part 1: The Complete Tutorial Series](/photo-booth/)** - Learn how to build your own photo booth from scratch, including all the mistakes I made so you don't have to!
+
+The tutorials cover hardware selection, custom PCB design, Python programming, GPIO control, image processing, cloud integration, and even wedding day deployment tips. Plus, all code and designs are open source on GitHub.
+
+
+
+
 ## Key Features
 
 <div class="key-features">
@@ -79,6 +97,7 @@ img: /2017/photo_booth/0_FinishedBooth_1b
     </div>
   </div>
 </div>
+
 
 ## Impact & Results
 

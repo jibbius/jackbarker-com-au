@@ -16,8 +16,18 @@
 {% for project in sorted_projects limit:limit %}
   <a href="{{ project.url | prepend: site.baseurl }}" class="project-card-link">
     <div class="project-card{% if project.draft == true %} draft-post{% endif %}">
-      <h4>{{ project.title }}</h4>
-      <p>{{ project.desc | default: project.excerpt | strip_html | truncate: 200 }}</p>
+      {% if project.img %}
+        {% assign img_ext = project.img-ext | default: '.jpg' %}
+        <div class="project-thumbnail">
+          <img src="{{ site.img_root | append: project.img | append: '-600x314' | append: img_ext }}" 
+               alt="{{ project.title }} project thumbnail"
+               loading="lazy">
+        </div>
+      {% endif %}
+      <div class="project-content">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.desc | default: project.excerpt | strip_html | truncate: 200 }}</p>
+      </div>
     </div>
   </a>
 {% endfor %}
