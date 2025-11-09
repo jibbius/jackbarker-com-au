@@ -199,5 +199,5 @@ Comments (constructive) are welcome :smile:.
 
 
 
-[fotanus]: http://stackoverflow.com/a/18582395 "fotanus on Stackoverflow"
-[bundler-rationale]: http://bundler.io/rationale.html "bundler.io/rationale"
+[fotanus]: https://stackoverflow.com/a/18582395 "fotanus on Stackoverflow"
+[bundler-rationale]: https://bundler.io/rationale.html "bundler.io/rationale"
