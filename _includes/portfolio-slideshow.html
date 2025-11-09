@@ -272,9 +272,11 @@ function initializeShowcase() {
     
     if (Math.abs(diff) > swipeThreshold) {
       if (diff > 0) {
-        changeSlide(1); /* Swipe left - next slide */
+        /* Swipe left - next slide */
+        changeSlide(1);
       } else {
-        changeSlide(-1); /* Swipe right - previous slide */
+        /* Swipe right - previous slide */
+        changeSlide(-1);
       }
     }
   }
