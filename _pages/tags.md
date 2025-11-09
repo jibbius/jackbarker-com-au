@@ -10,7 +10,7 @@ adverts: disable
 
 {% comment %}
 # Get all tags from both blog posts and portfolio projects
-{% endcomment %} 
+{% endcomment %}
 {% capture tags %}
   {% for tag in site.tags %}|{{ tag[0] }}{% endfor %}
   {% for project in site.portfolio %}
@@ -76,7 +76,7 @@ adverts: disable
     {% for tag in sortedTags %}
     {% assign clean_tag = tag | strip %}
     <h2 id="{{ clean_tag | slugify }}">{{ clean_tag }}</h2>
-    
+
     {% comment %}
     # Get blog posts with this tag
     {% endcomment %}
@@ -103,7 +103,7 @@ adverts: disable
         <a class="tag-post-link portfolio-project"
         href="{{ site.baseurl }}{{ project.url }}"
         title="{{ project.title | escape }}{% if project.desc %}{% include linebreak.html %}{{ project.desc }}{% endif %}">
-        <li {% if project.draft == true %}class="draft-post"{% else %}class="portfolio-item"{% endif %}>
+        <li {% if project.draft == true %}class="draft-post portfolio-item"{% else %}class="portfolio-item"{% endif %}>
           <span class="tag-post-title">{{ project.title }}</span>
           <small class="tag-post-date tag-post-type">(Portfolio Project)</small>
         </li>

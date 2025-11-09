@@ -49,8 +49,8 @@ processed_files=0
 created_images=0
 skipped_images=0
 
-req_img_widths=( 700 1400 )
-req_img_resolutions=( 1400x1400 700x366 1400x732 600x314 )
+req_img_widths=( 700 1400 2100 )
+req_img_resolutions=( 1400x1400 700x366 1400x732 600x314 2100x1100 )
 
 #Common image sizes:
 # - Twitter / FB "Large" = 600 x 314

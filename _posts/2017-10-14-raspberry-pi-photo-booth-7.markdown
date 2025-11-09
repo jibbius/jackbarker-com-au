@@ -106,10 +106,6 @@ I wish you guys all the best for your events.
 
 If anyone else has any tips, feel free to share them below :smile:.
 
-
 ## Next article
-For the next article in this series, I'll be talking about **post-production tweaks you can make to your images**, and **how to convert your photos into a website**.
 
-{%include todo.html todo="Link to next post"%}
-
-[Subscribe]({{ "/subscribe" | prepend: site.url }}) to my blog to stay informed of my progress.
+For the [last article]({{ "/photo-booth/8" | prepend: site.url }}) in this series, I'll be talking about **post-production tweaks you can make to your images**, and **how to convert your photos into a website**.

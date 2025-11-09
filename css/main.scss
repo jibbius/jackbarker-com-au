@@ -20,11 +20,11 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $brand-color:      #1e6fda; /* tags, ...etc - improved contrast */
-$secondary-color:  #f06D06; /* header */
+$secondary-color:  #cc4e00; /* header - darker orange for WCAG AA compliance */
 
 $share-link-bground:  #000;
-$share-link-color: #e73582;
-$draft-link-color: #ff0089;
+$share-link-color: #c72561; /* darker pink for better contrast */
+$draft-link-color: #d6006f; /* darker magenta for better contrast */
 
 // tags
 $tag-background:       lighten($brand-color, 40%);
@@ -37,6 +37,47 @@ $content-width:    1200px;  // Increased for better desktop usage
 $on-palm:          600px;
 $on-laptop:        1024px;  // Updated laptop breakpoint
 $on-desktop:       1200px;  // New desktop breakpoint
+
+// CSS Custom Properties (Design System)
+:root {
+  // Border radius system
+  --border-radius-xs: 4px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+  --border-radius-2xl: 16px;
+  --border-radius-full: 20px;
+  
+  // Shadow system
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  // Simple shadows
+  --shadow-simple-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  // Brand-specific shadows
+  --shadow-brand: 0 4px 16px rgba(30, 111, 218, 0.3);
+  --shadow-brand-hover: 0 8px 24px rgba(30, 111, 218, 0.4);
+  --shadow-warning: 0 2px 6px rgba(255, 193, 7, 0.3);
+  --shadow-warning-lg: 0 4px 20px rgba(255, 193, 7, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+  
+  // Spacing system
+  --space-xs: 0.25rem;  // 4px
+  --space-sm: 0.5rem;   // 8px  
+  --space-md: 1rem;     // 16px
+  --space-lg: 2rem;     // 32px
+  --space-xl: 3rem;     // 48px
+  --space-2xl: 4rem;    // 64px
+  
+  // Layout spacing
+  --padding-card: var(--space-md);
+  --padding-section: var(--space-xl);
+  --margin-section: var(--space-xl);
+}
 
 // Import partials from the `minima` theme.
 @import "minima";
@@ -54,8 +95,8 @@ $on-desktop:       1200px;  // New desktop breakpoint
     border-bottom: 4px solid transparent;
     border-image: linear-gradient(90deg, $brand-color, $secondary-color, $brand-color) 1;
     position: relative;
-    padding: 1rem 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: var(--space-md) 0;
+    box-shadow: var(--shadow-lg);
     
     // Add subtle animated background pattern
     &::before {
@@ -120,11 +161,11 @@ $on-desktop:       1200px;  // New desktop breakpoint
             
             @include media-query($on-palm) {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: var(--space-sm);
                 background: white;
-                border-radius: 8px;
-                padding: 1rem;
-                margin-top: 1rem;
+                border-radius: var(--border-radius-lg);
+                padding: var(--space-md);
+                margin-top: var(--space-md);
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             }
         }
@@ -132,8 +173,8 @@ $on-desktop:       1200px;  // New desktop breakpoint
         a {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--border-radius-md);
             transition: all 0.3s ease;
             position: relative;
             font-weight: 500;
@@ -191,7 +232,7 @@ $on-desktop:       1200px;  // New desktop breakpoint
             right: 15px;
             background-color: transparent;
             border: 1px solid transparent;
-            border-radius: 5px;
+            border-radius: var(--border-radius-sm);
             text-align: right;
             
             label[for="nav-trigger"] {
@@ -246,9 +287,9 @@ $on-desktop:       1200px;  // New desktop breakpoint
                 top: 50px;
                 right: 0;
                 background: white;
-                border-radius: 8px;
-                padding: 1rem;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                border-radius: var(--border-radius-lg);
+                padding: var(--space-md);
+                box-shadow: var(--shadow-lg);
                 min-width: 200px;
                 flex-direction: column;
                 gap: 0.5rem;
@@ -275,18 +316,18 @@ $on-desktop:       1200px;  // New desktop breakpoint
     display: inline-block;
     background: linear-gradient(135deg, $brand-color 0%, lighten($brand-color, 15%) 100%);
     color: white !important;
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--border-radius-lg);
     text-decoration: none !important;
     font-weight: 700;
     font-size: 1.2rem;
-    box-shadow: 0 4px 16px rgba(30, 111, 218, 0.3);
+    box-shadow: var(--shadow-brand);
     transition: all 0.3s ease;
     border: 2px solid transparent;
     
     &:hover {
         transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 8px 24px rgba(30, 111, 218, 0.4);
+        box-shadow: var(--shadow-brand-hover);
         background: linear-gradient(135deg, lighten($brand-color, 5%) 0%, lighten($brand-color, 20%) 100%);
         color: white !important;
     }
@@ -307,10 +348,6 @@ $on-desktop:       1200px;  // New desktop breakpoint
         margin-bottom: 1.5rem;
         color: #212529;
         font-size: 2.5rem;
-        
-        @media (max-width: 768px) {
-            font-size: 2rem;
-        }
     }
     
     .hero-intro {
@@ -318,10 +355,6 @@ $on-desktop:       1200px;  // New desktop breakpoint
         line-height: 1.6;
         color: #495057;
         max-width: 900px;  // Increased from 800px
-        
-        @media (max-width: 768px) {
-            font-size: 1.1rem;
-        }
         
         @media (min-width: 1024px) {
             max-width: 1000px;  // Even wider on large screens
@@ -372,9 +405,9 @@ $on-desktop:       1200px;  // New desktop breakpoint
     .project-card {
         background: white;
         padding: 1.5rem;
-        border-radius: 8px;
+        border-radius: var(--border-radius-lg);
         border: 1px solid #e9ecef;
-        margin-bottom: 1rem;
+        margin-bottom: var(--space-md);
         transition: all 0.3s ease;
         
         &:hover {
@@ -450,8 +483,8 @@ $on-desktop:       1200px;  // New desktop breakpoint
     
     .drafts-section {
         background: white;
-        padding: 1rem;
-        border-radius: 6px;
+        padding: var(--space-md);
+        border-radius: var(--border-radius-md);
         border: 1px solid #e9ecef;
         margin-top: 1.5rem;
         
@@ -483,7 +516,7 @@ $on-desktop:       1200px;  // New desktop breakpoint
         margin-bottom: 1rem;
         
         strong {
-            color: #ffc107; // Gold/amber color - clearly distinct from blue links
+            color: #946900; // Darker gold for WCAG AA compliance (was #ffc107)
         }
     }
     
@@ -496,27 +529,7 @@ $on-desktop:       1200px;  // New desktop breakpoint
     }
 }
 
-// Mobile responsive adjustments
-@media (max-width: 768px) {
-    .homepage-hero {
-        padding: 2rem 0 1.5rem 0;
-    }
-    
-    .project-highlights .project-card {
-        padding: 1.2rem;
-    }
-    
-    .homepage-blog {
-        padding: 2rem 0;
-    }
-    
-    .homepage-content,
-    .homepage-blog {
-        .row .column {
-            margin-bottom: 2rem;
-        }
-    }
-}
+
 .page-content {
     background-color: #fff;
     padding-top:4px;
@@ -617,13 +630,13 @@ div.post-list-li {
     padding: 24px;
     background-color: #ffffff;
     text-align:center;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
     transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 ul.post-list li:hover,
 div.post-list-li:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
 }
 div.post-list-li {
@@ -690,7 +703,7 @@ figure.post-image{
     background: $tag-background;
     padding: 0.4rem 0.8rem;
     border: 1px solid $tag-text-color;
-    border-radius: 20px;
+    border-radius: var(--border-radius-xl);
     color: $tag-text-color;
     font-size: 90%;
     text-decoration: none;
@@ -774,7 +787,7 @@ li.portfolio-item:before {
     position: relative;
     background: linear-gradient(135deg, rgba(255, 193, 7, 0.04) 0%, rgba(255, 193, 7, 0.01) 100%);
     border: 2px solid #ffc107 !important;
-    border-radius: 8px;
+    border-radius: var(--border-radius-lg);
     
     /* Universal DRAFT badge */
     &::before {
@@ -791,7 +804,7 @@ li.portfolio-item:before {
         text-transform: uppercase;
         letter-spacing: 0.8px;
         z-index: 10;
-        box-shadow: 0 2px 6px rgba(255, 193, 7, 0.3);
+        box-shadow: var(--shadow-warning);
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         animation: draftPulse 3s ease-in-out infinite;
     }
@@ -819,7 +832,7 @@ li.portfolio-item:before {
     /* Enhanced hover effects for interactive elements */
     &:hover {
         border-color: #ffc107 !important;
-        box-shadow: 0 4px 20px rgba(255, 193, 7, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        box-shadow: var(--shadow-warning-lg) !important;
     }
 }
 
@@ -901,7 +914,7 @@ body.draft-page {
         text-transform: uppercase;
         letter-spacing: 1px;
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
+        box-shadow: var(--shadow-warning);
     }
     
     .page-content {
@@ -1062,7 +1075,7 @@ aside.multi-post li.current-post a {
     background-color: $brand-color;
     color: white;
     transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-simple-sm);
   }
 }
 
@@ -1097,9 +1110,9 @@ p.poweredByTL {
     background: $share-link-bground;
     color: $share-link-color;
     padding: 12px 20px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-lg);
     margin: 1.5 * $spacing-unit 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-simple-sm);
 
     a {
         font-weight: 700;
@@ -1331,19 +1344,21 @@ span.icon:hover svg path {
     min-height: 500px;
 }
 
-.portfolio-item {
+// Portfolio Card Component (for grid layouts)
+.portfolio-item,
+.portfolio-card {
     display: flex;
     flex-direction: column;
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
     border: 1px solid #f0f0f0;
     transition: all 0.3s ease;
     
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        box-shadow: var(--shadow-lg);
     }
     
     &.draft-post {
@@ -1558,43 +1573,7 @@ span.icon:hover svg path {
 }
 
 /* Responsive Design for Portfolio Slideshow */
-@media (max-width: 768px) {
-    .slide-pair {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 1rem;
-    }
-    
-    .portfolio-item {
-        margin-bottom: 0;
-    }
-    
-    .item-visual {
-        padding: 1rem;
-        min-height: 150px;
-    }
-    
-    .portfolio-item .project-image {
-        max-height: 140px;
-    }
-    
-    .item-details {
-        padding: 1rem;
-    }
-    
-    .portfolio-item .project-title {
-        font-size: 1.2rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-    }
-    
-    .portfolio-item .action-btn {
-        font-size: 0.85rem;
-        padding: 0.6rem 1.2rem;
-    }
-}
+
 
 /* Navigation Arrows */
 .showcase-slides {
@@ -1780,10 +1759,12 @@ span.icon:hover svg path {
 }
 
 /* Condensed Portfolio Item Styles */
+// Portfolio Page Layout
+.portfolio-page,
 .portfolio-item {
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: var(--space-lg) var(--space-md);
 }
 
 .portfolio-header {
@@ -1964,89 +1945,182 @@ span.icon:hover svg path {
 }
 
 /* Mobile Responsive */
+
+
+/* 
+ * Context-specific portfolio item styling
+ * 
+ * The .portfolio-item class is used in multiple contexts:
+ * 1. Portfolio slideshow - should be cards (.portfolio-showcase .portfolio-item)
+ * 2. Portfolio individual pages - should be condensed (.portfolio-condensed)  
+ * 3. Tags page lists - should match blog posts (.tags-expo-posts .portfolio-item)
+ * 4. Portfolio list page - should be list items (.portfolio-list .portfolio-item)
+ */
+
+/* Tags page: Make portfolio items match blog post list aesthetic */
+.tags-expo-posts .portfolio-item {
+    /* Reset card styling to match published-post list items */
+    display: list-item !important;
+    flex-direction: unset;
+    background: transparent !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    transition: none !important;
+    
+    /* Reset spacing to match blog posts */
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    /* Remove hover effects */
+    &:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Portfolio list page: Ensure consistent list styling */
+.portfolio-list .portfolio-item {
+    /* Same overrides as tags page for consistency */
+    display: list-item !important;
+    flex-direction: unset;
+    background: transparent !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    transition: none !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    &:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Layout Utilities */
+.u-flex { display: flex !important; }
+.u-block { display: block !important; }
+.u-inline-block { display: inline-block !important; }
+.u-grid { display: grid !important; }
+
+/* Centering Utilities */
+.u-mx-auto { 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+}
+.u-center-flex { 
+    display: flex !important; 
+    justify-content: center !important; 
+    align-items: center !important; 
+}
+.u-text-center { text-align: center !important; }
+
+/* Shadow Utilities */
+.u-shadow-xs { box-shadow: var(--shadow-xs) !important; }
+.u-shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.u-shadow-md { box-shadow: var(--shadow-md) !important; }
+.u-shadow-lg { box-shadow: var(--shadow-lg) !important; }
+.u-shadow-xl { box-shadow: var(--shadow-xl) !important; }
+.u-shadow-brand { box-shadow: var(--shadow-brand) !important; }
+.u-shadow-warning { box-shadow: var(--shadow-warning) !important; }
+.u-shadow-none { box-shadow: none !important; }
+
+/* Border Radius Utilities */
+.u-rounded-xs { border-radius: var(--border-radius-xs) !important; }
+.u-rounded-sm { border-radius: var(--border-radius-sm) !important; }
+.u-rounded-md { border-radius: var(--border-radius-md) !important; }
+.u-rounded-lg { border-radius: var(--border-radius-lg) !important; }
+.u-rounded-xl { border-radius: var(--border-radius-xl) !important; }
+.u-rounded-2xl { border-radius: var(--border-radius-2xl) !important; }
+.u-rounded-full { border-radius: var(--border-radius-full) !important; }
+.u-rounded-none { border-radius: 0 !important; }
+
+/* Spacing Utilities */
+.u-p-xs { padding: var(--space-xs) !important; }
+.u-p-sm { padding: var(--space-sm) !important; }
+.u-p-md { padding: var(--space-md) !important; }
+.u-p-lg { padding: var(--space-lg) !important; }
+.u-p-xl { padding: var(--space-xl) !important; }
+
+.u-m-xs { margin: var(--space-xs) !important; }
+.u-m-sm { margin: var(--space-sm) !important; }
+.u-m-md { margin: var(--space-md) !important; }
+.u-m-lg { margin: var(--space-lg) !important; }
+.u-m-xl { margin: var(--space-xl) !important; }
+
+/* ========================================
+   CONSOLIDATED MOBILE RESPONSIVE STYLES
+   ======================================== */
 @media (max-width: 768px) {
-    .portfolio-item {
-        padding: 1.5rem 1rem;
+    /* Typography */
+    .homepage-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-intro {
+        font-size: 1.1rem;
     }
     
     .portfolio-header .portfolio-title {
         font-size: 1.8rem;
     }
     
-    .portfolio-content {
-        .quick-facts .fact-grid {
-            grid-template-columns: 1fr;
+    /* Layout Components */
+    .homepage-hero {
+        padding: var(--space-lg) 0 1.5rem 0;
+    }
+    
+    .homepage-blog {
+        padding: var(--space-lg) 0;
+    }
+    
+    .homepage-content,
+    .homepage-blog {
+        .row .column {
+            margin-bottom: var(--space-lg);
         }
-        
+    }
+    
+    /* Project & Portfolio Components */
+    .project-highlights .project-card {
+        padding: 1.2rem;
+    }
+    
+    .portfolio-page,
+    .portfolio-item {
+        padding: 1.5rem var(--space-md);
+    }
+    
+    .portfolio-item,
+    .portfolio-card {
+        margin-bottom: 0;
+    }
+    
+    /* Portfolio Slideshow */
+    .slide-pair {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+        gap: var(--space-md);
+    }
+    
+    .item-visual {
+        padding: var(--space-md);
+        min-height: 150px;
+    }
+    
+    .portfolio-content {
+        .quick-facts .fact-grid,
         .key-features .feature-grid {
             grid-template-columns: 1fr;
         }
-    }
-    
-    .portfolio-navigation {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-    
-    .showcase-slides {
-        min-height: 400px;
-    }
-    
-    .slide-layout {
-        min-height: 400px;
-    }
-    
-    .slide-visual {
-        padding: 1.2rem;
-        min-height: 200px;
-    }
-    
-    .project-image {
-        max-height: 200px;
-        max-width: 100%;
-    }
-    
-    .slide-details {
-        padding: 1.2rem;
-    }
-    
-    .project-title {
-        font-size: 1.5rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-    }
-    
-    .nav-arrow {
-        width: 44px;
-        height: 44px;
-        
-        &.nav-prev {
-            left: 1rem;
-        }
-        
-        &.nav-next {
-            right: 1rem;
-        }
-    }
-    
-    .showcase-nav {
-        padding: 1rem 0;
-        gap: 0.8rem;
-    }
-    
-    .nav-dots {
-        gap: 1rem;
-    }
-    
-    .nav-dot {
-        width: 14px;
-        height: 14px;
-    }
-    
-    .nav-counter {
-        font-size: 0.8rem;
     }
 }

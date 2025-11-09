@@ -41,7 +41,7 @@ img-ext: .png
     img="/portfolio/python-tictactoe"
     ext=".gif"
     raw="true"
-    alt="UI"
+    alt="Animated demonstration of Python Tic-Tac-Toe game with interactive grid and player moves"
     caption="Modern web interface with game board, player management, and real-time gameplay"
 %}
 

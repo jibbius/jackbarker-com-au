@@ -5,10 +5,11 @@ layout: compress
   {% include head.html %}
 
   <body{% if page.draft == true or page.collection == 'posts_draft' %} class="draft-page"{% endif %}>
+    <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
 
     {% include header.html %}
 
-    <main class="page-content" aria-label="Content">
+    <main id="main-content" class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
