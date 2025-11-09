@@ -57,30 +57,30 @@
     ,{ "name" : "Account Type", "parent" : "Account", "dataType" : "", "occurrence" : ""}
     ];
     
-    // Data Conversion functions:
+    /* Data Conversion functions: */
     
     var dataMap = data.reduce(function(map, node) {
         map[node.name] = node;
         return map;
     }, {});
     
-    // create the tree array
+    /* create the tree array */
     var myTreeData = [];
     data.forEach(function(node) {
-        // add to parent
+        /* add to parent */
         var parent = dataMap[node.parent];
         if (parent) {
-        // create child array if it doesn't exist
+        /* create child array if it doesn't exist */
         (parent.children || (parent.children = []))
-            // add node to child array
+            /* add node to child array */
             .push(node);
         } else {
-        // parent is null or missing
+        /* parent is null or missing */
             myTreeData.push(node);
         }
     });
     
-    // Code from bl.ocks.org/mbostock/4339083:
+    /* Code from bl.ocks.org/mbostock/4339083: */
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
         width = 960 - margin.right - margin.left,
         height = 800 - margin.top - margin.bottom;
@@ -114,25 +114,25 @@
         }
       }
     
-     // root.children.forEach(collapse);
+     /* root.children.forEach(collapse); */
       update(root);
     
     d3.select(self.frameElement).style("height", "800px");
     
     function update(source) {
     
-      // Compute the new tree layout.
+      /* Compute the new tree layout. */
       var nodes = tree.nodes(root).reverse(),
           links = tree.links(nodes);
     
-      // Normalize for fixed-depth.
+      /* Normalize for fixed-depth. */
       nodes.forEach(function(d) { d.y = d.depth * 180; });
     
-      // Update the nodes…
+      /* Update the nodes… */
       var node = svg.selectAll("g.node")
           .data(nodes, function(d) { return d.id || (d.id = ++i); });
     
-      // Enter any new nodes at the parent's previous position.
+      /* Enter any new nodes at the parent's previous position. */
       var nodeEnter = node.enter().append("g")
           .attr("class", "node")
           .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
@@ -149,7 +149,7 @@
           .text(function(d) { return d.name; })
           .style("fill-opacity", 1e-6);
     
-      // Transition nodes to their new position.
+      /* Transition nodes to their new position. */
       var nodeUpdate = node.transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
@@ -161,7 +161,7 @@
       nodeUpdate.select("text")
           .style("fill-opacity", 1);
     
-      // Transition exiting nodes to the parent's new position.
+      /* Transition exiting nodes to the parent's new position. */
       var nodeExit = node.exit().transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
@@ -173,11 +173,11 @@
       nodeExit.select("text")
           .style("fill-opacity", 1e-6);
     
-      // Update the links…
+      /* Update the links… */
       var link = svg.selectAll("path.link")
           .data(links, function(d) { return d.target.id; });
     
-      // Enter any new links at the parent's previous position.
+      /* Enter any new links at the parent's previous position. */
       link.enter().insert("path", "g")
           .attr("class", "link")
           .attr("d", function(d) {
@@ -185,12 +185,12 @@
             return diagonal({source: o, target: o});
           });
     
-      // Transition links to their new position.
+      /* Transition links to their new position. */
       link.transition()
           .duration(duration)
           .attr("d", diagonal);
     
-      // Transition exiting nodes to the parent's new position.
+      /* Transition exiting nodes to the parent's new position. */
       link.exit().transition()
           .duration(duration)
           .attr("d", function(d) {
@@ -199,14 +199,14 @@
           })
           .remove();
     
-      // Stash the old positions for transition.
+      /* Stash the old positions for transition. */
       nodes.forEach(function(d) {
         d.x0 = d.x;
         d.y0 = d.y;
       });
     }
     
-    // Toggle children on click.
+    /* Toggle children on click. */
     function click(d) {
       if (d.children) {
         d._children = d.children;
