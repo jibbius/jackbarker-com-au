@@ -7,10 +7,12 @@ date:   2017-05-08
 author: Jack Barker
 tags:   [ Raspberry Pi , hacks, Python ]
 img: "/2017/photo_booth/1_Breadboarding_2"
+parent_post: "/photo-booth/"
+series_order: 2
 
 ---
 
-{% include multi-post-photo-booth.html part=2 %}
+{% include multi-post-summary.html %}
 
 ## Overview of Part 2
 Before providing a full set of components and plans for the Photo Booth, I'd recommend breadboarding out a simple version to get you started.

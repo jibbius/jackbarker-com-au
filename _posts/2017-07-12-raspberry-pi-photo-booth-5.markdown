@@ -7,9 +7,11 @@ date: 2017-07-12
 author: Jack Barker
 tags: [ Raspberry Pi , hacks, Python ]
 img: "/2017/photo_booth/part5-run-module"
+parent_post: "/photo-booth/"
+series_order: 5
 img-ext: ".png"
 ---
-{% include multi-post-photo-booth.html part=5 %}
+{% include multi-post-summary.html %}
 
 ## Overview of Part 5
 Part 5 of this series is all about the code, and optimising the performance of our Pi.

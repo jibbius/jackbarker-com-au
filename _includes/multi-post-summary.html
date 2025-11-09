@@ -1,0 +1,87 @@
+{% comment %}
+Generic Multi-Post Summary Include
+Automatically detects and displays parent-child post relationships
+
+Usage: {% include multi-post-summary.html %}
+No parameters needed - auto-detects current post relationships
+{% endcomment %}
+
+{% assign current_post = page %}
+{% assign series_posts = '' | split: '' %}
+{% assign parent_post = null %}
+{% assign series_title = '' %}
+
+{% comment %} Step 1: Determine if current post is parent or child {% endcomment %}
+{% if current_post.parent_post %}
+  {% comment %} Current post is a child - find the parent {% endcomment %}
+  {% for post in site.posts %}
+    {% if post.url == current_post.parent_post %}
+      {% assign parent_post = post %}
+      {% assign series_title = post.title %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% comment %} Check if current post is a parent (has children) {% endcomment %}
+  {% for post in site.posts %}
+    {% if post.parent_post == current_post.url %}
+      {% assign parent_post = current_post %}
+      {% assign series_title = current_post.title %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% comment %} Step 2: If we found a series, build the complete post list {% endcomment %}
+{% if parent_post %}
+  {% comment %} Add parent post to series {% endcomment %}
+  {% assign series_posts = series_posts | push: parent_post %}
+  
+  {% comment %} Find all child posts {% endcomment %}
+  {% assign child_posts = '' | split: '' %}
+  {% for post in site.posts %}
+    {% if post.parent_post == parent_post.url %}
+      {% assign child_posts = child_posts | push: post %}
+    {% endif %}
+  {% endfor %}
+  
+  {% comment %} Sort child posts by series_order if available, otherwise by date {% endcomment %}
+  {% if child_posts.size > 0 %}
+    {% assign sorted_children = child_posts | sort: 'series_order' %}
+    {% comment %} If no series_order found, sort by date {% endcomment %}
+    {% unless sorted_children.first.series_order %}
+      {% assign sorted_children = child_posts | sort: 'date' %}
+    {% endunless %}
+    {% assign series_posts = series_posts | concat: sorted_children %}
+  {% endif %}
+{% endif %}
+
+{% comment %} Step 3: Display the series navigation if we found one {% endcomment %}
+{% if series_posts.size > 1 %}
+<aside class='multi-post'>
+<h3>Multi-part Series</h3>
+
+{% if current_post.parent_post %}
+<p>This article is part of the <em><a href="{{ parent_post.url | prepend: site.baseurl }}">{{ series_title }}</a></em> series:</p>
+{% else %}
+<p>This is a multi-part series:</p>
+{% endif %}
+
+<ul>
+{% for post in series_posts -%}
+  <li{% if post.url == current_post.url %} class="current-post"{% endif %}>
+    {%- if forloop.first and post.url == parent_post.url -%}
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>{% if post.url == current_post.url %} <strong>(this post)</strong>{% endif %}
+    {%- else -%}
+      {%- assign part_number = forloop.index0 -%}
+      {%- if post.series_order -%}
+        {%- assign part_number = post.series_order -%}
+      {%- endif -%}
+      Part {{ part_number }}: <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | split: ': ' | last | default: post.title }}</a>{% if post.url == current_post.url %} <strong>(this post)</strong>{% endif %}
+    {%- endif -%}
+  </li>
+{% endfor %}
+</ul>
+
+</aside>
+{% endif %}
