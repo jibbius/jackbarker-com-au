@@ -5,7 +5,7 @@ desc:   "A quick solution using D3.js"
 author: Jack Barker
 tags:   [ javascript, data, data visualisation, shell scripting, d3js, csv ]
 include_d3_js: true
-date: 2025-11-10
+date: 2025-11-09
 img: "/2025/d3js_howto"
 img-ext: ".jpg"
 ---
