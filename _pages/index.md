@@ -24,6 +24,16 @@ I'm a <strong>Business Analyst and Developer</strong> based in Melbourne, Austra
 <div class="row">
 <div class="column column-50" markdown="1">
 
+## **Blog**
+
+{% include post-list.html limit=1 include_children=false search_limit=20 %}
+
+**[Read All Posts →](/blog/)**
+
+</div><!--/column-->
+
+<div class="column column-50" markdown="1">
+
 ## **Portfolio**
 
 Explore my **[portfolio](/portfolio/)** of technical projects:
@@ -31,16 +41,6 @@ Explore my **[portfolio](/portfolio/)** of technical projects:
 {% include project-highlights.html limit=3 %}
 
 **[View All Projects →](/portfolio/)**
-
-</div><!--/column-->
-
-<div class="column column-50" markdown="1">
-
-## **Blog**
-
-{% include post-list.html limit=1 include_children=false search_limit=20 %}
-
-**[Read All Posts →](/blog/)**
 
 </div><!--/column-->
 </div><!--/row-->

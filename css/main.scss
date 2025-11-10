@@ -1942,7 +1942,7 @@ span.icon:hover svg path {
 
 .portfolio-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 4rem;
     padding-top: 2rem;
@@ -1962,10 +1962,12 @@ span.icon:hover svg path {
     
     .nav-prev {
         text-align: left;
+        margin-right: auto;
     }
     
     .nav-next {
         text-align: right;
+        margin-left: auto;
     }
 }
 
