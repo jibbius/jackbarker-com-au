@@ -11,6 +11,12 @@
   <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
+  <!-- SEO protection for draft content -->
+  {% if page.draft == true and site.show_drafts != true %}
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  {% endif %}
+
 {% if site.cache-bust %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}?{{site.time | date: '%s%N'}}">
   <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}?{{site.time | date: '%s%N'}}">

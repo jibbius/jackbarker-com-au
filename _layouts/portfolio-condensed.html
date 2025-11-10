@@ -2,6 +2,20 @@
 layout: default
 ---
 
+{% if page.draft == true and site.show_drafts != true %}
+<!-- Draft Protection: Redirect to 404 or Portfolio -->
+<script>
+  // Redirect draft pages when not in draft mode
+  window.location.replace('{{ site.baseurl }}/portfolio/');
+</script>
+<meta http-equiv="refresh" content="0; url={{ site.baseurl }}/portfolio/">
+
+<div style="text-align: center; padding: 2rem;">
+  <h1>Page Not Found</h1>
+  <p>This page is not available. <a href="{{ site.baseurl }}/portfolio/">View all projects</a></p>
+</div>
+{% else %}
+
 <article class="portfolio-item{% if page.draft == true %} draft-post{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
 
   <header class="portfolio-header">
@@ -24,16 +38,52 @@ layout: default
   </div>
 
   <nav class="portfolio-navigation">
-    {% if page.previous.url %}
-      <a class="nav-prev" href="{{page.previous.url}}" title="{{ page.previous.title | escape }}">
-        ← {{page.previous.title}}
+    <!-- Sort portfolio by rank and filter out drafts -->
+    {% assign sorted_portfolio = site.portfolio | sort: 'rank' %}
+    {% assign non_draft_portfolio = '' | split: '' %}
+    {% for item in sorted_portfolio %}
+      {% unless item.draft == true %}
+        {% assign non_draft_portfolio = non_draft_portfolio | push: item %}
+      {% endunless %}
+    {% endfor %}
+    
+    <!-- Find current item index in the filtered list -->
+    {% assign current_index = -1 %}
+    {% for item in non_draft_portfolio %}
+      {% if item.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    <!-- Calculate previous and next indices -->
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+    
+    <!-- Get previous and next posts -->
+    {% assign prev_post = null %}
+    {% assign next_post = null %}
+    
+    {% if prev_index >= 0 %}
+      {% assign prev_post = non_draft_portfolio[prev_index] %}
+    {% endif %}
+    
+    {% if next_index < non_draft_portfolio.size %}
+      {% assign next_post = non_draft_portfolio[next_index] %}
+    {% endif %}
+    
+    {% if prev_post %}
+      <a class="nav-prev" href="{{ prev_post.url }}" title="{{ prev_post.title | escape }}">
+        ← {{ prev_post.title }}
       </a>
     {% endif %}
-    {% if page.next.url %}
-      <a class="nav-next" href="{{page.next.url}}" title="{{ page.next.title | escape }}">
-        {{page.next.title}} →
+    {% if next_post %}
+      <a class="nav-next" href="{{ next_post.url }}" title="{{ next_post.title | escape }}">
+        {{ next_post.title }} →
       </a>
     {% endif %}
   </nav>
 
 </article>
+
+{% endif %}
