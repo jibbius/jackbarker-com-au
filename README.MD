@@ -62,6 +62,25 @@ Another error (`bundle install` fails to build `bigdecimal`, per: [rubygems/issu
 - Execute: `bundler exec jekyll serve` (or `bundler exec jekyll serve -D` to include 'Draft' content)
 - Preview your local Jekyll site in your web browser at [localhost:4000](http://localhost:4000).
 
+### WSL helper (recommended)
+
+If you are editing in WSL and viewing in a Windows browser, use:
+
+```bash
+./start_jekyll_wsl.sh
+```
+
+This helper script:
+- Stops stale Jekyll processes that are already occupying the target port.
+- Starts Jekyll on `0.0.0.0` with LiveReload and file polling.
+- Prints both `http://localhost:4000/` and a WSL-IP fallback URL.
+
+Optional: choose a different port (for example `4001`):
+
+```bash
+./start_jekyll_wsl.sh 4001
+```
+
 ## Live reload support (not supported by Windows... yet?)
 
 - Install Livereload plugin for Chrome
