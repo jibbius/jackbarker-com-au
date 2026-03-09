@@ -67,6 +67,7 @@ header_pages:
   - '_pages/resume.md'
   - '_pages/about.md'
   - '_pages/donate.md'
+  # - '_pages/downloads.md'
   - '_pages/subscribe.md'
 
 # ImageSizes
