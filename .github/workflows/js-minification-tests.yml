@@ -12,7 +12,9 @@ on:
 jobs:
   test-js-minification:
     runs-on: ubuntu-latest
-    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -27,9 +29,6 @@ jobs:
       with:
         ruby-version: '3.2'
         bundler-cache: true
-        
-    - name: Install Jekyll dependencies
-      run: bundle install
       
     - name: Run JavaScript minification tests (source files)
       run: |
