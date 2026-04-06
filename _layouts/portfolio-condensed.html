@@ -5,7 +5,7 @@ layout: default
 {% if page.draft == true and site.show_drafts != true %}
 <!-- Draft Protection: Redirect to 404 or Portfolio -->
 <script>
-  // Redirect draft pages when not in draft mode
+  /* Redirect draft pages when not in draft mode */
   window.location.replace('{{ site.baseurl }}/portfolio/');
 </script>
 <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/portfolio/">
