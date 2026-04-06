@@ -27,7 +27,7 @@ jobs:
     - name: Set up Ruby (for Jekyll)
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2'
+        ruby-version: '3.3'
         bundler-cache: true
       
     - name: Run JavaScript minification tests (source files)
