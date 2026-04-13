@@ -10,6 +10,7 @@ adverts: disable
 
 ### Available Downloads
 
-- [VS Code plugin (v0.7)](/acurity.vsix){:download="acurity.vsix"}
+- [VS Code plugin (v0.14)](/acurity.vsix){:download="acurity.vsix"}
+- [Acurity source zip](/acurity_src.zip){:download="acurity_src.zip"}
 
 </div>
