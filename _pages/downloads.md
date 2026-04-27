@@ -11,5 +11,6 @@ adverts: disable
 ### Available Downloads
 
 - [Plugin source zip](/plugin_src.zip){:download="plugin_src.zip"}
+- [Include parser zip](/include-parser.zip){:download="include-parser.zip"}
 
 </div>
