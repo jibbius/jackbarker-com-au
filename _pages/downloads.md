@@ -10,6 +10,6 @@ adverts: disable
 
 ### Available Downloads
 
-- [Plugin](/architect-language-tools.vsix){:download="plugin.zip"}
+- [Plugin](/plugin.zip){:download="plugin.zip"}
 
 </div>
