@@ -10,6 +10,6 @@ adverts: disable
 
 ### Available Downloads
 
-- [Plugin](/plugin.zip){:download="plugin.zip"}
+- [Architect Language Tools (VS Code extension) — v1.0.4](/architect-language-tools.vsix){:download="architect-language-tools.vsix"}
 
 </div>
