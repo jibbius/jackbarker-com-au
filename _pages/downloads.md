@@ -10,6 +10,6 @@ adverts: disable
 
 ### Available Downloads
 
-- [Architect Language Tools (VS Code extension) — v1.2.0](/architect-language-tools.vsix){:download="architect-language-tools.vsix"}
+- [Architect Language Tools (VS Code extension) — v1.3.0](/architect-language-tools.vsix){:download="architect-language-tools.vsix"}
 
 </div>
