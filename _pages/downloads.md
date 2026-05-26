@@ -10,7 +10,7 @@ adverts: disable
 
 ### Available Downloads
 
-- [Architect Language Tools (VS Code extension) — v1.4.0](/architect-language-tools.vsix){:download="architect-language-tools.vsix"}
-- [Architect Language Tools — full toolchain bundle (VS Code extensions + MCP server + Python agent host + rule-authoring source) — v1.4.0](/architect-language-tools.zip){:download="architect-language-tools.zip"}
+- [Architect Language Tools (VS Code extension) — v1.5.0](/architect-language-tools.vsix){:download="architect-language-tools.vsix"}
+- [Architect Language Tools — full toolchain bundle (VS Code extensions + MCP server + Python agent host + rule-authoring source) — v1.5.0](/architect-language-tools.zip){:download="architect-language-tools.zip"}
 
 </div>
