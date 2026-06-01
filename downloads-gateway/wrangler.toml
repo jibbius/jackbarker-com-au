@@ -1,0 +1,13 @@
+# Cloudflare Pages project for the password-gated downloads subdomain.
+#
+# Deploy from this directory with:  wrangler pages deploy
+# (the served folder is `public/`, which contains _worker.js + index.html +
+# the real download artifacts copied in before deploy — see README.md).
+#
+# NOTE: the shared password is NOT defined here. It is set as an *encrypted
+# secret* (`wrangler pages secret put DOWNLOAD_PASSWORD`). Do not add a
+# [vars] DOWNLOAD_PASSWORD entry — that would commit it in plaintext.
+
+name = "jackbarker-downloads"
+compatibility_date = "2025-05-01"
+pages_build_output_dir = "public"

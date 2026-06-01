@@ -137,6 +137,7 @@ include: ['_pages']
 
 exclude:
   - .gitignore
+  - downloads-gateway   # Cloudflare Pages project (separate deploy); must NOT be published on the apex
   - .travis.yml
   - .vscode
   - .yaspellerrc
