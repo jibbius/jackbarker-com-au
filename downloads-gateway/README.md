@@ -78,12 +78,20 @@ shared password with no lockout is brute-forceable, so entropy is your defence.
 Copy the current artifacts in (see *Updating the files* below), then:
 
 ```bash
-wrangler pages deploy
+wrangler pages deploy --branch main
 ```
 
-This reads `wrangler.toml`, uploads `public/`, and prints a
-`*.pages.dev` preview URL. Open it — you should get a password prompt, and the
-correct password should reveal the download list.
+This reads `wrangler.toml`, uploads `public/`, and deploys.
+
+> **Always pass `--branch main`.** The project's *production branch* is `main`,
+> but this repo's git branch is `gh-pages`. Without `--branch main`, wrangler
+> uses the current git branch (`gh-pages`) and publishes a **preview**
+> deployment — the production URL and the custom domain would not update.
+
+Open the production URL (`https://jackbarker-downloads.pages.dev/`): you should
+get a password prompt, and the correct password reveals the download list. (Set
+the secret in step 3 *before* deploying, or it fails closed with 401 for
+everyone until the next deploy.)
 
 ### 5. Attach the custom domain
 
@@ -105,7 +113,7 @@ running the language-tools release (`RELEASE.md`), from this directory:
 ```bash
 cp /mnt/c/Projects/arch-lang-server/dist/1-core/architect-language-tools.vsix public/architect-language-tools.vsix
 cp /mnt/c/Projects/arch-lang-server/dist/5-to-ship.zip                          public/architect-language-tools.zip
-wrangler pages deploy
+wrangler pages deploy --branch main
 ```
 
 (Paths assume the WSL view of the Windows build tree. The filenames served are
@@ -116,7 +124,7 @@ in `index.html` in future, bump it here too.
 
 ```bash
 wrangler pages secret put DOWNLOAD_PASSWORD --project-name jackbarker-downloads
-wrangler pages deploy   # <-- required: secret changes take effect on the next deploy
+wrangler pages deploy --branch main   # <-- required: secret changes take effect on the next deploy
 ```
 
 A secret change alone does **not** update the live production deployment — you
