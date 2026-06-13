@@ -10,7 +10,10 @@ adverts: disable
 
 ### Available Downloads
 
-- [Architect Language Tools (VS Code extension) — v1.7.0](/architect-language-tools.vsix){:download="architect-language-tools.vsix"}
-- [Architect Language Tools — full toolchain bundle (VS Code extensions + MCP server + Python agent host + rule-authoring source) — v1.7.0](/architect-language-tools.zip){:download="architect-language-tools.zip"}
+The Architect Language Tools downloads have moved to a password-protected page:
+
+- **[Architect Language Tools — Downloads](https://downloads.jackbarker.com.au/)**
+
+Access requires a password — please get in touch if you need it.
 
 </div>
